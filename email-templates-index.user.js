@@ -1,8 +1,8 @@
 // ==UserScript==
 // @name         Email Templates Index
 // @namespace    https://example.com
-// @version      7.11
-// @description  Inserts selected template text into focused input fields or TinyMCE editors, with correct selection, auto-scroll, button highlighting, and restart functionality.
+// @version      7.12
+// @description  Inserts selected template text into focused input fields or TinyMCE editors (iframes), with F4 hotkey.
 // @author       KaiserXanderW
 // @match        *://*/*
 // @grant        GM_registerMenuCommand
@@ -10,152 +10,154 @@
 // @updateURL    https://raw.githubusercontent.com/KaiserXanderW/email-responses-index/main/email-templates-index.user.js
 // ==/UserScript==
 
-
-(function () {
-    'use strict';
+(function() {
+    "use strict";
 
     let lastFocusedElement = null;
+    let lastIframe = null;
     let searchBoxContainer = null;
     let input, ul;
     let highlightedIndex = -1;
-    let selectedLanguage = "DE"; // Default to German
-    let filteredTemplates = [];  // Stores the filtered templates from search
+    let selectedLanguage = "DE";
+    let filteredTemplates = [];
     let templates = [];
 
-    // Wrap all script logic in a function
     async function init() {
         console.log("Template Index Script: init() called.");
 
-        // Clear existing event listeners to avoid duplicates on script restart
-        document.removeEventListener('focusin', trackFocusedElement);
-        document.removeEventListener('keydown', globalKeyListener);
+        document.removeEventListener("focusin", trackFocusedElement);
+        document.removeEventListener("keydown", globalKeyListener);
 
-        // 1. Track Focused Elements
-        document.addEventListener('focusin', trackFocusedElement, { capture: true });
+        document.addEventListener("focusin", trackFocusedElement, { capture: true });
+        document.addEventListener("keydown", globalKeyListener, { capture: true });
 
-        // 2. Keydown for opening the search box (F4) - capture phase for reliability
-        document.addEventListener('keydown', globalKeyListener, { capture: true });
+        const observer = new MutationObserver(setupIframeListeners);
+        observer.observe(document.body, { childList: true, subtree: true });
 
-        // 3. Fetch templates again (or skip if you prefer caching)
+        setupIframeListeners();
         templates = await loadTemplates();
     }
 
+    function setupIframeListeners() {
+        document.querySelectorAll("iframe").forEach((iframe) => {
+            if (iframe.contentDocument && !iframe.dataset.scriptListener) {
+                iframe.dataset.scriptListener = "true";
+                iframe.contentDocument.addEventListener("focusin", (e) => trackFocusedElementInIframe(e, iframe), { capture: true });
+                iframe.contentDocument.addEventListener("keydown", (e) => globalKeyListenerInIframe(e, iframe), { capture: true });
+                console.log("Listeners added to iframe:", iframe.id || iframe.src);
+            }
+        });
+    }
+
     function trackFocusedElement(event) {
-        if (searchBoxContainer && searchBoxContainer.contains(event.target)) {
-            return;
-        }
+        if (searchBoxContainer && searchBoxContainer.contains(event.target)) return;
         const target = event.target;
-        if (
-            target.tagName === 'TEXTAREA' ||
-            (target.tagName === 'INPUT' && target.type === 'text') ||
-            target.isContentEditable
-        ) {
+        if (isEditable(target)) {
             lastFocusedElement = target;
+            lastIframe = null;
+        }
+    }
+
+    function trackFocusedElementInIframe(event, iframe) {
+        if (searchBoxContainer && searchBoxContainer.contains(event.target)) return;
+        const target = event.target;
+        if (isEditable(target)) {
+            lastFocusedElement = target;
+            lastIframe = iframe;
         }
     }
 
     function globalKeyListener(event) {
-        console.log('Keydown captured:', event.key);  // Debug log
-        if (event.key === 'F4') {
+        console.log("Main keydown:", event.key);
+        if (event.key === "F4") {
             event.preventDefault();
             event.stopPropagation();
             createSearchBox();
         }
     }
 
-    function createSearchBox() {
-        if (searchBoxContainer) {
-            searchBoxContainer.remove();
+    function globalKeyListenerInIframe(event, iframe) {
+        console.log("Iframe keydown:", event.key);
+        if (event.key === "F4") {
+            event.preventDefault();
+            event.stopPropagation();
+            createSearchBox();
         }
+    }
+
+    function isEditable(el) {
+        return el.tagName === "TEXTAREA" ||
+               (el.tagName === "INPUT" && el.type === "text") ||
+               el.isContentEditable ||
+               el.contentEditable === "true";
+    }
+
+    function createSearchBox() {
+        if (searchBoxContainer) searchBoxContainer.remove();
 
         if (!lastFocusedElement) {
-            alert('No text box or contenteditable field was focused.');
+            alert("No text box or contenteditable field was focused.");
             return;
         }
 
-        // Container for the entire search UI
-        searchBoxContainer = document.createElement('div');
-        searchBoxContainer.style.position = 'absolute';
-        searchBoxContainer.style.zIndex = '10000';
-        searchBoxContainer.style.fontFamily = 'Arial, sans-serif';
-        searchBoxContainer.style.backgroundColor = 'white';
-        searchBoxContainer.style.border = '1px solid #ccc';
-        searchBoxContainer.style.borderRadius = '4px';
-        searchBoxContainer.style.padding = '5px';
-        searchBoxContainer.style.boxShadow = '0px 4px 8px rgba(0,0,0,0.1)';
+        searchBoxContainer = document.createElement("div");
+        searchBoxContainer.style.cssText = `
+            position: absolute; z-index: 10000; font-family: Arial, sans-serif;
+            background: white; border: 1px solid #ccc; border-radius: 4px;
+            padding: 5px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        `;
 
-        const rect = lastFocusedElement.getBoundingClientRect();
+        const rect = lastIframe ? lastIframe.getBoundingClientRect() : lastFocusedElement.getBoundingClientRect();
         searchBoxContainer.style.top = `${rect.top + window.scrollY}px`;
         searchBoxContainer.style.left = `${rect.left + window.scrollX}px`;
 
-        // The top container with the input + close button
-        const topRowContainer = document.createElement('div');
-        topRowContainer.style.display = 'flex';
-        topRowContainer.style.alignItems = 'center';
+        const topRowContainer = document.createElement("div");
+        topRowContainer.style.cssText = "display: flex; align-items: center;";
 
-        // The search input
-        input = document.createElement('input');
-        input.type = 'text';
-        input.placeholder = 'Type to filter templates...';
-        input.style.width = '200px';
-        input.style.padding = '5px';
-        input.style.fontSize = '14px';
-        input.style.border = '1px solid #ccc';
-        input.style.borderRadius = '4px';
-        input.style.display = 'block';
-        input.setAttribute('autocomplete', 'off');
-        input.setAttribute('autocorrect', 'off');
-        input.setAttribute('spellcheck', 'false');
-        // Prevent autofill by making it readonly initially
-        input.setAttribute('name', 'search_' + Math.random().toString(36).substr(2, 10));
-        input.setAttribute('readonly', 'true');
-        input.addEventListener('focus', () => {
-            input.removeAttribute('readonly');
+        input = document.createElement("input");
+        Object.assign(input.style, {
+            width: "200px",
+            padding: "5px",
+            fontSize: "14px",
+            border: "1px solid #ccc",
+            borderRadius: "4px",
+            display: "block"
         });
+        input.type = "text";
+        input.placeholder = "Type to filter templates...";
+        input.autocomplete = "off";
+        input.autocorrect = "off";
+        input.spellcheck = false;
+        input.name = "search_" + Math.random().toString(36).substr(2, 10);
+        input.readOnly = true;
+        input.addEventListener("focus", () => input.readOnly = false);
 
-        // The close button (little X)
-        const closeButton = document.createElement('button');
-        closeButton.textContent = 'X';
-        closeButton.style.fontSize = '14px';
-        closeButton.style.cursor = 'pointer';
-        closeButton.style.marginLeft = '5px';
-        closeButton.addEventListener('click', () => {
-            closeSearchBox();
-        });
+        const closeButton = document.createElement("button");
+        closeButton.textContent = "X";
+        closeButton.style.cssText = "font-size: 14px; cursor: pointer; margin-left: 5px;";
+        closeButton.addEventListener("click", closeSearchBox);
 
-        // Add input and close button to the top row
-        topRowContainer.appendChild(input);
-        topRowContainer.appendChild(closeButton);
+        topRowContainer.append(input, closeButton);
 
-        // The list of templates
-        ul = document.createElement('ul');
-        ul.style.listStyle = 'none';
-        ul.style.margin = '5px 0 0 0';
-        ul.style.padding = '0';
-        ul.style.backgroundColor = 'white';
-        ul.style.border = '1px solid #ccc';
-        ul.style.borderRadius = '4px';
-        ul.style.maxHeight = '200px';
-        ul.style.overflowY = 'auto';
-        ul.style.display = 'none';
+        ul = document.createElement("ul");
+        ul.style.cssText = `
+            list-style: none; margin: 5px 0 0 0; padding: 0; background: white;
+            border: 1px solid #ccc; border-radius: 4px; max-height: 200px;
+            overflow-y: auto; display: none;
+        `;
 
-        // Attach everything
-        searchBoxContainer.appendChild(topRowContainer);
-        searchBoxContainer.appendChild(ul);
+        searchBoxContainer.append(topRowContainer, ul);
         document.body.appendChild(searchBoxContainer);
 
-        // Setup event listeners
         input.focus();
-        input.addEventListener('input', () => handleSearch(input.value));
-        input.addEventListener('keydown', handleInputNavigation, true);
-
-        // Show full list initially
-        handleSearch('');
+        input.addEventListener("input", () => handleSearch(input.value));
+        input.addEventListener("keydown", handleInputNavigation, true);
+        handleSearch("");
     }
 
     function handleSearch(query) {
         query = query.trim().toLowerCase();
-        ul.innerHTML = '';
+        ul.innerHTML = "";
         highlightedIndex = -1;
 
         filteredTemplates = templates.filter(t =>
@@ -164,44 +166,37 @@
         );
 
         if (filteredTemplates.length === 0) {
-            ul.style.display = 'none';
+            ul.style.display = "none";
             return;
         }
 
-        ul.style.display = 'block';
+        ul.style.display = "block";
 
         filteredTemplates.forEach((template, index) => {
-            const li = document.createElement('li');
-            li.style.display = 'flex';
-            li.style.justifyContent = 'space-between';
-            li.style.alignItems = 'center';
-            li.style.padding = '8px';
-            li.style.borderBottom = '1px solid #eee';
-            li.style.cursor = 'pointer';
-            li.style.userSelect = 'none';
-            li.contentEditable = false;
+            const li = document.createElement("li");
+            li.style.cssText = `
+                display: flex; justify-content: space-between; align-items: center;
+                padding: 8px; border-bottom: 1px solid #eee; cursor: pointer;
+                user-select: none;
+            `;
             li.tabIndex = -1;
 
-            const title = document.createElement('span');
+            const title = document.createElement("span");
             title.textContent = template.title;
-            title.style.flex = '1';
+            title.style.flex = "1";
 
-            const buttonContainer = document.createElement('div');
-            buttonContainer.style.display = 'flex';
-            buttonContainer.style.gap = '5px';
+            const buttonContainer = document.createElement("div");
+            buttonContainer.style.cssText = "display: flex; gap: 5px;";
 
-            const buttonDE = createLangButton('DE', template.text.de, index);
-            const buttonEN = createLangButton('EN', template.text.en, index);
+            const buttonDE = createLangButton("DE", template.text.de, index);
+            const buttonEN = createLangButton("EN", template.text.en, index);
 
-            buttonContainer.appendChild(buttonDE);
-            buttonContainer.appendChild(buttonEN);
+            buttonContainer.append(buttonDE, buttonEN);
+            li.append(title, buttonContainer);
 
-            li.appendChild(title);
-            li.appendChild(buttonContainer);
-
-            li.addEventListener('mouseenter', () => highlightResult(index));
-            li.addEventListener('mouseleave', () => highlightResult(-1));
-            li.addEventListener('click', () => highlightResult(index));
+            li.addEventListener("mouseenter", () => highlightResult(index));
+            li.addEventListener("mouseleave", () => highlightResult(-1));
+            li.addEventListener("click", () => highlightResult(index));
 
             ul.appendChild(li);
         });
@@ -210,16 +205,15 @@
     }
 
     function createLangButton(lang, text, index) {
-        const button = document.createElement('button');
+        const button = document.createElement("button");
         button.textContent = lang;
-        button.style.padding = '5px 10px';
-        button.style.fontSize = '12px';
-        button.style.cursor = 'pointer';
-        button.style.border = '1px solid #ccc';
-        button.style.borderRadius = '4px';
-        button.style.transition = 'background 0.2s, color 0.2s';
+        button.style.cssText = `
+            padding: 5px 10px; font-size: 12px; cursor: pointer;
+            border: 1px solid #ccc; border-radius: 4px;
+            transition: background 0.2s, color 0.2s;
+        `;
 
-        button.addEventListener('click', (e) => {
+        button.addEventListener("click", (e) => {
             e.stopPropagation();
             insertTemplate(text);
             closeSearchBox();
@@ -231,67 +225,62 @@
 
     function updateButtonStyle(button, lang, index) {
         if (index === highlightedIndex && lang === selectedLanguage) {
-            button.style.backgroundColor = '#007bff';
-            button.style.color = 'white';
+            button.style.backgroundColor = "#007bff";
+            button.style.color = "white";
         } else {
-            button.style.backgroundColor = '#ddd';
-            button.style.color = 'black';
+            button.style.backgroundColor = "#ddd";
+            button.style.color = "black";
         }
     }
 
     function highlightResult(index) {
         highlightedIndex = index;
-        const items = ul.querySelectorAll('li');
+        const items = ul.querySelectorAll("li");
 
         items.forEach((item, i) => {
-            item.style.backgroundColor = i === index ? '#bde4ff' : '';
+            item.style.backgroundColor = i === index ? "#bde4ff" : "";
 
-            const buttons = item.querySelectorAll('button');
-            buttons.forEach(btn => {
+            const buttons = item.querySelectorAll("button");
+            buttons.forEach((btn) => {
                 const lang = btn.textContent;
                 updateButtonStyle(btn, lang, i);
             });
         });
 
         if (index >= 0 && items[index]) {
-            items[index].scrollIntoView({
-                block: 'nearest',
-                inline: 'nearest'
-            });
+            items[index].scrollIntoView({ block: "nearest", inline: "nearest" });
         }
     }
 
     function handleInputNavigation(event) {
-        const items = ul.querySelectorAll('li');
+        const items = ul.querySelectorAll("li");
         if (!items.length) return;
 
         switch (event.key) {
-            case 'ArrowDown':
+            case "ArrowDown":
                 highlightedIndex = (highlightedIndex + 1) % filteredTemplates.length;
                 highlightResult(highlightedIndex);
                 break;
-            case 'ArrowUp':
+            case "ArrowUp":
                 highlightedIndex = (highlightedIndex - 1 + filteredTemplates.length) % filteredTemplates.length;
                 highlightResult(highlightedIndex);
                 break;
-            case 'ArrowLeft':
+            case "ArrowLeft":
                 selectedLanguage = "DE";
                 highlightResult(highlightedIndex);
                 break;
-            case 'ArrowRight':
+            case "ArrowRight":
                 selectedLanguage = "EN";
                 highlightResult(highlightedIndex);
                 break;
-            case 'Enter':
+            case "Enter":
                 if (highlightedIndex >= 0 && filteredTemplates.length > 0) {
                     const template = filteredTemplates[highlightedIndex];
-                    insertTemplate(
-                        selectedLanguage === "DE" ? template.text.de : template.text.en
-                    );
+                    insertTemplate(selectedLanguage === "DE" ? template.text.de : template.text.en);
                     closeSearchBox();
                 }
                 break;
-            case 'Escape':
+            case "Escape":
                 closeSearchBox();
                 break;
         }
@@ -304,13 +293,13 @@
 
         let wrappedText;
         if (selectedLanguage === "DE") {
-            wrappedText = `${text}\\\\n\\\\nFreundliche Grüße,\\\\nAlexander`;
+            wrappedText = `${text}\n\nFreundliche Grüße,\nAlexander`;
         } else {
-            wrappedText = `${text}\\\\n\\\\nKind regards,\\\\nAlexander`;
+            wrappedText = `${text}\n\nKind regards,\nAlexander`;
         }
 
-        if (lastFocusedElement.isContentEditable) {
-            document.execCommand('insertText', false, wrappedText);
+        if (lastFocusedElement.isContentEditable || lastIframe) {
+            document.execCommand("insertText", false, wrappedText);
         } else {
             lastFocusedElement.value += wrappedText;
         }
@@ -331,11 +320,9 @@
         }
     }
 
-    // Call init() right away
     init();
 
-    // Add the restart function if GM_registerMenuCommand is available
-    if (typeof GM_registerMenuCommand === 'function') {
+    if (typeof GM_registerMenuCommand === "function") {
         GM_registerMenuCommand("Restart Script", async () => {
             console.clear();
             console.log("Restarting Template Index Script!");
