@@ -288,22 +288,34 @@
 
     function insertTemplate(text) {
         if (!lastFocusedElement) return;
-
+    
+        // Focus first
         lastFocusedElement.focus();
-
+    
         let wrappedText;
         if (selectedLanguage === "DE") {
-            wrappedText = `${text}\n\nFreundliche Grüße,\nAlexander`;
+            wrappedText = `${text}\\n\\nFreundliche Grüße,\\nAlexander`;
         } else {
-            wrappedText = `${text}\n\nKind regards,\nAlexander`;
+            wrappedText = `${text}\\n\\nKind regards,\\nAlexander`;
         }
-
-        if (lastFocusedElement.isContentEditable || lastIframe) {
-            document.execCommand("insertText", false, wrappedText);
-        } else {
-            lastFocusedElement.value += wrappedText;
+    
+        // TinyMCE API check (works inside iframe)
+        if (typeof tinymce !== 'undefined' && tinymce.activeEditor) {
+            tinymce.activeEditor.execCommand('mceInsertContent', false, wrappedText);
+            return;
         }
+    
+        // Fallback: Try iframe document first, then main
+        const doc = lastIframe ? lastIframe.contentDocument : document;
+        if (doc.execCommand) {
+            doc.execCommand('insertText', false, wrappedText);
+            return;
+        }
+    
+        // Ultimate fallback
+        lastFocusedElement.textContent += wrappedText;
     }
+
 
     function closeSearchBox() {
         if (searchBoxContainer) searchBoxContainer.remove();
