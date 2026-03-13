@@ -291,27 +291,29 @@
     
         lastFocusedElement.focus();
     
-        let wrappedText;
-        if (selectedLanguage === "DE") {
-            wrappedText = `${text.replace(/\n/g, '<br>')}<br><br>Freundliche Grüße,<br>Alexander`;
-        } else {
-            wrappedText = `${text.replace(/\n/g, '<br>')}<br><br>Kind regards,<br>Alexander`;
-        }
+        // Trim trailing newlines from template, then add signature
+        let cleanText = text.trim().replace(/\n/g, '<br>');
+        let signature = selectedLanguage === "DE" 
+            ? "<br><br>Freundliche Grüße,<br>Alexander"
+            : "<br><br>Kind regards,<br>Alexander";
     
-        // TinyMCE API (HTML mode)
+        let wrappedText = cleanText + signature;
+    
+        // TinyMCE API
         if (typeof tinymce !== 'undefined' && tinymce.activeEditor) {
             tinymce.activeEditor.execCommand('mceInsertContent', false, wrappedText);
             return;
         }
     
-        // Fallbacks (same as before)
+        // Fallbacks
         const doc = lastIframe ? lastIframe.contentDocument : document;
         if (doc.execCommand) {
-            doc.execCommand('insertHTML', false, wrappedText);  // Use insertHTML
+            doc.execCommand('insertHTML', false, wrappedText);
             return;
         }
         lastFocusedElement.innerHTML += wrappedText;
     }
+
 
 
 
