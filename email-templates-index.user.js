@@ -3,9 +3,13 @@
 // @namespace    https://example.com
 // @version      7.11
 // @description  Inserts selected template text into focused input fields or TinyMCE editors, with correct selection, auto-scroll, button highlighting, and restart functionality.
+// @author       KaiserXanderW
 // @match        *://*/*
 // @grant        GM_registerMenuCommand
+// @downloadURL  https://raw.githubusercontent.com/KaiserXanderW/email-responses-index/main/email-templates-index.user.js
+// @updateURL    https://raw.githubusercontent.com/KaiserXanderW/email-responses-index/main/email-templates-index.user.js
 // ==/UserScript==
+
 
 (function () {
     'use strict';
