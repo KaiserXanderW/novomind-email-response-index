@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name         Template Index with x
+// @name         Email Templates Index
 // @namespace    https://example.com
 // @version      7.11
 // @description  Inserts selected template text into focused input fields or TinyMCE editors, with correct selection, auto-scroll, button highlighting, and restart functionality.
