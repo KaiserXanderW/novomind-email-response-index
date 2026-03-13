@@ -1,7 +1,7 @@
 // ==UserScript==
-// @name         Email Templates Index
-// @namespace    [https://example.com](https://example.com)
-// @version      7.10
+// @name         Template Index with x
+// @namespace    https://example.com
+// @version      7.11
 // @description  Inserts selected template text into focused input fields or TinyMCE editors, with correct selection, auto-scroll, button highlighting, and restart functionality.
 // @match        *://*/*
 // @grant        GM_registerMenuCommand
@@ -27,10 +27,10 @@
         document.removeEventListener('keydown', globalKeyListener);
 
         // 1. Track Focused Elements
-        document.addEventListener('focusin', trackFocusedElement);
+        document.addEventListener('focusin', trackFocusedElement, { capture: true });
 
-        // 2. Keydown for opening the search box (F4)
-        document.addEventListener('keydown', globalKeyListener);
+        // 2. Keydown for opening the search box (F4) - capture phase for reliability
+        document.addEventListener('keydown', globalKeyListener, { capture: true });
 
         // 3. Fetch templates again (or skip if you prefer caching)
         templates = await loadTemplates();
@@ -51,8 +51,10 @@
     }
 
     function globalKeyListener(event) {
+        console.log('Keydown captured:', event.key);  // Debug log
         if (event.key === 'F4') {
             event.preventDefault();
+            event.stopPropagation();
             createSearchBox();
         }
     }
@@ -298,9 +300,9 @@
 
         let wrappedText;
         if (selectedLanguage === "DE") {
-            wrappedText = `${text}\\n\\nFreundliche Grüße,\\nAlexander`;
+            wrappedText = `${text}\\\\n\\\\nFreundliche Grüße,\\\\nAlexander`;
         } else {
-            wrappedText = `${text}\\n\\nKind regards,\\nAlexander`;
+            wrappedText = `${text}\\\\n\\\\nKind regards,\\\\nAlexander`;
         }
 
         if (lastFocusedElement.isContentEditable) {
