@@ -288,24 +288,19 @@
 
     function insertTemplate(text) {
         if (!lastFocusedElement) return;
-    
         lastFocusedElement.focus();
     
-        // Trim trailing newlines from template, then add signature
         let cleanText = text.trim().replace(/\n/g, '<br>');
         let signature = selectedLanguage === "DE" 
-            ? "<br><br>Freundliche Grüße,<br>Alexander"
-            : "<br><br>Kind regards,<br>Alexander";
+            ? '<br><br>Freundliche Grüße,<br>Alexander'
+            : '<br><br>Kind regards,<br>Alexander';
+        let wrappedText = cleanText + signature;  // Exact control
     
-        let wrappedText = cleanText + signature;
-    
-        // TinyMCE API
         if (typeof tinymce !== 'undefined' && tinymce.activeEditor) {
-            tinymce.activeEditor.execCommand('mceInsertContent', false, wrappedText);
+            tinymce.activeEditor.insertContent(wrappedText);  // Use insertContent (no extra P)
             return;
         }
     
-        // Fallbacks
         const doc = lastIframe ? lastIframe.contentDocument : document;
         if (doc.execCommand) {
             doc.execCommand('insertHTML', false, wrappedText);
@@ -313,6 +308,7 @@
         }
         lastFocusedElement.innerHTML += wrappedText;
     }
+
 
 
 
