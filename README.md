@@ -1,1 +1,1 @@
-# email-responses-index
+# novomind-email-response-index

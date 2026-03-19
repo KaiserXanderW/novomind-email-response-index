@@ -1,13 +1,13 @@
 // ==UserScript==
-// @name         Email Templates Index
+// @name         Novomind Email Response Index
 // @namespace    https://example.com
 // @version      7.12
 // @description  Inserts selected template text into focused input fields or TinyMCE editors (iframes), with F4 hotkey.
 // @author       KaiserXanderW
 // @match        *://*/*
 // @grant        GM_registerMenuCommand
-// @downloadURL  https://raw.githubusercontent.com/KaiserXanderW/email-responses-index/main/email-templates-index.user.js
-// @updateURL    https://raw.githubusercontent.com/KaiserXanderW/email-responses-index/main/email-templates-index.user.js
+// @downloadURL  https://raw.githubusercontent.com/KaiserXanderW/novomind-email-response-index/main/novomind-email-response-index.user.js
+// @updateURL    https://raw.githubusercontent.com/KaiserXanderW/novomind-email-response-index/main/novomind-email-response-index.user.js
 // ==/UserScript==
 
 (function() {
