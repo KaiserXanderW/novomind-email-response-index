@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name         Novomind Email Response Index
+// @name         novomind-email-response-index
 // @namespace    https://example.com
 // @version      7.12
 // @description  Inserts selected template text into focused input fields or TinyMCE editors (iframes), with F4 hotkey.
