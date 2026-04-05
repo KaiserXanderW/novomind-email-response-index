@@ -1,11 +1,14 @@
 // ==UserScript==
 // @name         novomind-email-response-index
 // @namespace    https://example.com
-// @version      7.12
+// @version      7.13
 // @description  Inserts selected template text into focused input fields or TinyMCE editors (iframes), with F4 hotkey.
 // @author       KaiserXanderW
 // @match        *://*/*
 // @grant        GM_registerMenuCommand
+// @grant        GM_setValue
+// @grant        GM_getValue
+// @connect      gist.githubusercontent.com
 // @downloadURL  https://raw.githubusercontent.com/KaiserXanderW/novomind-email-response-index/main/novomind-email-response-index.user.js
 // @updateURL    https://raw.githubusercontent.com/KaiserXanderW/novomind-email-response-index/main/novomind-email-response-index.user.js
 // ==/UserScript==
@@ -21,6 +24,7 @@
     let selectedLanguage = "DE";
     let filteredTemplates = [];
     let templates = [];
+    let templatesLoadFailed = false;
 
     async function init() {
         console.log("Template Index Script: init() called.");
@@ -35,7 +39,14 @@
         observer.observe(document.body, { childList: true, subtree: true });
 
         setupIframeListeners();
-        templates = await loadTemplates();
+        const loaded = await loadTemplates();
+        if (loaded === null) {
+            templatesLoadFailed = true;
+            templates = [];
+        } else {
+            templatesLoadFailed = false;
+            templates = loaded;
+        }
     }
 
     function setupIframeListeners() {
@@ -159,6 +170,15 @@
         query = query.trim().toLowerCase();
         ul.innerHTML = "";
         highlightedIndex = -1;
+
+        if (templatesLoadFailed) {
+            ul.style.display = "block";
+            const li = document.createElement("li");
+            li.style.cssText = "padding: 8px; color: red;";
+            li.textContent = "Failed to load templates. Check your connection.";
+            ul.appendChild(li);
+            return;
+        }
 
         filteredTemplates = templates.filter(t =>
             t.title.toLowerCase().includes(query) ||
@@ -320,11 +340,18 @@
     async function loadTemplates() {
         try {
             const response = await fetch("https://gist.githubusercontent.com/KaiserXanderW/51087d041078b96b8b702e91395331e5/raw");
-            if (!response.ok) throw new Error("Failed to load templates.");
-            return await response.json();
+            if (!response.ok) throw new Error(`HTTP ${response.status}`);
+            const data = await response.json();
+            GM_setValue("templatesCache", JSON.stringify(data));
+            return data;
         } catch (error) {
             console.error("Error loading templates:", error);
-            return [];
+            const cached = GM_getValue("templatesCache", null);
+            if (cached) {
+                console.warn("Using cached templates.");
+                return JSON.parse(cached);
+            }
+            return null;
         }
     }
 
