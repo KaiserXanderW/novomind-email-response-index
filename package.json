@@ -1,0 +1,23 @@
+{
+  "name": "novomind-email-response-index",
+  "version": "1.0.0",
+  "description": "",
+  "main": "novomind-email-response-index.user.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KaiserXanderW/novomind-email-response-index.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KaiserXanderW/novomind-email-response-index/issues"
+  },
+  "homepage": "https://github.com/KaiserXanderW/novomind-email-response-index#readme",
+  "dependencies": {
+    "@playwright/test": "^1.60.0"
+  }
+}

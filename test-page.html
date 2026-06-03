@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test Page — Template Combining</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        h1 {
+            font-size: 1.4em;
+            color: #333;
+        }
+        .editor-section {
+            margin-bottom: 24px;
+            background: #fff;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            padding: 12px;
+        }
+        .editor-section label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 6px;
+            font-size: 0.9em;
+            color: #555;
+        }
+        textarea, #test-contenteditable {
+            width: 100%;
+            max-width: 700px;
+            box-sizing: border-box;
+        }
+        #test-contenteditable {
+            min-height: 80px;
+            border: 1px solid #aaa;
+            padding: 8px;
+            border-radius: 3px;
+            background: #fff;
+        }
+        iframe {
+            width: 100%;
+            max-width: 700px;
+            height: 120px;
+            border: 1px solid #aaa;
+            border-radius: 3px;
+            background: #fff;
+        }
+        .instructions {
+            background: #e8f4e8;
+            border: 1px solid #b2d8b2;
+            border-radius: 4px;
+            padding: 10px 14px;
+            margin-bottom: 20px;
+            font-size: 0.9em;
+            color: #2d5a2d;
+        }
+        .instructions kbd {
+            background: #fff;
+            border: 1px solid #999;
+            border-radius: 3px;
+            padding: 1px 5px;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Test Page — Template Combining</h1>
+
+<div class="instructions">
+    <strong>Instructions:</strong> Focus any editor below, then press <kbd>F4</kbd> to open the template search box.
+    Arrow between editors to test insertion in different target types.
+</div>
+
+<div class="editor-section">
+    <label for="test-textarea">&lt;textarea&gt;</label>
+    <textarea id="test-textarea" rows="10" cols="80">Original text</textarea>
+</div>
+
+<div class="editor-section">
+    <label for="test-contenteditable">&lt;div contenteditable&gt;</label>
+    <div id="test-contenteditable" contenteditable="true" style="min-height:80px; border:1px solid #aaa; padding:8px; border-radius:3px; background:#fff; width:100%; max-width:700px; box-sizing:border-box;">Original contenteditable text</div>
+</div>
+
+<div class="editor-section">
+    <label for="test-iframe">&lt;iframe&gt; with contenteditable body</label>
+    <iframe id="test-iframe" srcdoc="<html><body contenteditable=&quot;true&quot; style=&quot;font-family:Arial,sans-serif;padding:8px;&quot;>Original iframe text</body></html>"></iframe>
+</div>
+
+<!-- Mock Tampermonkey APIs and fetch BEFORE loading the userscript -->
+<script>
+// Save the real fetch before any mock overrides it
+window.__realFetch = window.fetch.bind(window);
+
+// Mock GM_* functions
+window.GM_setValue = function(key, val) { window.__gm_storage = window.__gm_storage || {}; window.__gm_storage[key] = val; };
+window.GM_getValue = function(key, def) { window.__gm_storage = window.__gm_storage || {}; return key in window.__gm_storage ? window.__gm_storage[key] : def; };
+window.GM_registerMenuCommand = function(name, fn) { console.log('GM_registerMenuCommand:', name); window.__restartScript = fn; };
+
+// Mock fetch for the Gist URL used by loadTemplates()
+const MOCK_TEMPLATES = {
+    templates: [
+        {
+            title: "Check-in Times",
+            tags: ["check-in", "times"],
+            text: {
+                DE: "Sehr geehrte Damen und Herren,\n\nvielen Dank für Ihre Nachricht.\n\nDer Check-in ist ab 15:00 Uhr möglich, der Check-out erfolgt bis 10:00 Uhr.\n\nBei weiteren Fragen stehen wir Ihnen zur Verfügung.",
+                EN: "Dear Sir or Madam,\n\nThank you for your message.\n\nCheck-in starts at 3:00 PM, and check-out is by 10:00 AM.\n\nIf you have further questions you can always contact us."
+            },
+            bodyOnly: {
+                DE: "Der Check-in ist ab 15:00 Uhr möglich, der Check-out erfolgt bis 10:00 Uhr.",
+                EN: "Check-in starts at 3:00 PM, and check-out is by 10:00 AM."
+            }
+        },
+        {
+            title: "Parking Options",
+            tags: ["parking"],
+            text: {
+                DE: "Sehr geehrte Damen und Herren,\n\nvielen Dank für Ihre Nachricht.\n\nLeider können wir keinen hoteleigenen Parkplatz anbieten. Eine alternative Parkmöglichkeit finden Sie unter: http://www.parkopedia.de\n\nBei weiteren Fragen stehen wir Ihnen zur Verfügung.",
+                EN: "Dear Sir or Madam,\n\nThank you for your message.\n\nUnfortunately, we cannot offer on-site hotel parking. You can find alternative parking at: http://www.parkopedia.de\n\nIf you have further questions you can always contact us."
+            },
+            bodyOnly: {
+                DE: "Leider können wir keinen hoteleigenen Parkplatz anbieten. Eine alternative Parkmöglichkeit finden Sie unter: http://www.parkopedia.de",
+                EN: "Unfortunately, we cannot offer on-site hotel parking. You can find alternative parking at: http://www.parkopedia.de"
+            }
+        },
+        {
+            title: "Delayed Response Apology",
+            tags: ["apology", "delayed"],
+            text: {
+                DE: "Sehr geehrte Damen und Herren,\n\nvielen Dank für Ihre Nachricht.\n\nWir entschuldigen uns für die verspätete Antwort. Aufgrund eines hohen Anfrageaufkommens sind unsere Reaktionszeiten länger als üblich.\n\nWir freuen uns auf Ihre Rückmeldung.",
+                EN: "Dear Sir or Madam,\n\nThank you for your message.\n\nWe apologize for the delayed response. Due to high volume, our response times are longer than usual.\n\nWe are looking forward to hearing from you."
+            },
+            bodyOnly: {
+                DE: "Wir entschuldigen uns für die verspätete Antwort. Aufgrund eines hohen Anfrageaufkommens sind unsere Reaktionszeiten länger als üblich.",
+                EN: "We apologize for the delayed response. Due to high volume, our response times are longer than usual."
+            }
+        }
+    ],
+    closings: [
+        { de: "Bei weiteren Fragen stehen wir Ihnen zur Verfügung.", en: "If you have further questions you can always contact us." },
+        { de: "Wir freuen uns auf Ihre Rückmeldung.", en: "We are looking forward to hearing from you." }
+    ]
+};
+
+const originalFetch = window.fetch;
+window.fetch = function(url, opts) {
+    if (typeof url === 'string' && url.includes('gist.githubusercontent.com/KaiserXanderW/51087d041078b96b8b702e91395331e5')) {
+        console.log('[Mock] Intercepted fetch for Gist URL');
+        return Promise.resolve({
+            ok: true,
+            json: () => Promise.resolve(MOCK_TEMPLATES)
+        });
+    }
+    return originalFetch(url, opts);
+};
+</script>
+
+<!-- Load the userscript -->
+<script src="novomind-email-response-index.user.js"></script>
+
+</body>
+</html>

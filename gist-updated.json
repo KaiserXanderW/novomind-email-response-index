@@ -1,0 +1,1999 @@
+{
+  "templates": [
+    {
+      "title": "Check-in and Check-out Times / Check-in- und Check-out-Zeiten",
+      "tags": [
+        "check-in",
+        "Check-in",
+        "check-out",
+        "Check-out",
+        "arrival time",
+        "Ankunftszeit",
+        "departure time",
+        "Abreisezeit",
+        "hotel times",
+        "Hotelzeiten",
+        "stay information",
+        "Aufenthaltsinformationen",
+        "check-in time",
+        "Check-in-Zeit",
+        "check-out time",
+        "Check-out-Zeit"
+      ],
+      "text": {
+        "de": "Sehr geehrte Damen und Herren,\n\nvielen Dank für Ihre Nachricht.\n\nDer Check-in ist ab 15:00 Uhr möglich, der Check-out erfolgt bis 10:00 Uhr.\n\nBei weiteren Fragen stehen wir Ihnen zur Verfügung.",
+        "en": "Dear Sir or Madam,\n\nThank you for your message.\n\nCheck-in starts at 3:00 PM, and check-out is by 10:00 AM.\n\nIf you have further questions you can always contact us."
+      },
+      "bodyOnly": {
+        "de": "Der Check-in ist ab 15:00 Uhr möglich, der Check-out erfolgt bis 10:00 Uhr.",
+        "en": "Check-in starts at 3:00 PM, and check-out is by 10:00 AM."
+      }
+    },
+    {
+      "title": "Invoice Sent to Provided Email / Rechnung an angegebene E-Mail gesendet",
+      "tags": [
+        "invoice",
+        "Rechnung",
+        "email sent",
+        "E-Mail gesendet",
+        "billing",
+        "Abrechnung",
+        "payment",
+        "Zahlung",
+        "invoice confirmation",
+        "Rechnungsbestätigung"
+      ],
+      "text": {
+        "de": "Sehr geehrte Damen und Herren,\n\nvielen Dank für Ihre Nachricht.\n\nWir haben die Rechnung an die von Ihnen angegebene E-Mail-Adresse gesendet.\n\nBei weiteren Fragen stehen wir Ihnen zur Verfügung.",
+        "en": "Dear Sir or Madam,\n\nThank you for your message.\n\nWe have sent the invoice to the provided email address.\n\nIf you have further questions you can always contact us."
+      },
+      "bodyOnly": {
+        "de": "Wir haben die Rechnung an die von Ihnen angegebene E-Mail-Adresse gesendet.",
+        "en": "We have sent the invoice to the provided email address."
+      }
+    },
+    {
+      "title": "Third-Party Booking Change Required / Änderung über Drittanbieter erforderlich",
+      "tags": [
+        "third-party booking",
+        "Drittanbieterbuchung",
+        "booking change",
+        "Buchungsänderung",
+        "external booking",
+        "externe Buchung",
+        "reservation platform",
+        "Buchungsplattform",
+        "customer service",
+        "Kundendienst"
+      ],
+      "text": {
+        "de": "Sehr geehrte Damen und Herren,\n\nvielen Dank für Ihre Nachricht.\n\nUm diese Änderung vorzunehmen, wenden Sie sich bitte an den Drittanbieter, bei dem Sie die Buchung vorgenommen haben, und führen Sie die Änderung direkt über diese Plattform durch.\n\nBei weiteren Fragen stehen wir Ihnen zur Verfügung.",
+        "en": "Dear Sir or Madam,\n\nThank you for your message.\n\nIn order to make this change, please contact the third party through which you created the booking and process the change directly with them.\n\nIf you have further questions you can always contact us."
+      },
+      "bodyOnly": {
+        "de": "Um diese Änderung vorzunehmen, wenden Sie sich bitte an den Drittanbieter, bei dem Sie die Buchung vorgenommen haben, und führen Sie die Änderung direkt über diese Plattform durch.",
+        "en": "In order to make this change, please contact the third party through which you created the booking and process the change directly with them."
+      }
+    },
+    {
+      "title": "Early Check-In Confirmed – Fee on Arrival / Früher Check-in bestätigt – Gebühr bei Ankunft",
+      "tags": [
+        "early check-in",
+        "früher Check-in",
+        "check-in time",
+        "Check-in-Zeit",
+        "arrival time",
+        "Ankunftszeit",
+        "check-in fee",
+        "Check-in-Gebühr",
+        "booking update",
+        "Buchungsänderung"
+      ],
+      "text": {
+        "de": "Sehr geehrte Damen und Herren,\n\nvielen Dank für Ihre Nachricht.\n\nWir haben Ihrer Buchung einen frühen Check-in hinzugefügt, sodass Sie das Zimmer ab 11:00 bzw. 12:00 Uhr betreten können. Die Gebühr in Höhe von €14 ist bei der Ankunft zu entrichten.\n\nBei weiteren Fragen stehen wir Ihnen zur Verfügung.",
+        "en": "Dear Sir or Madam,\n\nThank you for your message.\n\nWe have added early check-in to your booking, allowing access to the room from 11:00 or 12:00. The €14 fee is payable upon arrival.\n\nIf you have further questions you can always contact us."
+      },
+      "bodyOnly": {
+        "de": "Wir haben Ihrer Buchung einen frühen Check-in hinzugefügt, sodass Sie das Zimmer ab 11:00 bzw. 12:00 Uhr betreten können. Die Gebühr in Höhe von €14 ist bei der Ankunft zu entrichten.",
+        "en": "We have added early check-in to your booking, allowing access to the room from 11:00 or 12:00. The €14 fee is payable upon arrival."
+      }
+    },
+    {
+      "title": "Booking Changes via Booking.com / Buchungsänderungen über Booking.com",
+      "tags": [
+        "booking change",
+        "Buchungsänderung",
+        "reservation update",
+        "Reservierungsänderung",
+        "modify booking",
+        "Buchung ändern",
+        "third party booking",
+        "Drittanbieterbuchung",
+        "Booking.com",
+        "Kundendienst Booking.com"
+      ],
+      "text": {
+        "de": "Sehr geehrte Damen und Herren,\n\nvielen Dank für Ihre Nachricht.\n\nWenn Sie Ihre Buchung ändern möchten, tun Sie dies bitte direkt über Booking.com oder wenden Sie sich an deren Kundenservice.\n\nBei weiteren Fragen stehen wir Ihnen zur Verfügung.",
+        "en": "Dear Sir or Madam,\n\nThank you for your message.\n\nIf you wish to change your booking, please do so through Booking.com or contact their customer support directly.\n\nIf you have further questions you can always contact us."
+      },
+      "bodyOnly": {
+        "de": "Wenn Sie Ihre Buchung ändern möchten, tun Sie dies bitte direkt über Booking.com oder wenden Sie sich an deren Kundenservice.",
+        "en": "If you wish to change your booking, please do so through Booking.com or contact their customer support directly."
+      }
+    },
+    {
+      "title": "Bed Selection in Shared Rooms / Bettauswahl in Mehrbettzimmern",
+      "tags": [
+        "bed selection",
+        "Bettauswahl",
+        "shared room",
+        "Mehrbettzimmer",
+        "lower bed request",
+        "Unteres Bett",
+        "room change",
+        "Zimmerwechsel",
+        "special bed request",
+        "Sonderwunsch Bett",
+        "reception support",
+        "Rezeption Hilfe"
+      ],
+      "text": {
+        "de": "Sehr geehrte Damen und Herren,\n\nvielen Dank für Ihre Nachricht.\n\nIn unseren Mehrbettzimmern ist es leider nicht möglich, ein bestimmtes Bett im Voraus zu reservieren, da die Betten nicht nummeriert sind. Bitte wählen Sie einfach ein freies Bett bei Ihrem Einzug ins Zimmer aus.\n\nSollte kein unteres Bett verfügbar sein, Sie jedoch dringend eines benötigen, können Sie sich jederzeit an unsere Rezeption wenden. Wir prüfen dann gerne, ob ein Zimmerwechsel möglich ist.\n\nBei weiteren Fragen stehen wir Ihnen zur Verfügung.",
+        "en": "Dear Sir or Madam,\n\nThank you for your message.\n\nIt is unfortunately not possible to reserve a specific bed in our shared rooms, as the beds are not numbered. Please choose any available bed when you move into the room.\n\nIf no lower bed is available but you urgently need one, you are welcome to contact our reception at any time. We will be happy to check whether a room change is possible.\n\nIf you have further questions you can always contact us."
+      },
+      "bodyOnly": {
+        "de": "In unseren Mehrbettzimmern ist es leider nicht möglich, ein bestimmtes Bett im Voraus zu reservieren, da die Betten nicht nummeriert sind. Bitte wählen Sie einfach ein freies Bett bei Ihrem Einzug ins Zimmer aus.\n\nSollte kein unteres Bett verfügbar sein, Sie jedoch dringend eines benötigen, können Sie sich jederzeit an unsere Rezeption wenden. Wir prüfen dann gerne, ob ein Zimmerwechsel möglich ist.",
+        "en": "It is unfortunately not possible to reserve a specific bed in our shared rooms, as the beds are not numbered. Please choose any available bed when you move into the room.\n\nIf no lower bed is available but you urgently need one, you are welcome to contact our reception at any time. We will be happy to check whether a room change is possible."
+      }
+    },
+    {
+      "title": "Baby Cot Reservation – Free of Charge / Babybett-Reservierung – Kostenlos",
+      "tags": [
+        "baby cot",
+        "Babybett",
+        "crib",
+        "Kinderbett",
+        "child equipment",
+        "Kinderausstattung",
+        "free of charge",
+        "kostenlos",
+        "bed linen",
+        "Bettwäsche",
+        "reservation",
+        "Reservierung"
+      ],
+      "text": {
+        "de": "Sehr geehrte Damen und Herren,\n\nvielen Dank für Ihre Nachricht.\n\nWir haben für Sie ein Babybett kostenlos reserviert. Es steht Ihnen während des gesamten Aufenthalts zur Verfügung. Bettwäsche für das Babybett wird ebenfalls bereitgestellt. Unsere Babybetten sind für Kinder bis zu einem Alter von zwei Jahren geeignet.\n\nBei weiteren Fragen stehen wir Ihnen zur Verfügung.",
+        "en": "Dear Sir or Madam,\n\nThank you for your message.\n\nWe have reserved a baby cot for you free of charge. It will be available to you for the entire stay. Bed linen for the cot will also be provided. Our cribs are suitable for children up to the age of two.\n\nIf you have further questions you can always contact us."
+      },
+      "bodyOnly": {
+        "de": "Wir haben für Sie ein Babybett kostenlos reserviert. Es steht Ihnen während des gesamten Aufenthalts zur Verfügung. Bettwäsche für das Babybett wird ebenfalls bereitgestellt. Unsere Babybetten sind für Kinder bis zu einem Alter von zwei Jahren geeignet.",
+        "en": "We have reserved a baby cot for you free of charge. It will be available to you for the entire stay. Bed linen for the cot will also be provided. Our cribs are suitable for children up to the age of two."
+      }
+    },
+    {
+      "title": "Invoice Sent to Provided Email / Rechnung an angegebene E-Mail gesendet",
+      "tags": [
+        "invoice",
+        "Rechnung",
+        "billing",
+        "Abrechnung",
+        "email sent",
+        "E-Mail gesendet",
+        "invoice email",
+        "Rechnungsversand",
+        "payment details",
+        "Zahlungsinformationen"
+      ],
+      "text": {
+        "de": "Sehr geehrte Damen und Herren,\n\nvielen Dank für Ihre Nachricht.\n\nWir haben die Rechnung an die von Ihnen angegebene E-Mail-Adresse gesendet.\n\nBei weiteren Fragen stehen wir Ihnen zur Verfügung.",
+        "en": "Dear Sir or Madam,\n\nThank you for your message.\n\nWe have sent the invoice to the email address you provided.\n\nIf you have further questions you can always contact us."
+      },
+      "bodyOnly": {
+        "de": "Wir haben die Rechnung an die von Ihnen angegebene E-Mail-Adresse gesendet.",
+        "en": "We have sent the invoice to the email address you provided."
+      }
+    },
+    {
+      "title": "Technical Issues with Online Check-In / Technische Probleme beim Online-Check-in",
+      "tags": [
+        "online check-in",
+        "Online-Check-in",
+        "technical issue",
+        "technisches Problem",
+        "check-in options",
+        "Check-in-Optionen",
+        "reception check-in",
+        "Check-in an der Rezeption",
+        "self check-in kiosk",
+        "Self-Check-in-Automat",
+        "app issue",
+        "App-Problem",
+        "digital check-in",
+        "digitaler Check-in",
+        "alternative check-in",
+        "alternative Check-in-Methode"
+      ],
+      "text": {
+        "de": "Sehr geehrte Damen und Herren,\n\nvielen Dank für Ihre Nachricht.\n\nDerzeit kommt es zu technischen Problemen mit dem Online-Check-in über unsere Website oder App. Auch wenn der Online-Check-in nicht verpflichtend ist, verstehen wir, dass dies frustrierend sein kann. Selbstverständlich können Sie den Check-in auch direkt an der Rezeption oder über einen unserer Self-Check-in-Automaten vor Ort durchführen.\n\nBei weiteren Fragen stehen wir Ihnen zur Verfügung.",
+        "en": "Dear Sir or Madam,\n\nThank you for your message.\n\nWe are currently experiencing technical difficulties with the online check-in via our website or app. While online check-in is not mandatory, we understand that this may be frustrating. You are welcome to complete your check-in at the reception desk or by using one of the self check-in kiosks at the location.\n\nIf you have further questions you can always contact us."
+      },
+      "bodyOnly": {
+        "de": "Derzeit kommt es zu technischen Problemen mit dem Online-Check-in über unsere Website oder App. Auch wenn der Online-Check-in nicht verpflichtend ist, verstehen wir, dass dies frustrierend sein kann. Selbstverständlich können Sie den Check-in auch direkt an der Rezeption oder über einen unserer Self-Check-in-Automaten vor Ort durchführen.",
+        "en": "We are currently experiencing technical difficulties with the online check-in via our website or app. While online check-in is not mandatory, we understand that this may be frustrating. You are welcome to complete your check-in at the reception desk or by using one of the self check-in kiosks at the location."
+      }
+    },
+    {
+      "title": "Alternative Parkmöglichkeiten / Alternative Parking Options",
+      "tags": [
+        "parking",
+        "Parken",
+        "hotel parking",
+        "Hotelparkplatz",
+        "parking unavailable",
+        "Parkplatz nicht verfügbar",
+        "alternative parking",
+        "alternative Parkmöglichkeiten",
+        "Parkopedia",
+        "öffentliche Parkplätze",
+        "nearby parking",
+        "nahegelegene Parkplätze"
+      ],
+      "text": {
+        "de": "Sehr geehrte Damen und Herren,\n\nvielen Dank für Ihre Nachricht.\n\nLeider können wir Ihnen für Ihren Reisezeitraum keinen hoteleigenen Parkplatz anbieten. Eine alternative Parkmöglichkeit finden Sie unter folgendem Link: http://www.parkopedia.de\n\nBei weiteren Fragen stehen wir Ihnen zur Verfügung.",
+        "en": "Dear Sir or Madam,\n\nThank you for your message.\n\nUnfortunately, we cannot offer on-site hotel parking for your travel period. You can find an alternative parking option at the following link: http://www.parkopedia.de\n\nIf you have further questions you can always contact us."
+      },
+      "bodyOnly": {
+        "de": "Leider können wir Ihnen für Ihren Reisezeitraum keinen hoteleigenen Parkplatz anbieten. Eine alternative Parkmöglichkeit finden Sie unter folgendem Link: http://www.parkopedia.de",
+        "en": "Unfortunately, we cannot offer on-site hotel parking for your travel period. You can find an alternative parking option at the following link: http://www.parkopedia.de"
+      }
+    },
+    {
+      "title": "Late Arrival Notification and 24-Hour Reception / Späte Anreise und 24-Stunden-Rezeption",
+      "tags": [
+        "late arrival",
+        "späte Anreise",
+        "reception",
+        "Rezeption",
+        "24-hour service",
+        "24-Stunden-Service",
+        "no-show",
+        "Nichterscheinen",
+        "arrival time",
+        "Ankunftszeit",
+        "check-in",
+        "Check-in",
+        "guest information",
+        "Gästeinformation"
+      ],
+      "text": {
+        "de": "Sehr geehrte Damen und Herren,\n\nvielen Dank für Ihre Nachricht.\n\nUnsere Rezeption ist rund um die Uhr besetzt, sodass Ihnen bei Ihrer Ankunft jederzeit jemand zur Verfügung steht. Falls Sie jedoch nach 03:00 Uhr ankommen, bitten wir Sie, uns vorab Bescheid zu geben, damit wir dies entsprechend vermerken und Sie nicht fälschlicherweise als \"No-Show\" registrieren.\n\nBei weiteren Fragen stehen wir Ihnen zur Verfügung.",
+        "en": "Dear Sir or Madam,\n\nThank you for your message.\n\nOur reception is staffed around the clock, so someone will be available to assist you at any time upon your arrival. However, if you expect to arrive after 3:00 a.m., we kindly ask you to inform us in advance so we can make a note of this and avoid mistakenly registering you as a 'no-show.'\n\nIf you have further questions you can always contact us."
+      },
+      "bodyOnly": {
+        "de": "Unsere Rezeption ist rund um die Uhr besetzt, sodass Ihnen bei Ihrer Ankunft jederzeit jemand zur Verfügung steht. Falls Sie jedoch nach 03:00 Uhr ankommen, bitten wir Sie, uns vorab Bescheid zu geben, damit wir dies entsprechend vermerken und Sie nicht fälschlicherweise als \"No-Show\" registrieren.",
+        "en": "Our reception is staffed around the clock, so someone will be available to assist you at any time upon your arrival. However, if you expect to arrive after 3:00 a.m., we kindly ask you to inform us in advance so we can make a note of this and avoid mistakenly registering you as a 'no-show.'"
+      }
+    },
+    {
+      "title": "Retroactive Booking Changes / Rückwirkende Buchungsänderungen",
+      "tags": [
+        "booking change",
+        "Buchungsänderung",
+        "retroactive change",
+        "rückwirkende Änderung",
+        "modification",
+        "Änderung",
+        "reservation update",
+        "Reservierungsaktualisierung",
+        "policy restriction",
+        "Richtlinienbeschränkung"
+      ],
+      "text": {
+        "de": "Sehr geehrte Damen und Herren,\n\nvielen Dank für Ihre Nachricht.\n\nEine rückwirkende Änderung der Buchung ist in der Regel nicht möglich.\n\nBei weiteren Fragen stehen wir Ihnen zur Verfügung.",
+        "en": "Dear Sir or Madam,\n\nThank you for your message.\n\nChanging a booking retroactively in that way is generally not possible.\n\nIf you have further questions you can always contact us."
+      },
+      "bodyOnly": {
+        "de": "Eine rückwirkende Änderung der Buchung ist in der Regel nicht möglich.",
+        "en": "Changing a booking retroactively in that way is generally not possible."
+      }
+    },
+    {
+      "title": "Kreditkartenzahlung vorab / Prepayment by Credit Card",
+      "tags": [
+        "Kreditkartenzahlung",
+        "credit card payment",
+        "Vorauszahlung",
+        "prepayment",
+        "Zahlungsmethode",
+        "payment method",
+        "Kostenübernahme",
+        "cost coverage",
+        "MasterCard",
+        "VISA"
+      ],
+      "text": {
+        "de": "Sehr geehrte Damen und Herren,\n\nvielen Dank für Ihre Nachricht.\n\nSie können gerne vorab mit Kreditkarte bezahlen. \n\nFür die Abbuchung benötigen wir:\n- die Kreditkartennummer\n- das Ablaufdatum\n\nBitte bestätigen Sie uns auch, dass wir die Abbuchung des entsprechenden Betrags vornehmen dürfen. Füllen Sie hierfür das beigefügte Formular aus und senden Sie es an uns zurück. Sollten Sie mehrere Buchungen mit einer Kreditkarte vorab bezahlen wollen, bitten wir Sie, für jede Buchung ein einzelnes Formular auszufüllen.\n\nWenn Sie die Rechnung auf eine bestimmte Firma wünschen, senden Sie uns bitte die korrekte Firmenanschrift zu. Wir bereiten dann alles vor Ihrer Anreise für Sie vor.\n\nBitte beachten Sie folgende Hinweise:\n- In einigen Städten wird eine Bettensteuer erhoben, die grundsätzlich vor Ort zu zahlen ist. Sollten Sie eine Befreiung aufgrund eines beruflichen Aufenthalts oder zu Bildungszwecken benötigen, legen Sie bitte ein entsprechendes Formular bei Anreise vor. Weitere Informationen finden Sie hier: https://www.aohostels.com/de/service/faq/#touristensteuer\n- Wir akzeptieren ausschließlich MasterCard und VISA.\n- Eine Kostenübernahme wird erst nach schriftlicher Bestätigung durch a&o anerkannt. Diese erfolgt nach erfolgreicher Belastung der Kreditkarte per E-Mail.\n\nIn dringenden Fällen oder falls Sie bis zum Anreisetag keine Bestätigung von uns erhalten haben, empfehlen wir Ihnen, uns telefonisch unter der unten stehenden Nummer zu kontaktieren. Bitte nennen Sie uns dabei die oben stehende Ticket-Nummer.\n\nBei weiteren Fragen stehen wir Ihnen zur Verfügung.",
+        "en": "Dear Sir or Madam,\n\nThank you for your message.\n\nYou are welcome to prepay by credit card.\n\nFor the charge, we require:\n- the credit card number\n- the expiration date\n\nPlease also confirm that we may charge the corresponding amount to your card. To do so, kindly fill out the attached form and return it to us. If you wish to prepay multiple bookings with one credit card, please complete a separate form for each booking.\n\nIf you need the invoice issued to a specific company, please provide us with the correct company address. We will prepare everything before your arrival.\n\nPlease note the following:\n- In some cities, a bed tax is charged, which must generally be paid on-site. If an exemption is required due to a business stay or for educational purposes, please present the relevant form upon arrival. Further information can be found here: https://www.aohostels.com/de/service/faq/#touristensteuer\n- We only accept MasterCard and VISA.\n- Cost coverage is only accepted after written confirmation from a&o. This confirmation is sent via email after the credit card has been successfully charged.\n\nIn urgent cases or if you have not received confirmation from us by the day of arrival, we recommend calling us at the number below. Please mention the ticket number stated above when calling.\n\nIf you have further questions, you can always contact us."
+      },
+      "bodyOnly": {
+        "de": "Sie können gerne vorab mit Kreditkarte bezahlen. \n\nFür die Abbuchung benötigen wir:\n- die Kreditkartennummer\n- das Ablaufdatum\n\nBitte bestätigen Sie uns auch, dass wir die Abbuchung des entsprechenden Betrags vornehmen dürfen. Füllen Sie hierfür das beigefügte Formular aus und senden Sie es an uns zurück. Sollten Sie mehrere Buchungen mit einer Kreditkarte vorab bezahlen wollen, bitten wir Sie, für jede Buchung ein einzelnes Formular auszufüllen.\n\nWenn Sie die Rechnung auf eine bestimmte Firma wünschen, senden Sie uns bitte die korrekte Firmenanschrift zu. Wir bereiten dann alles vor Ihrer Anreise für Sie vor.\n\nBitte beachten Sie folgende Hinweise:\n- In einigen Städten wird eine Bettensteuer erhoben, die grundsätzlich vor Ort zu zahlen ist. Sollten Sie eine Befreiung aufgrund eines beruflichen Aufenthalts oder zu Bildungszwecken benötigen, legen Sie bitte ein entsprechendes Formular bei Anreise vor. Weitere Informationen finden Sie hier: https://www.aohostels.com/de/service/faq/#touristensteuer\n- Wir akzeptieren ausschließlich MasterCard und VISA.\n- Eine Kostenübernahme wird erst nach schriftlicher Bestätigung durch a&o anerkannt. Diese erfolgt nach erfolgreicher Belastung der Kreditkarte per E-Mail.\n\nIn dringenden Fällen oder falls Sie bis zum Anreisetag keine Bestätigung von uns erhalten haben, empfehlen wir Ihnen, uns telefonisch unter der unten stehenden Nummer zu kontaktieren. Bitte nennen Sie uns dabei die oben stehende Ticket-Nummer.",
+        "en": "You are welcome to prepay by credit card.\n\nFor the charge, we require:\n- the credit card number\n- the expiration date\n\nPlease also confirm that we may charge the corresponding amount to your card. To do so, kindly fill out the attached form and return it to us. If you wish to prepay multiple bookings with one credit card, please complete a separate form for each booking.\n\nIf you need the invoice issued to a specific company, please provide us with the correct company address. We will prepare everything before your arrival.\n\nPlease note the following:\n- In some cities, a bed tax is charged, which must generally be paid on-site. If an exemption is required due to a business stay or for educational purposes, please present the relevant form upon arrival. Further information can be found here: https://www.aohostels.com/de/service/faq/#touristensteuer\n- We only accept MasterCard and VISA.\n- Cost coverage is only accepted after written confirmation from a&o. This confirmation is sent via email after the credit card has been successfully charged.\n\nIn urgent cases or if you have not received confirmation from us by the day of arrival, we recommend calling us at the number below. Please mention the ticket number stated above when calling."
+      }
+    },
+    {
+      "title": "Date Change – NOT Possible, Date in the Past / Datumsänderung – NICHT Möglich, Anreisedatum in der Vergangenheit",
+      "tags": [
+        "change request",
+        "Änderungsanfrage",
+        "arrival date",
+        "Anreisedatum",
+        "modification not possible",
+        "Änderung nicht möglich",
+        "past date",
+        "vergangenes Datum",
+        "booking issue",
+        "Buchungsproblem"
+      ],
+      "text": {
+        "de": "Sehr geehrte Damen und Herren,\n\nvielen Dank für Ihre Nachricht.\n\nLeider ist diese Änderung nicht möglich, da das Anreisedatum in der Vergangenheit liegt.\n\nBei weiteren Fragen stehen wir Ihnen zur Verfügung.",
+        "en": "Dear Sir or Madam,\n\nThank you for your message.\n\nUnfortunately, this change is not possible, as the arrival date is in the past.\n\nIf you have further questions you can always contact us."
+      },
+      "bodyOnly": {
+        "de": "Leider ist diese Änderung nicht möglich, da das Anreisedatum in der Vergangenheit liegt.",
+        "en": "Unfortunately, this change is not possible, as the arrival date is in the past."
+      }
+    },
+    {
+      "title": "Booking Not Found – Additional Information Required / Buchung nicht gefunden – Zusätzliche Informationen erforderlich",
+      "tags": [
+        "booking",
+        "Buchung",
+        "reservation",
+        "Reservierung",
+        "booking issue",
+        "Buchungsproblem",
+        "missing booking",
+        "fehlende Buchung",
+        "confirmation number",
+        "Bestätigungsnummer",
+        "customer support",
+        "Kundensupport"
+      ],
+      "text": {
+        "de": "Sehr geehrte Damen und Herren,\n\nvielen Dank für Ihre Nachricht.\n\nLeider konnten wir die Buchung nicht finden. Bitte stellen Sie uns weitere Informationen zur Verfügung, wie beispielsweise die Bestätigungsnummer, den Namen auf der Buchung oder das Anreisedatum, damit wir Ihnen weiterhelfen können.\n\nBei weiteren Fragen stehen wir Ihnen zur Verfügung.",
+        "en": "Dear Sir or Madam,\n\nThank you for your message.\n\nUnfortunately, we are unable to locate the booking. Please provide us with additional information, such as the confirmation number, the name on the booking, or the arrival date, so that we can assist you further.\n\nIf you have further questions you can always contact us."
+      },
+      "bodyOnly": {
+        "de": "Leider konnten wir die Buchung nicht finden. Bitte stellen Sie uns weitere Informationen zur Verfügung, wie beispielsweise die Bestätigungsnummer, den Namen auf der Buchung oder das Anreisedatum, damit wir Ihnen weiterhelfen können.",
+        "en": "Unfortunately, we are unable to locate the booking. Please provide us with additional information, such as the confirmation number, the name on the booking, or the arrival date, so that we can assist you further."
+      }
+    },
+    {
+      "title": "Voucher Booking & Availability / Gutscheinbuchung & Verfügbarkeit",
+      "tags": [
+        "voucher",
+        "Gutschein",
+        "booking",
+        "Buchung",
+        "availability",
+        "Verfügbarkeit",
+        "allotment",
+        "Kontingent",
+        "surcharge",
+        "Aufpreis"
+      ],
+      "text": {
+        "de": "Sehr geehrte Damen und Herren,\n\nvielen Dank für Ihre Nachricht.\n\nGutscheine können ausschließlich über https://voucher.aohostels.com gebucht werden. Der Verfügbarkeitskalender zeigt offene Kontingente – grün markierte Tage sind buchbar, während Abreisetage rot markiert sein können. Auch rot markierte Tage sind buchbar, jedoch kann ein Aufpreis anfallen.\n\nBei weiteren Fragen stehen wir Ihnen zur Verfügung.",
+        "en": "Dear Sir or Madam,\n\nThank you for your message.\n\nVouchers can only be booked through https://voucher.aohostels.com. The availability calendar shows open allotments—days marked in green can be booked, while departure days may appear in red. Red-marked days are also bookable but may incur a surcharge.\n\nIf you have further questions you can always contact us."
+      },
+      "bodyOnly": {
+        "de": "Gutscheine können ausschließlich über https://voucher.aohostels.com gebucht werden. Der Verfügbarkeitskalender zeigt offene Kontingente – grün markierte Tage sind buchbar, während Abreisetage rot markiert sein können. Auch rot markierte Tage sind buchbar, jedoch kann ein Aufpreis anfallen.",
+        "en": "Vouchers can only be booked through https://voucher.aohostels.com. The availability calendar shows open allotments—days marked in green can be booked, while departure days may appear in red. Red-marked days are also bookable but may incur a surcharge."
+      }
+    },
+    {
+      "title": "Late Cancellation Request – Refund Not Possible / Späte Stornierungsanfrage – Erstattung Nicht Möglich",
+      "tags": [
+        "cancellation",
+        "Stornierung",
+        "refund",
+        "Erstattung",
+        "booking policy",
+        "Buchungsrichtlinien",
+        "cancellation deadline",
+        "Stornierungsfrist",
+        "late cancellation",
+        "verspätete Stornierung",
+        "non-refundable",
+        "nicht erstattungsfähig"
+      ],
+      "text": {
+        "de": "Sehr geehrte Damen und Herren,\n\nvielen Dank für Ihre Nachricht.\n\nStornierungsanfragen für diese Art der Buchung müssen bis spätestens bevor 00:00 Uhr am Vortag des Anreisedatums eingereicht werden. \n\nDa Ihre Anfrage nach dieser Frist eingegangen ist, können wir leider keine Erstattung anbieten.\n\nBei weiteren Fragen stehen wir Ihnen zur Verfügung.",
+        "en": "Dear Sir or Madam,\n\nThank you for your message.\n\nCancellation requests for this type of booking must be submitted before 00:00 on the day before the arrival date. \n\nAs your request was received after this deadline, we are unable to offer a refund.\n\nIf you have further questions you can always contact us."
+      },
+      "bodyOnly": {
+        "de": "Stornierungsanfragen für diese Art der Buchung müssen bis spätestens bevor 00:00 Uhr am Vortag des Anreisedatums eingereicht werden. \n\nDa Ihre Anfrage nach dieser Frist eingegangen ist, können wir leider keine Erstattung anbieten.",
+        "en": "Cancellation requests for this type of booking must be submitted before 00:00 on the day before the arrival date. \n\nAs your request was received after this deadline, we are unable to offer a refund."
+      }
+    },
+    {
+      "title": "Room Continuity Across Bookings / Gleicher Raum für mehrere Buchungen",
+      "tags": [
+        "room assignment",
+        "Zimmerzuteilung",
+        "same room",
+        "gleicher Raum",
+        "booking continuity",
+        "Buchungskontinuität",
+        "reservation preference",
+        "Reservierungspräferenz",
+        "guest request",
+        "Gästeanfrage"
+      ],
+      "text": {
+        "de": "Sehr geehrte Damen und Herren,\n\nvielen Dank für Ihre Nachricht.\n\nWir haben sichergestellt, dass Sie während Ihrer Buchungen im selben Zimmer bleiben.\n\nBei weiteren Fragen stehen wir Ihnen zur Verfügung.",
+        "en": "Dear Sir or Madam,\n\nThank you for your message.\n\nWe have ensured that you will stay in the same room across your bookings.\n\nIf you have further questions you can always contact us."
+      },
+      "bodyOnly": {
+        "de": "Wir haben sichergestellt, dass Sie während Ihrer Buchungen im selben Zimmer bleiben.",
+        "en": "We have ensured that you will stay in the same room across your bookings."
+      }
+    },
+    {
+      "title": "Request for Email Address / Anfrage nach E-Mail-Adresse",
+      "tags": [
+        "email request",
+        "E-Mail-Anfrage",
+        "contact information",
+        "Kontaktinformationen",
+        "third-party booking",
+        "Drittanbieter-Buchung",
+        "customer details",
+        "Kundendaten",
+        "verification",
+        "Verifizierung"
+      ],
+      "text": {
+        "de": "Sehr geehrte Damen und Herren,\n\nvielen Dank für Ihre Nachricht.\n\nUm Ihre Anfrage zu bearbeiten, benötigen wir Ihre E-Mail-Adresse, da uns diese Informationen von unseren Drittanbieter-Partnern nicht vorliegen.\n\nWir freuen uns auf Ihre Rückmeldung.",
+        "en": "Dear Sir or Madam,\n\nThank you for your message.\n\nIn order to process your request, please provide your email address, as we do not have access to this information from our third-party partners.\n\nWe look forward to hearing back from you."
+      },
+      "bodyOnly": {
+        "de": "Um Ihre Anfrage zu bearbeiten, benötigen wir Ihre E-Mail-Adresse, da uns diese Informationen von unseren Drittanbieter-Partnern nicht vorliegen.",
+        "en": "In order to process your request, please provide your email address, as we do not have access to this information from our third-party partners."
+      }
+    },
+    {
+      "title": "Towel Availability – Private and Dormitory Rooms / Handtücher verfügbar – Private und Schlafsäle",
+      "tags": [
+        "towels",
+        "Handtücher",
+        "rental",
+        "Miete",
+        "included amenities",
+        "inklusive Ausstattung",
+        "private room",
+        "Privatzimmer",
+        "dormitory",
+        "Schlafsaal",
+        "hostel services",
+        "Hostel-Dienstleistungen"
+      ],
+      "text": {
+        "de": "Sehr geehrte Damen und Herren,\n\nvielen Dank für Ihre Nachricht.\n\nJa, wir stellen Handtücher zur Verfügung. In privaten Zimmern sind pro Bett ein kleines und ein großes Handtuch inbegriffen. In Schlafsälen sind Handtücher nicht im Preis enthalten, jedoch können Sie ein kleines und ein großes Handtuch für 1,75 € mieten.\n\nBei weiteren Fragen stehen wir Ihnen gerne zur Verfügung!",
+        "en": "Dear Sir or Madam,\n\nThank you for your message.\n\nYes, we do provide towels. In private rooms, a small and large towel per bed are included. In dormitory rooms, towels are not included in the price, but you can rent a small and large towel for €1.75.\n\nIf you have any questions, feel free to ask!"
+      },
+      "bodyOnly": {
+        "de": "Ja, wir stellen Handtücher zur Verfügung. In privaten Zimmern sind pro Bett ein kleines und ein großes Handtuch inbegriffen. In Schlafsälen sind Handtücher nicht im Preis enthalten, jedoch können Sie ein kleines und ein großes Handtuch für 1,75 € mieten.",
+        "en": "Yes, we do provide towels. In private rooms, a small and large towel per bed are included. In dormitory rooms, towels are not included in the price, but you can rent a small and large towel for €1.75."
+      }
+    },
+    {
+      "title": "Non-Refundable Booking / Nicht erstattungsfähige Buchung",
+      "tags": [
+        "non-refundable",
+        "refund",
+        "no refund",
+        "nicht erstattungsfähig",
+        "Erstattung",
+        "Buchung"
+      ],
+      "text": {
+        "de": "Sehr geehrte Damen und Herren,\n\nvielen Dank für Ihre Nachricht.\n\nDiese Buchung ist nicht erstattungsfähig, daher kann leider keine Rückerstattung erfolgen.\n\nBei weiteren Fragen stehen wir Ihnen zur Verfügung.",
+        "en": "Dear Sir or Madam,\n\nThank you for your message.\n\nThis booking is non-refundable; therefore, no refund can be issued unfortunately.\n\nIf you have further questions you can always contact us."
+      },
+      "bodyOnly": {
+        "de": "Diese Buchung ist nicht erstattungsfähig, daher kann leider keine Rückerstattung erfolgen.",
+        "en": "This booking is non-refundable; therefore, no refund can be issued unfortunately."
+      }
+    },
+    {
+      "title": "Apology for Delayed Response – Issue Resolved / Entschuldigung für verspätete Antwort – Anliegen bereits gelöst",
+      "tags": [
+        "apology",
+        "Entschuldigung",
+        "delayed response",
+        "verspätete Antwort",
+        "high volume",
+        "hohes Anfrageaufkommen",
+        "issue resolved",
+        "Anliegen gelöst",
+        "hotline",
+        "Hotline",
+        "contact recommendation",
+        "Kontaktempfehlung",
+        "response time",
+        "Antwortzeit",
+        "support delay",
+        "Support-Verzögerung"
+      ],
+      "text": {
+        "de": "Sehr geehrte Damen und Herren,\n\nvielen Dank für Ihre Nachricht.\n\nWir entschuldigen uns aufrichtig für die verspätete Antwort. Aufgrund eines außergewöhnlich hohen Anfrageaufkommens sind unsere Reaktionszeiten derzeit länger als üblich. Es scheint, dass Ihr Anliegen inzwischen bereits gelöst wurde. Bei dringenden Fällen empfehlen wir, unsere Hotline direkt anzurufen.\n\nBei weiteren Fragen stehen wir Ihnen zur Verfügung.",
+        "en": "Dear Sir or Madam,\n\nThank you for your message.\n\nWe sincerely apologize for the delay in our response. Due to an unusually high volume of inquiries, our response times are currently longer than usual. It appears that your issue has already been resolved. For urgent matters, we recommend calling our hotline directly.\n\nIf you have further questions you can always contact us."
+      },
+      "bodyOnly": {
+        "de": "Wir entschuldigen uns aufrichtig für die verspätete Antwort. Aufgrund eines außergewöhnlich hohen Anfrageaufkommens sind unsere Reaktionszeiten derzeit länger als üblich. Es scheint, dass Ihr Anliegen inzwischen bereits gelöst wurde. Bei dringenden Fällen empfehlen wir, unsere Hotline direkt anzurufen.",
+        "en": "We sincerely apologize for the delay in our response. Due to an unusually high volume of inquiries, our response times are currently longer than usual. It appears that your issue has already been resolved. For urgent matters, we recommend calling our hotline directly."
+      }
+    },
+    {
+      "title": "Date Change - Possible, Higher Price Applies / Datumsänderung - Möglich, höherer Preis gilt",
+      "tags": [
+        "date change",
+        "higher price",
+        "confirmation",
+        "cost",
+        "Änderung",
+        "Preis",
+        "Bestätigung",
+        "Kosten"
+      ],
+      "text": {
+        "de": "Sehr geehrte Damen und Herren,\n\nvielen Dank für Ihre Nachricht.\n\nDie Änderung wäre möglich, und der neue Preis beträgt €.\n\nWir freuen uns auf Ihre Rückmeldung.",
+        "en": "Dear Sir or Madam,\n\nThank you for your message.\n\nThe change would be possible, and the new price would be €.\n\nWe are looking forward to hearing from you."
+      },
+      "bodyOnly": {
+        "de": "Die Änderung wäre möglich, und der neue Preis beträgt €.",
+        "en": "The change would be possible, and the new price would be €."
+      }
+    },
+    {
+      "title": "Date Change - Possible, Price Would Remain Unchanged / Datumsänderung - Möglich, Preis würde unverändert bleiben",
+      "tags": [
+        "date change",
+        "price",
+        "confirmation",
+        "availability",
+        "Änderung",
+        "Preis",
+        "Bestätigung",
+        "Verfügbarkeit",
+        "Terminänderung"
+      ],
+      "text": {
+        "de": "Sehr geehrte Damen und Herren,\n\nvielen Dank für Ihre Nachricht.\n\nDie Änderung wäre möglich, und der Preis würde unverändert bleiben, da es sich um eine nich-rückerstattbare Rate handelt.\n\nWir freuen uns auf Ihre Rückmeldung.",
+        "en": "Dear Sir or Madam,\n\nThank you for your message.\n\nThe change would be possible, and the price would remain unchanged as this is a non-refundable booking.\n\nWe are looking forward to hearing from you."
+      },
+      "bodyOnly": {
+        "de": "Die Änderung wäre möglich, und der Preis würde unverändert bleiben, da es sich um eine nich-rückerstattbare Rate handelt.",
+        "en": "The change would be possible, and the price would remain unchanged as this is a non-refundable booking."
+      }
+    },
+    {
+      "title": "Refund Request Due to Technical Issues / Rückerstattungsanfrage wegen technischer Probleme",
+      "tags": [
+        "refund",
+        "technical issue",
+        "Erstattung",
+        "Technische Probleme",
+        "Buchung",
+        "Zahlung",
+        "Rückzahlung"
+      ],
+      "text": {
+        "de": "Sehr geehrte Damen und Herren,\n\nvielen Dank für Ihre Nachricht.\n\nWir entschuldigen uns für etwaige technische Schwierigkeiten und Unannehmlichkeiten, die dadurch entstanden sind. Bitte senden Sie uns eine E-Mail an booking@aohostels.com mit Screenshots der Abbuchungen, Ihren Buchungsdetails, Ihrem vollständigen Namen und weiteren relevanten Informationen. Geben Sie auch Ihre Bankverbindung oder Ihre PayPal-E-Mail-Adresse für die Rückerstattung an. Unser Team wird dies bearbeiten und Ihre Rückerstattung veranlassen. Vielen Dank für Ihre Geduld!\n\nWir freuen uns auf Ihre Rückmeldung.",
+        "en": "Dear Sir or Madam,\n\nThank you for your message.\n\nWe apologize for any technical difficulties and inconveniences this may have caused. Please send us an email at booking@aohostels.com with screenshots of the charges, your booking details, your full name, and any other relevant information. Also, include your banking details or your PayPal email address for the refund. Our team will process this and issue your refund. Thank you for your patience!\n\nWe are looking forward to hearing from you."
+      },
+      "bodyOnly": {
+        "de": "Wir entschuldigen uns für etwaige technische Schwierigkeiten und Unannehmlichkeiten, die dadurch entstanden sind. Bitte senden Sie uns eine E-Mail an booking@aohostels.com mit Screenshots der Abbuchungen, Ihren Buchungsdetails, Ihrem vollständigen Namen und weiteren relevanten Informationen. Geben Sie auch Ihre Bankverbindung oder Ihre PayPal-E-Mail-Adresse für die Rückerstattung an. Unser Team wird dies bearbeiten und Ihre Rückerstattung veranlassen. Vielen Dank für Ihre Geduld!",
+        "en": "We apologize for any technical difficulties and inconveniences this may have caused. Please send us an email at booking@aohostels.com with screenshots of the charges, your booking details, your full name, and any other relevant information. Also, include your banking details or your PayPal email address for the refund. Our team will process this and issue your refund. Thank you for your patience!"
+      }
+    },
+    {
+      "title": "Kontakt für Gutscheinprobleme / Contact for Voucher Issues",
+      "tags": [
+        "Gutschein",
+        "Support",
+        "Kontakt",
+        "Email",
+        "Problem",
+        "Kundendienst",
+        "Voucher",
+        "Help"
+      ],
+      "text": {
+        "de": "Sehr geehrte Damen und Herren,\n\nvielen Dank für Ihre Nachricht.\n\nBitte senden Sie eine E-Mail an gutschein@aohostels.com mit relevanten Bildern, Ihrem Namen und einer Beschreibung des Problems. Unsere Kollegen in der Abteilung werden Ihnen dann weiterhelfen.\n\nWir freuen uns auf Ihre Rückmeldung.",
+        "en": "Dear Sir or Madam,\n\nThank you for your message.\n\nPlease send an email to gutschein@aohostels.com with relevant images, your name, and a description of the issue. Our colleagues in the department will then assist you further.\n\nWe are looking forward to hearing from you."
+      },
+      "bodyOnly": {
+        "de": "Bitte senden Sie eine E-Mail an gutschein@aohostels.com mit relevanten Bildern, Ihrem Namen und einer Beschreibung des Problems. Unsere Kollegen in der Abteilung werden Ihnen dann weiterhelfen.",
+        "en": "Please send an email to gutschein@aohostels.com with relevant images, your name, and a description of the issue. Our colleagues in the department will then assist you further."
+      }
+    },
+    {
+      "title": "Verspätete Antwort Entschuldigung / Delayed Response Apology",
+      "tags": [
+        "Entschuldigung",
+        "Verzögerung",
+        "Kundenservice",
+        "Antwortzeit",
+        "Support",
+        "Verspätete Antwort",
+        "Apology",
+        "Delayed Response",
+        "Customer Service",
+        "Assistance"
+      ],
+      "text": {
+        "de": "Sehr geehrte Damen und Herren,\n\nvielen Dank für Ihre Nachricht.\n\nWir entschuldigen uns aufrichtig für etwaige Unannehmlichkeiten, die durch unsere verspätete Antwort entstanden sind. Wir bearbeiten derzeit mehr Anfragen als üblich, was zu dieser Verzögerung geführt hat. Benötigen Sie weiterhin Unterstützung?\n\nWir freuen uns auf Ihre Rückmeldung.",
+        "en": "Dear Sir or Madam,\n\nThank you for your message.\n\nWe sincerely apologize for any inconvenience caused by our delayed response. We are currently handling more inquiries than usual, which has led to this delay. Do you still need assistance?\n\nWe are looking forward to hearing from you."
+      },
+      "bodyOnly": {
+        "de": "Wir entschuldigen uns aufrichtig für etwaige Unannehmlichkeiten, die durch unsere verspätete Antwort entstanden sind. Wir bearbeiten derzeit mehr Anfragen als üblich, was zu dieser Verzögerung geführt hat. Benötigen Sie weiterhin Unterstützung?",
+        "en": "We sincerely apologize for any inconvenience caused by our delayed response. We are currently handling more inquiries than usual, which has led to this delay. Do you still need assistance?"
+      }
+    },
+    {
+      "title": "Luggage Storage Options / Gepäckaufbewahrungsmöglichkeiten",
+      "tags": [
+        "luggage",
+        "Gepäck",
+        "storage",
+        "Aufbewahrung",
+        "lockers",
+        "Schließfächer",
+        "luggage room",
+        "Gepäckraum",
+        "locker fees",
+        "Schließfachgebühren",
+        "bag storage",
+        "Gepäcklagerung",
+        "public luggage room",
+        "öffentlicher Gepäckraum"
+      ],
+      "text": {
+        "de": "Sehr geehrte Damen und Herren,\n\nvielen Dank für Ihre Nachricht.\n\nIn unserem Hostel steht Ihnen ein öffentlich zugänglicher Gepäckraum zur Verfügung, in dem Sie Ihr Gepäck im Voraus aufbewahren können. Zusätzlich bieten wir Schließfächer an. Die Kosten dafür variieren je nach Größe und liegen zwischen 2 € und 6 €.\n\nBei weiteren Fragen stehen wir Ihnen zur Verfügung.",
+        "en": "Dear Sir or Madam,\n\nThank you for your message.\n\nOur hostel provides a publicly accessible luggage room where you can store your luggage in advance. We also offer lockers, and the cost depends on the size, ranging from €2 to €6.\n\nIf you have further questions you can always contact us."
+      },
+      "bodyOnly": {
+        "de": "In unserem Hostel steht Ihnen ein öffentlich zugänglicher Gepäckraum zur Verfügung, in dem Sie Ihr Gepäck im Voraus aufbewahren können. Zusätzlich bieten wir Schließfächer an. Die Kosten dafür variieren je nach Größe und liegen zwischen 2 € und 6 €.",
+        "en": "Our hostel provides a publicly accessible luggage room where you can store your luggage in advance. We also offer lockers, and the cost depends on the size, ranging from €2 to €6."
+      }
+    },
+    {
+      "title": "Voucher Surcharge / Gutschein-Zuschlag",
+      "tags": [
+        "voucher",
+        "extra charge",
+        "Gutschein",
+        "Zuschlag",
+        "Upgrade",
+        "Tagesrate"
+      ],
+      "text": {
+        "de": "Sehr geehrte Damen und Herren,\n\nvielen Dank für Ihre Nachricht.\n\nAußerhalb der Promotion-Verfügbarkeiten kann ein Zuschlag anfallen (aktuelle Tagesrate abzüglich Gutscheinwert). Dieser wird vor Ort beim Check-in bezahlt.\n\nBei weiteren Fragen stehen wir Ihnen zur Verfügung.",
+        "en": "Dear Sir or Madam,\n\nThank you for your message.\n\nOutside promotional availability, a surcharge may apply (current daily rate minus voucher value). This is payable onsite at check-in.\n\nIf you have further questions you can always contact us."
+      },
+      "bodyOnly": {
+        "de": "Außerhalb der Promotion-Verfügbarkeiten kann ein Zuschlag anfallen (aktuelle Tagesrate abzüglich Gutscheinwert). Dieser wird vor Ort beim Check-in bezahlt.",
+        "en": "Outside promotional availability, a surcharge may apply (current daily rate minus voucher value). This is payable onsite at check-in."
+      }
+    },
+    {
+      "title": "Voucher Name Change / Namensänderung Gutscheinbuchung",
+      "tags": [
+        "voucher",
+        "name change",
+        "Gutschein",
+        "Namensänderung",
+        "Übertragung",
+        "Kulanz"
+      ],
+      "text": {
+        "de": "Sehr geehrte Damen und Herren,\n\nvielen Dank für Ihre Nachricht.\n\nDie Namensänderung wurde einmalig als Kulanz durchgeführt. Weitere Umbuchungen oder Namensänderungen sind ausgeschlossen.\n\nBei weiteren Fragen stehen wir Ihnen zur Verfügung.",
+        "en": "Dear Sir or Madam,\n\nThank you for your message.\n\nThe name change was done once as a goodwill gesture. Further rebookings or name changes are excluded.\n\nIf you have further questions you can always contact us."
+      },
+      "bodyOnly": {
+        "de": "Die Namensänderung wurde einmalig als Kulanz durchgeführt. Weitere Umbuchungen oder Namensänderungen sind ausgeschlossen.",
+        "en": "The name change was done once as a goodwill gesture. Further rebookings or name changes are excluded."
+      }
+    },
+    {
+      "title": "Voucher Availability / Gutscheinverfügbarkeit",
+      "tags": [
+        "voucher",
+        "availability",
+        "Gutschein",
+        "Buchung",
+        "Kontingente"
+      ],
+      "text": {
+        "de": "Sehr geehrte Damen und Herren,\n\nvielen Dank für Ihre Nachricht.\n\nVerfügbarkeiten für die nächsten zwölf Monate sind auf https://voucher.aohostels.com/de/availability einsehbar. Grün markierte Tage sind buchbar; der Abreisetag darf rot markiert sein, um den reinen Gutscheinwert zu nutzen.\n\nBei weiteren Fragen stehen wir Ihnen zur Verfügung.",
+        "en": "Dear Sir or Madam,\n\nThank you for your message.\n\nVoucher availability for the next twelve months can be checked at https://voucher.aohostels.com/de/availability. Green-marked days are bookable; the departure day can be red-marked to use the pure voucher value.\n\nIf you have further questions you can always contact us."
+      },
+      "bodyOnly": {
+        "de": "Verfügbarkeiten für die nächsten zwölf Monate sind auf https://voucher.aohostels.com/de/availability einsehbar. Grün markierte Tage sind buchbar; der Abreisetag darf rot markiert sein, um den reinen Gutscheinwert zu nutzen.",
+        "en": "Voucher availability for the next twelve months can be checked at https://voucher.aohostels.com/de/availability. Green-marked days are bookable; the departure day can be red-marked to use the pure voucher value."
+      }
+    },
+    {
+      "title": "Voucher Rebooking Within 12 Months / Umbuchung innerhalb 12 Monate",
+      "tags": [
+        "voucher",
+        "rebooking",
+        "Umbuchung",
+        "Gutschein",
+        "Kulanz",
+        "Kontingent"
+      ],
+      "text": {
+        "de": "Sehr geehrte Damen und Herren,\n\nvielen Dank für Ihre Nachricht.\n\nEine einmalige Kulanz-Umbuchung ist möglich, sofern Termine im ursprünglich gebuchten a&o verfügbar sind. Ansonsten ist ein Zuschlag zu zahlen. Bitte teilen Sie uns bis 18 Uhr am Anreisetag ein Alternativdatum mit.\n\nWir freuen uns auf Ihre Rückmeldung.",
+        "en": "Dear Sir or Madam,\n\nThank you for your message.\n\nA one-time goodwill rebooking is possible if dates at the originally booked a&o are available. Otherwise, a surcharge applies. Please provide an alternative date by 6 PM on the arrival day.\n\nWe are looking forward to hearing from you."
+      },
+      "bodyOnly": {
+        "de": "Eine einmalige Kulanz-Umbuchung ist möglich, sofern Termine im ursprünglich gebuchten a&o verfügbar sind. Ansonsten ist ein Zuschlag zu zahlen. Bitte teilen Sie uns bis 18 Uhr am Anreisetag ein Alternativdatum mit.",
+        "en": "A one-time goodwill rebooking is possible if dates at the originally booked a&o are available. Otherwise, a surcharge applies. Please provide an alternative date by 6 PM on the arrival day."
+      }
+    },
+    {
+      "title": "Upgrade from Dorm Voucher / Upgrade vom Mehrbettzimmer-Gutschein",
+      "tags": [
+        "voucher",
+        "dorm",
+        "Gutschein",
+        "Upgrade",
+        "Doppelzimmer"
+      ],
+      "text": {
+        "de": "Sehr geehrte Damen und Herren,\n\nvielen Dank für Ihre Nachricht.\n\nMit dem Mehrbettzimmer-Gutschein können Sie zunächst das Mehrbettzimmer buchen. Ein Upgrade auf ein Doppelzimmer ist gegen Aufpreis (FLEX-Rate) möglich.\n\nWir freuen uns auf Ihre Rückmeldung.",
+        "en": "Dear Sir or Madam,\n\nThank you for your message.\n\nUse the dorm voucher to book the dorm first. An upgrade to a double room is possible for an additional fee (based on FLEX rate).\n\nWe are looking forward to hearing from you."
+      },
+      "bodyOnly": {
+        "de": "Mit dem Mehrbettzimmer-Gutschein können Sie zunächst das Mehrbettzimmer buchen. Ein Upgrade auf ein Doppelzimmer ist gegen Aufpreis (FLEX-Rate) möglich.",
+        "en": "Use the dorm voucher to book the dorm first. An upgrade to a double room is possible for an additional fee (based on FLEX rate)."
+      }
+    },
+    {
+      "title": "Voucher Valid for 3 Years / Gutschein 3 Jahre gültig",
+      "tags": [
+        "voucher",
+        "validity",
+        "3 Jahre",
+        "Gültigkeitsdauer",
+        "Frist"
+      ],
+      "text": {
+        "de": "Sehr geehrte Damen und Herren,\n\nvielen Dank für Ihre Nachricht.\n\nDer Gutschein ist ab Kaufdatum 3 Jahre lang gültig. Eine Reservierung ist bis Ende des Jahres des Ablaufdatums möglich. Der Aufenthalt kann noch im Folgejahr stattfinden, sofern der Gutschein rechtzeitig eingelöst wurde.\n\nBei weiteren Fragen stehen wir Ihnen zur Verfügung.",
+        "en": "Dear Sir or Madam,\n\nThank you for your message.\n\nThe voucher is valid for three years from the purchase date. You can reserve until the end of the year it expires, and the stay can occur the following year if redeemed on time.\n\nIf you have further questions you can always contact us."
+      },
+      "bodyOnly": {
+        "de": "Der Gutschein ist ab Kaufdatum 3 Jahre lang gültig. Eine Reservierung ist bis Ende des Jahres des Ablaufdatums möglich. Der Aufenthalt kann noch im Folgejahr stattfinden, sofern der Gutschein rechtzeitig eingelöst wurde.",
+        "en": "The voucher is valid for three years from the purchase date. You can reserve until the end of the year it expires, and the stay can occur the following year if redeemed on time."
+      }
+    },
+    {
+      "title": "Booking Number Request / Buchungsnummer erfragen",
+      "tags": [
+        "booking",
+        "reservation",
+        "Buchungsnummer",
+        "Anfrage",
+        "Details"
+      ],
+      "text": {
+        "de": "Sehr geehrte Damen und Herren,\n\nvielen Dank für Ihre Nachricht.\n\nBitte teilen Sie uns Ihre Buchungsnummer mit, damit wir Ihnen weiterhelfen können.\n\nWir freuen uns auf Ihre Rückmeldung.",
+        "en": "Dear Sir or Madam,\n\nThank you for your message.\n\nPlease provide your booking number so we can assist you.\n\nWe are looking forward to hearing from you."
+      },
+      "bodyOnly": {
+        "de": "Bitte teilen Sie uns Ihre Buchungsnummer mit, damit wir Ihnen weiterhelfen können.",
+        "en": "Please provide your booking number so we can assist you."
+      }
+    },
+    {
+      "title": "Stay Duration in Dorm / Aufenthaltsdauer im Schlafsaal",
+      "tags": [
+        "stay",
+        "dorm",
+        "Schlafsaal",
+        "Langzeitaufenthalt",
+        "14 Nächte",
+        "Verlängerung"
+      ],
+      "text": {
+        "de": "Sehr geehrte Damen und Herren,\n\nvielen Dank für Ihre Nachricht.\n\nIm Mehrbettzimmer sind 14 Nächte möglich, verlängerbar auf bis zu 2 Monate (nach Rücksprache). In privaten Zimmern sind bis zu 6 Monate Buchung möglich (Mindestaufenthalt 30 Nächte). Infos unter https://www.aohostels.com/en/longstay/.\n\nBei weiteren Fragen stehen wir Ihnen zur Verfügung.",
+        "en": "Dear Sir or Madam,\n\nThank you for your message.\n\nA stay of 14 nights is possible in dorms, extendable up to 2 months (with agreement). In private rooms, up to 6 months can be booked (minimum 30 nights). More info: https://www.aohostels.com/en/longstay/.\n\nIf you have further questions you can always contact us."
+      },
+      "bodyOnly": {
+        "de": "Im Mehrbettzimmer sind 14 Nächte möglich, verlängerbar auf bis zu 2 Monate (nach Rücksprache). In privaten Zimmern sind bis zu 6 Monate Buchung möglich (Mindestaufenthalt 30 Nächte). Infos unter https://www.aohostels.com/en/longstay/.",
+        "en": "A stay of 14 nights is possible in dorms, extendable up to 2 months (with agreement). In private rooms, up to 6 months can be booked (minimum 30 nights). More info: https://www.aohostels.com/en/longstay/."
+      }
+    },
+    {
+      "title": "Non-Smoking / Nichtraucher",
+      "tags": [
+        "non-smoking",
+        "smoking policy",
+        "Rauchverbot",
+        "Rauchen",
+        "Hotelregeln"
+      ],
+      "text": {
+        "de": "Sehr geehrte Damen und Herren,\n\nvielen Dank für Ihre Nachricht.\n\nRauchen ist in allen a&o Häusern untersagt. Außerhalb unserer Gebäude ist das Rauchen gestattet.\n\nBei weiteren Fragen stehen wir Ihnen zur Verfügung.",
+        "en": "Dear Sir or Madam,\n\nThank you for your message.\n\nSmoking is prohibited in all a&o locations. Smoking is allowed outside the buildings.\n\nIf you have further questions you can always contact us."
+      },
+      "bodyOnly": {
+        "de": "Rauchen ist in allen a&o Häusern untersagt. Außerhalb unserer Gebäude ist das Rauchen gestattet.",
+        "en": "Smoking is prohibited in all a&o locations. Smoking is allowed outside the buildings."
+      }
+    },
+    {
+      "title": "Message in English / Nachricht auf Deutsch",
+      "tags": [
+        "language",
+        "English",
+        "Sprache",
+        "Kommunikation",
+        "Übersetzung"
+      ],
+      "text": {
+        "de": "Sehr geehrte Damen und Herren,\n\nvielen Dank für Ihre Nachricht.\n\nWir verstehen Ihre Nachricht nicht. Bitte verfassen Sie diese auf Deutsch, damit wir weiterhelfen können.\n\nWir freuen uns auf Ihre Rückmeldung.",
+        "en": "Dear Sir or Madam,\n\nThank you for your message.\n\nWe can't understand your message. Please rewrite it in English so we can assist you.\n\nWe are looking forward to hearing from you."
+      },
+      "bodyOnly": {
+        "de": "Wir verstehen Ihre Nachricht nicht. Bitte verfassen Sie diese auf Deutsch, damit wir weiterhelfen können.",
+        "en": "We can't understand your message. Please rewrite it in English so we can assist you."
+      }
+    },
+    {
+      "title": "Specific Bed in Dorm / Spezielles Bett im Mehrbettzimmer",
+      "tags": [
+        "dorm bed",
+        "Mehrbettzimmer",
+        "Bettwunsch",
+        "Unteres Bett"
+      ],
+      "text": {
+        "de": "Sehr geehrte Damen und Herren,\n\nvielen Dank für Ihre Nachricht.\n\nEin bestimmtes Bett im Mehrbettzimmer kann nicht reserviert werden. Bei Bedarf eines unteren Bettes sprechen Sie bitte das Team an.\n\nBei weiteren Fragen stehen wir Ihnen zur Verfügung.",
+        "en": "Dear Sir or Madam,\n\nThank you for your message.\n\nIt is not possible to reserve a specific bed in a dorm. If you need a lower bed, please inform our staff.\n\nIf you have further questions you can always contact us."
+      },
+      "bodyOnly": {
+        "de": "Ein bestimmtes Bett im Mehrbettzimmer kann nicht reserviert werden. Bei Bedarf eines unteren Bettes sprechen Sie bitte das Team an.",
+        "en": "It is not possible to reserve a specific bed in a dorm. If you need a lower bed, please inform our staff."
+      }
+    },
+    {
+      "title": "Hostel & Hotel Comfort / Hostel- & Hotelkomfort",
+      "tags": [
+        "hostel comfort",
+        "hotel comfort",
+        "Ausstattung",
+        "Extras",
+        "Handtücher",
+        "Bettwäsche",
+        "Familienvorteile",
+        "TV",
+        "WLAN",
+        "Shampoo"
+      ],
+      "text": {
+        "de": "Sehr geehrte Damen und Herren,\n\nvielen Dank für Ihre Nachricht.\n\nZimmer mit Dusche/WC enthalten Föhn, Kosmetiktücher, 2in1 Shampoo & Duschgel, WLAN und Bettwäsche. Handtücher können Sie selbst mitbringen oder vor Ort erwerben. Im Hotel sind zusätzlich Handtücher und TV inklusive. Familien erhalten weitere Gratis-Extras: http://www.aohostels.com/familien.\n\nBei weiteren Fragen stehen wir Ihnen zur Verfügung.",
+        "en": "Dear Sir or Madam,\n\nThank you for your message.\n\nRooms with shower/WC include a hairdryer, tissues, 2-in-1 shampoo/shower gel, Wi-Fi, and bed linen. You can bring your own towels or rent them onsite. In hotels, towels and TV are also included. Families receive more free extras: http://www.aohostels.com/families.\n\nIf you have further questions you can always contact us."
+      },
+      "bodyOnly": {
+        "de": "Zimmer mit Dusche/WC enthalten Föhn, Kosmetiktücher, 2in1 Shampoo & Duschgel, WLAN und Bettwäsche. Handtücher können Sie selbst mitbringen oder vor Ort erwerben. Im Hotel sind zusätzlich Handtücher und TV inklusive. Familien erhalten weitere Gratis-Extras: http://www.aohostels.com/familien.",
+        "en": "Rooms with shower/WC include a hairdryer, tissues, 2-in-1 shampoo/shower gel, Wi-Fi, and bed linen. You can bring your own towels or rent them onsite. In hotels, towels and TV are also included. Families receive more free extras: http://www.aohostels.com/families."
+      }
+    },
+    {
+      "title": "Dynamic Pricing / Dynamische Preisgestaltung",
+      "tags": [
+        "prices",
+        "cost",
+        "dynamische Preise",
+        "Tarif",
+        "Buchung"
+      ],
+      "text": {
+        "de": "Sehr geehrte Damen und Herren,\n\nvielen Dank für Ihre Nachricht.\n\nUnsere Preise variieren je nach Auslastung, Ereignissen und Feiertagen. Tagesaktuelle Preise finden Sie unter www.aohostels.com (maximal 1 Jahr im Voraus buchbar).\n\nBei weiteren Fragen stehen wir Ihnen zur Verfügung.",
+        "en": "Dear Sir or Madam,\n\nThank you for your message.\n\nOur prices vary based on occupancy, events, and holidays. Current rates can be found at www.aohostels.com (bookable up to 1 year in advance).\n\nIf you have further questions you can always contact us."
+      },
+      "bodyOnly": {
+        "de": "Unsere Preise variieren je nach Auslastung, Ereignissen und Feiertagen. Tagesaktuelle Preise finden Sie unter www.aohostels.com (maximal 1 Jahr im Voraus buchbar).",
+        "en": "Our prices vary based on occupancy, events, and holidays. Current rates can be found at www.aohostels.com (bookable up to 1 year in advance)."
+      }
+    },
+    {
+      "title": "Underage Guests / Minderjährige Gäste",
+      "tags": [
+        "underage",
+        "Minderjährige",
+        "Einverständniserklärung",
+        "Jugendliche",
+        "Ü14"
+      ],
+      "text": {
+        "de": "Sehr geehrte Damen und Herren,\n\nvielen Dank für Ihre Nachricht.\n\nGäste ab 14 Jahren benötigen eine Einverständniserklärung der Eltern und eine Ausweiskopie des unterschreibenden Elternteils. Kostenlose Übernachtung für Minderjährige nur mit Erziehungsberechtigtem im selben Zimmer.\n\nBei weiteren Fragen stehen wir Ihnen zur Verfügung.",
+        "en": "Dear Sir or Madam,\n\nThank you for your message.\n\nGuests aged 14+ need a parental consent form and a copy of the signing parent's ID. Free stays for minors only apply if a legal guardian is in the same room.\n\nIf you have further questions you can always contact us."
+      },
+      "bodyOnly": {
+        "de": "Gäste ab 14 Jahren benötigen eine Einverständniserklärung der Eltern und eine Ausweiskopie des unterschreibenden Elternteils. Kostenlose Übernachtung für Minderjährige nur mit Erziehungsberechtigtem im selben Zimmer.",
+        "en": "Guests aged 14+ need a parental consent form and a copy of the signing parent's ID. Free stays for minors only apply if a legal guardian is in the same room."
+      }
+    },
+    {
+      "title": "Accepted Payment Methods / Akzeptierte Zahlungsmethoden",
+      "tags": [
+        "payment",
+        "Zahlung",
+        "Visa",
+        "MasterCard",
+        "Bar",
+        "EC-Karte"
+      ],
+      "text": {
+        "de": "Sehr geehrte Damen und Herren,\n\nvielen Dank für Ihre Nachricht.\n\nWir akzeptieren Debit- und Kreditkarten (Visa, Mastercard). American Express wird nicht angenommen. Zahlung erfolgt nur in Landeswährung.\n\nBei weiteren Fragen stehen wir Ihnen zur Verfügung.",
+        "en": "Dear Sir or Madam,\n\nThank you for your message.\n\nWe accept debit and credit cards (Visa, Mastercard). American Express is not accepted. Payment is in local currency only.\n\nIf you have further questions you can always contact us."
+      },
+      "bodyOnly": {
+        "de": "Wir akzeptieren Debit- und Kreditkarten (Visa, Mastercard). American Express wird nicht angenommen. Zahlung erfolgt nur in Landeswährung.",
+        "en": "We accept debit and credit cards (Visa, Mastercard). American Express is not accepted. Payment is in local currency only."
+      }
+    },
+    {
+      "title": "Early Check-In Option / Früher Check-In",
+      "tags": [
+        "early check-in",
+        "früher Check-in",
+        "Anreise",
+        "Zimmerverfügbarkeit",
+        "Aufpreis"
+      ],
+      "text": {
+        "de": "Sehr geehrte Damen und Herren,\n\nvielen Dank für Ihre Nachricht.\n\nSie können Gepäck abstellen. Ein garantierter Early Check-In ab 11/12 Uhr (je nach Wochentag) ist gegen Aufpreis buchbar. Verfügbarkeit prüfen wir auf Anfrage.\n\nWir freuen uns auf Ihre Rückmeldung.",
+        "en": "Dear Sir or Madam,\n\nThank you for your message.\n\nYou can store your luggage. A guaranteed early check-in from 11/12 AM (depending on the day) is available for an additional fee. We can confirm availability on request.\n\nWe are looking forward to hearing from you."
+      },
+      "bodyOnly": {
+        "de": "Sie können Gepäck abstellen. Ein garantierter Early Check-In ab 11/12 Uhr (je nach Wochentag) ist gegen Aufpreis buchbar. Verfügbarkeit prüfen wir auf Anfrage.",
+        "en": "You can store your luggage. A guaranteed early check-in from 11/12 AM (depending on the day) is available for an additional fee. We can confirm availability on request."
+      }
+    },
+    {
+      "title": "Early Check-In Not Available / Früher Check-In nicht möglich",
+      "tags": [
+        "early check-in",
+        "nicht verfügbar",
+        "Anreise",
+        "Zimmerbelegung"
+      ],
+      "text": {
+        "de": "Sehr geehrte Damen und Herren,\n\nvielen Dank für Ihre Nachricht.\n\nEin Early Check-In für Ihren gewünschten Zeitraum ist leider nicht möglich. Wir bitten um Ihr Verständnis.\n\nBei weiteren Fragen stehen wir Ihnen zur Verfügung.",
+        "en": "Dear Sir or Madam,\n\nThank you for your message.\n\nUnfortunately, an early check-in is not possible for your requested dates. We appreciate your understanding.\n\nIf you have further questions you can always contact us."
+      },
+      "bodyOnly": {
+        "de": "Ein Early Check-In für Ihren gewünschten Zeitraum ist leider nicht möglich. Wir bitten um Ihr Verständnis.",
+        "en": "Unfortunately, an early check-in is not possible for your requested dates. We appreciate your understanding."
+      }
+    },
+    {
+      "title": "Early Check-In Added / Früher Check-In hinzugefügt",
+      "tags": [
+        "early check-in",
+        "Buchungsänderung",
+        "Anreise",
+        "Aufpreis"
+      ],
+      "text": {
+        "de": "Sehr geehrte Damen und Herren,\n\nvielen Dank für Ihre Nachricht.\n\nWir haben den Early Check-In zu Ihrer Buchung hinzugefügt. Sie können das Zimmer ab 11/12 Uhr beziehen. Die 14€ Gebühr zahlen Sie vor Ort.\n\nBei weiteren Fragen stehen wir Ihnen zur Verfügung.",
+        "en": "Dear Sir or Madam,\n\nThank you for your message.\n\nWe have added early check-in to your booking, allowing room access from 11/12 AM. The € 14 fee is payable on arrival.\n\nIf you have further questions you can always contact us."
+      },
+      "bodyOnly": {
+        "de": "Wir haben den Early Check-In zu Ihrer Buchung hinzugefügt. Sie können das Zimmer ab 11/12 Uhr beziehen. Die 14€ Gebühr zahlen Sie vor Ort.",
+        "en": "We have added early check-in to your booking, allowing room access from 11/12 AM. The € 14 fee is payable on arrival."
+      }
+    },
+    {
+      "title": "Flex Booking Guarantee / Garantie für Flex-Buchung",
+      "tags": [
+        "flex booking",
+        "garantierte Buchung",
+        "Kreditkarte",
+        "Stornierung"
+      ],
+      "text": {
+        "de": "Sehr geehrte Damen und Herren,\n\nvielen Dank für Ihre Nachricht.\n\nSie können Ihre Flexbuchung mit Kreditkartendaten, Vorauszahlung oder Web-Check-In am Vortag garantieren. Ohne Garantie kann Ihre Buchung ab 18 Uhr freigegeben werden.\n\nWir freuen uns auf Ihre Rückmeldung.",
+        "en": "Dear Sir or Madam,\n\nThank you for your message.\n\nGuarantee your flexible booking by providing credit card details, prepayment, or using the web check-in link the day before. Without a guarantee, we may release your room after 6 PM.\n\nWe are looking forward to hearing from you."
+      },
+      "bodyOnly": {
+        "de": "Sie können Ihre Flexbuchung mit Kreditkartendaten, Vorauszahlung oder Web-Check-In am Vortag garantieren. Ohne Garantie kann Ihre Buchung ab 18 Uhr freigegeben werden.",
+        "en": "Guarantee your flexible booking by providing credit card details, prepayment, or using the web check-in link the day before. Without a guarantee, we may release your room after 6 PM."
+      }
+    },
+    {
+      "title": "Late Arrival / Späte Anreise",
+      "tags": [
+        "late check-in",
+        "späte Anreise",
+        "garantierte Buchung",
+        "Nach 18 Uhr"
+      ],
+      "text": {
+        "de": "Sehr geehrte Damen und Herren,\n\nvielen Dank für Ihre Nachricht.\n\nUnsere Rezeption ist 24/7 besetzt. Mit garantierter Buchung halten wir Ihr Zimmer auch nach 18 Uhr frei.\n\nBei weiteren Fragen stehen wir Ihnen zur Verfügung.",
+        "en": "Dear Sir or Madam,\n\nThank you for your message.\n\nOur reception is staffed 24/7. With a guaranteed booking, your room remains reserved after 6 PM.\n\nIf you have further questions you can always contact us."
+      },
+      "bodyOnly": {
+        "de": "Unsere Rezeption ist 24/7 besetzt. Mit garantierter Buchung halten wir Ihr Zimmer auch nach 18 Uhr frei.",
+        "en": "Our reception is staffed 24/7. With a guaranteed booking, your room remains reserved after 6 PM."
+      }
+    },
+    {
+      "title": "Bank Transfer Payment / Überweisung",
+      "tags": [
+        "payment",
+        "Überweisung",
+        "Vorkasse",
+        "Bankdaten",
+        "Buchungsnummer"
+      ],
+      "text": {
+        "de": "Sehr geehrte Damen und Herren,\n\nvielen Dank für Ihre Nachricht.\n\nSie können den Betrag vorab überweisen. Nutzen Sie pro Buchung eine separate Überweisung und geben Sie die Buchungsnummer als Verwendungszweck an. Prüfen Sie nach fünf Werktagen den Zahlungseingang mit uns ab.\n\nWir freuen uns auf Ihre Rückmeldung.",
+        "en": "Dear Sir or Madam,\n\nThank you for your message.\n\nYou can pay in advance via bank transfer. For each booking, please transfer separately and include the booking number as a reference. Contact us after five business days to confirm receipt.\n\nWe are looking forward to hearing from you."
+      },
+      "bodyOnly": {
+        "de": "Sie können den Betrag vorab überweisen. Nutzen Sie pro Buchung eine separate Überweisung und geben Sie die Buchungsnummer als Verwendungszweck an. Prüfen Sie nach fünf Werktagen den Zahlungseingang mit uns ab.",
+        "en": "You can pay in advance via bank transfer. For each booking, please transfer separately and include the booking number as a reference. Contact us after five business days to confirm receipt."
+      }
+    },
+    {
+      "title": "Booking Guaranteed with Credit Card / Buchung mit Kreditkarte garantiert",
+      "tags": [
+        "payment",
+        "Kreditkarte",
+        "Garantie",
+        "Nichtanreise"
+      ],
+      "text": {
+        "de": "Sehr geehrte Damen und Herren,\n\nvielen Dank für Ihre Nachricht.\n\nIhre Buchung ist jetzt garantiert; das Zimmer wird die ganze Nacht freigehalten. Die Kreditkarte wird nur bei Nichtanreise belastet.\n\nBei weiteren Fragen stehen wir Ihnen zur Verfügung.",
+        "en": "Dear Sir or Madam,\n\nThank you for your message.\n\nYour booking is now guaranteed; the room will be held all night. The credit card will be charged only in case of no-show.\n\nIf you have further questions you can always contact us."
+      },
+      "bodyOnly": {
+        "de": "Ihre Buchung ist jetzt garantiert; das Zimmer wird die ganze Nacht freigehalten. Die Kreditkarte wird nur bei Nichtanreise belastet.",
+        "en": "Your booking is now guaranteed; the room will be held all night. The credit card will be charged only in case of no-show."
+      }
+    },
+    {
+      "title": "Credit Card Charge Confirmation / Kreditkartenbelastung bestätigt",
+      "tags": [
+        "credit card",
+        "Kreditkarte",
+        "Belastung",
+        "Bezahlung",
+        "Rechnung"
+      ],
+      "text": {
+        "de": "Sehr geehrte Damen und Herren,\n\nvielen Dank für Ihre Nachricht.\n\nIhre Kreditkarte wurde erfolgreich belastet. Eine provisorische Rechnung liegt bei. Für Fragen stehen wir gerne zur Verfügung.\n\nBei weiteren Fragen stehen wir Ihnen zur Verfügung.",
+        "en": "Dear Sir or Madam,\n\nThank you for your message.\n\nYour credit card was successfully charged. A provisional invoice is attached. Let us know if you have any questions.\n\nIf you have further questions you can always contact us."
+      },
+      "bodyOnly": {
+        "de": "Ihre Kreditkarte wurde erfolgreich belastet. Eine provisorische Rechnung liegt bei. Für Fragen stehen wir gerne zur Verfügung.",
+        "en": "Your credit card was successfully charged. A provisional invoice is attached. Let us know if you have any questions."
+      }
+    },
+    {
+      "title": "Flexible Booking Guarantee / Flexibel buchen und absichern",
+      "tags": [
+        "payment",
+        "flex booking",
+        "Anzahlung",
+        "Kreditkarte",
+        "Garantie"
+      ],
+      "text": {
+        "de": "Sehr geehrte Damen und Herren,\n\nvielen Dank für Ihre Nachricht.\n\nSie können Ihre Flexbuchung per Kreditkarte absichern oder vorab anzahlen. Die Karte wird nur im Falle einer Nichtanreise belastet.\n\nWir freuen uns auf Ihre Rückmeldung.",
+        "en": "Dear Sir or Madam,\n\nThank you for your message.\n\nYou may secure your flex booking with a credit card or prepayment. The card will only be charged in the event of a no-show.\n\nWe are looking forward to hearing from you."
+      },
+      "bodyOnly": {
+        "de": "Sie können Ihre Flexbuchung per Kreditkarte absichern oder vorab anzahlen. Die Karte wird nur im Falle einer Nichtanreise belastet.",
+        "en": "You may secure your flex booking with a credit card or prepayment. The card will only be charged in the event of a no-show."
+      }
+    },
+    {
+      "title": "Late Check-Out Added / Später Check-Out hinzugefügt",
+      "tags": [
+        "late check-out",
+        "Abreise",
+        "Buchungsänderung",
+        "Aufpreis"
+      ],
+      "text": {
+        "de": "Sehr geehrte Damen und Herren,\n\nvielen Dank für Ihre Nachricht.\n\nDer Late Check-Out bis 14 Uhr wurde hinzugefügt. Die Gebühr zahlen Sie bequem bei Anreise.\n\nBei weiteren Fragen stehen wir Ihnen zur Verfügung.",
+        "en": "Dear Sir or Madam,\n\nThank you for your message.\n\nLate check-out until 2 PM has been added. The fee is payable upon arrival.\n\nIf you have further questions you can always contact us."
+      },
+      "bodyOnly": {
+        "de": "Der Late Check-Out bis 14 Uhr wurde hinzugefügt. Die Gebühr zahlen Sie bequem bei Anreise.",
+        "en": "Late check-out until 2 PM has been added. The fee is payable upon arrival."
+      }
+    },
+    {
+      "title": "Check-Out Times / Check-out-Zeiten",
+      "tags": [
+        "check-out",
+        "Zeiten",
+        "Late Check-out",
+        "Zusatzleistung"
+      ],
+      "text": {
+        "de": "Sehr geehrte Damen und Herren,\n\nvielen Dank für Ihre Nachricht.\n\nCheck-out ist Mo-Fr bis 10 Uhr, Sa-So bis 11 Uhr. Ein Late Check-out bis 14 Uhr kann optional gegen Aufpreis gebucht werden (nur für Privatzimmer).\n\nBei weiteren Fragen stehen wir Ihnen zur Verfügung.",
+        "en": "Dear Sir or Madam,\n\nThank you for your message.\n\nCheck-out is until 10 AM (Mon-Fri) and 11 AM (Sat-Sun). A late check-out until 2 PM is available for an extra fee (private rooms only).\n\nIf you have further questions you can always contact us."
+      },
+      "bodyOnly": {
+        "de": "Check-out ist Mo-Fr bis 10 Uhr, Sa-So bis 11 Uhr. Ein Late Check-out bis 14 Uhr kann optional gegen Aufpreis gebucht werden (nur für Privatzimmer).",
+        "en": "Check-out is until 10 AM (Mon-Fri) and 11 AM (Sat-Sun). A late check-out until 2 PM is available for an extra fee (private rooms only)."
+      }
+    },
+    {
+      "title": "Booking Modified / Buchung geändert",
+      "tags": [
+        "booking change",
+        "Änderung",
+        "Buchungsbestätigung",
+        "Update"
+      ],
+      "text": {
+        "de": "Sehr geehrte Damen und Herren,\n\nvielen Dank für Ihre Nachricht.\n\nWir haben Ihre Buchung wie gewünscht angepasst. Die neue Bestätigung finden Sie im Anhang.\n\nWir freuen uns auf Ihre Rückmeldung.",
+        "en": "Dear Sir or Madam,\n\nThank you for your message.\n\nYour booking has been modified as requested. The updated confirmation is attached.\n\nWe are looking forward to hearing from you."
+      },
+      "bodyOnly": {
+        "de": "Wir haben Ihre Buchung wie gewünscht angepasst. Die neue Bestätigung finden Sie im Anhang.",
+        "en": "Your booking has been modified as requested. The updated confirmation is attached."
+      }
+    },
+    {
+      "title": "Fixed Booking / Fix-Buchung (Non-Refundable)",
+      "tags": [
+        "fix booking",
+        "non-refundable",
+        "Sparrate",
+        "Umbuchung",
+        "Stornierung"
+      ],
+      "text": {
+        "de": "Sehr geehrte Damen und Herren,\n\nvielen Dank für Ihre Nachricht.\n\nIhre Sparrate ist nicht stornierbar oder erstattungsfähig. Aus Kulanz haben wir Ihre Buchung einmalig auf den neuen Termin/Zimmerkategorie gelegt. Der Aufpreis wird beim Check-in beglichen.\n\nBei weiteren Fragen stehen wir Ihnen zur Verfügung.",
+        "en": "Dear Sir or Madam,\n\nThank you for your message.\n\nYour special rate is non-refundable. As a goodwill gesture, we moved your booking once to the new date/room category. Any additional amount is payable at check-in.\n\nIf you have further questions you can always contact us."
+      },
+      "bodyOnly": {
+        "de": "Ihre Sparrate ist nicht stornierbar oder erstattungsfähig. Aus Kulanz haben wir Ihre Buchung einmalig auf den neuen Termin/Zimmerkategorie gelegt. Der Aufpreis wird beim Check-in beglichen.",
+        "en": "Your special rate is non-refundable. As a goodwill gesture, we moved your booking once to the new date/room category. Any additional amount is payable at check-in."
+      }
+    },
+    {
+      "title": "Booking Made via Third Party / Buchung über Drittanbieter",
+      "tags": [
+        "third party",
+        "travel agent",
+        "Expedia",
+        "Booking.com",
+        "Änderung"
+      ],
+      "text": {
+        "de": "Sehr geehrte Damen und Herren,\n\nvielen Dank für Ihre Nachricht.\n\nBitte wenden Sie sich direkt an Ihren Reiseveranstalter (Agoda/Booking.com/Expedia), um Änderungen vorzunehmen. Wir dürfen ohne dessen Einverständnis nichts bearbeiten.\n\nBei weiteren Fragen stehen wir Ihnen zur Verfügung.",
+        "en": "Dear Sir or Madam,\n\nThank you for your message.\n\nPlease contact your travel provider (Agoda/Booking.com/Expedia) directly for modifications. We cannot adjust your reservation without their consent.\n\nIf you have further questions you can always contact us."
+      },
+      "bodyOnly": {
+        "de": "Bitte wenden Sie sich direkt an Ihren Reiseveranstalter (Agoda/Booking.com/Expedia), um Änderungen vorzunehmen. Wir dürfen ohne dessen Einverständnis nichts bearbeiten.",
+        "en": "Please contact your travel provider (Agoda/Booking.com/Expedia) directly for modifications. We cannot adjust your reservation without their consent."
+      }
+    },
+    {
+      "title": "Fix-Rate Date Change / Fix-Buchung Datum verschieben",
+      "tags": [
+        "fix booking",
+        "non-refundable",
+        "Umbuchung",
+        "Kulanz",
+        "Stornogebühren"
+      ],
+      "text": {
+        "de": "Sehr geehrte Damen und Herren,\n\nvielen Dank für Ihre Nachricht.\n\nWir können Ihre Fix-Buchung einmalig auf ein neues Datum verschieben (innerhalb von 12 Monaten), wenn verfügbar. Bei teurerem Datum zahlen Sie den Aufpreis, bei günstigerem Datum wird keine Rückerstattung gewährt.\n\nWir freuen uns auf Ihre Rückmeldung.",
+        "en": "Dear Sir or Madam,\n\nThank you for your message.\n\nWe can shift your non-refundable booking once to a new date (within 12 months) if available. If the new date is more expensive, the difference is payable, and if cheaper, no refund is provided.\n\nWe are looking forward to hearing from you."
+      },
+      "bodyOnly": {
+        "de": "Wir können Ihre Fix-Buchung einmalig auf ein neues Datum verschieben (innerhalb von 12 Monaten), wenn verfügbar. Bei teurerem Datum zahlen Sie den Aufpreis, bei günstigerem Datum wird keine Rückerstattung gewährt.",
+        "en": "We can shift your non-refundable booking once to a new date (within 12 months) if available. If the new date is more expensive, the difference is payable, and if cheaper, no refund is provided."
+      }
+    },
+    {
+      "title": "Free Cancellation Done / Kostenfreie Stornierung erfolgt",
+      "tags": [
+        "free cancellation",
+        "Stornierung",
+        "Buchung storniert",
+        "Kostenfrei"
+      ],
+      "text": {
+        "de": "Sehr geehrte Damen und Herren,\n\nvielen Dank für Ihre Nachricht.\n\nIhre Buchung wurde wunschgemäß kostenfrei storniert. Wir hoffen, Sie zukünftig wieder bei a&o begrüßen zu dürfen.\n\nBei weiteren Fragen stehen wir Ihnen zur Verfügung.",
+        "en": "Dear Sir or Madam,\n\nThank you for your message.\n\nYour booking was canceled free of charge as requested. We hope to welcome you at a&o in the future.\n\nIf you have further questions you can always contact us."
+      },
+      "bodyOnly": {
+        "de": "Ihre Buchung wurde wunschgemäß kostenfrei storniert. Wir hoffen, Sie zukünftig wieder bei a&o begrüßen zu dürfen.",
+        "en": "Your booking was canceled free of charge as requested. We hope to welcome you at a&o in the future."
+      }
+    },
+    {
+      "title": "Offer with Temporary Reservation / Angebot mit vorläufiger Reservierung",
+      "tags": [
+        "offer",
+        "Angebot",
+        "Reservierung",
+        "Frühstück",
+        "Bezahlung"
+      ],
+      "text": {
+        "de": "Sehr geehrte Damen und Herren,\n\nvielen Dank für Ihre Nachricht.\n\nWir haben das gewünschte Zimmer unverbindlich bis 18 Uhr am Anreisetag für Sie reserviert. Die Preise entnehmen Sie der Buchungsbestätigung. Frühstück ist optional buchbar. Bitte sichern Sie Ihre Buchung per Kreditkarte oder Überweisung ab.\n\nWir freuen uns auf Ihre Rückmeldung.",
+        "en": "Dear Sir or Madam,\n\nThank you for your message.\n\nWe have tentatively reserved the requested room(s) until 6 PM on arrival day. Prices are in the attached confirmation. Breakfast is optional. Please secure your booking via credit card or bank transfer.\n\nWe are looking forward to hearing from you."
+      },
+      "bodyOnly": {
+        "de": "Wir haben das gewünschte Zimmer unverbindlich bis 18 Uhr am Anreisetag für Sie reserviert. Die Preise entnehmen Sie der Buchungsbestätigung. Frühstück ist optional buchbar. Bitte sichern Sie Ihre Buchung per Kreditkarte oder Überweisung ab.",
+        "en": "We have tentatively reserved the requested room(s) until 6 PM on arrival day. Prices are in the attached confirmation. Breakfast is optional. Please secure your booking via credit card or bank transfer."
+      }
+    },
+    {
+      "title": "Desired a&o Fully Booked / Gewünschtes a&o ausgebucht",
+      "tags": [
+        "fully booked",
+        "Ausgebucht",
+        "Kein Zimmer",
+        "Alternativer Zeitraum"
+      ],
+      "text": {
+        "de": "Sehr geehrte Damen und Herren,\n\nvielen Dank für Ihre Nachricht.\n\nDas gewünschte a&o ist für Ihren Termin ausgebucht. Wenn Sie einen anderen Zeitraum erwägen, lassen Sie es uns wissen. Wir unterbreiten Ihnen gern ein Angebot.\n\nWir freuen uns auf Ihre Rückmeldung.",
+        "en": "Dear Sir or Madam,\n\nThank you for your message.\n\nThe requested a&o is fully booked for your dates. If you consider alternative dates, let us know, and we will offer a suitable option.\n\nWe are looking forward to hearing from you."
+      },
+      "bodyOnly": {
+        "de": "Das gewünschte a&o ist für Ihren Termin ausgebucht. Wenn Sie einen anderen Zeitraum erwägen, lassen Sie es uns wissen. Wir unterbreiten Ihnen gern ein Angebot.",
+        "en": "The requested a&o is fully booked for your dates. If you consider alternative dates, let us know, and we will offer a suitable option."
+      }
+    },
+    {
+      "title": "City or Property Not Specified / Stadt oder Haus nicht angegeben",
+      "tags": [
+        "city",
+        "property",
+        "Standort",
+        "Unklarheit",
+        "Anfrage"
+      ],
+      "text": {
+        "de": "Sehr geehrte Damen und Herren,\n\nvielen Dank für Ihre Nachricht.\n\nBitte teilen Sie uns mit, in welcher Stadt bzw. in welchem a&o Sie buchen möchten. Eine Übersicht unserer Standorte finden Sie auf www.aohostels.com.\n\nWir freuen uns auf Ihre Rückmeldung.",
+        "en": "Dear Sir or Madam,\n\nThank you for your message.\n\nPlease let us know which city or a&o property you wish to book. A full list of our locations is available at www.aohostels.com.\n\nWe are looking forward to hearing from you."
+      },
+      "bodyOnly": {
+        "de": "Bitte teilen Sie uns mit, in welcher Stadt bzw. in welchem a&o Sie buchen möchten. Eine Übersicht unserer Standorte finden Sie auf www.aohostels.com.",
+        "en": "Please let us know which city or a&o property you wish to book. A full list of our locations is available at www.aohostels.com."
+      }
+    },
+    {
+      "title": "Long-Term Stay / Langzeitaufenthalt (ab 30 Nächte)",
+      "tags": [
+        "long stay",
+        "Langzeitaufenthalt",
+        "30 Nächte",
+        "Buchung",
+        "Longstay"
+      ],
+      "text": {
+        "de": "Sehr geehrte Damen und Herren,\n\nvielen Dank für Ihre Nachricht.\n\nLangzeitaufenthalte ab 30 Nächten können Sie ausschließlich selbst über https://www.aohostels.com/de/longstay/ buchen. Eine Anmeldung ist nicht möglich.\n\nBei weiteren Fragen stehen wir Ihnen zur Verfügung.",
+        "en": "Dear Sir or Madam,\n\nThank you for your message.\n\nLong-term stays of 30+ nights can only be booked by you directly at https://www.aohostels.com/de/longstay/. Registration is not possible.\n\nIf you have further questions you can always contact us."
+      },
+      "bodyOnly": {
+        "de": "Langzeitaufenthalte ab 30 Nächten können Sie ausschließlich selbst über https://www.aohostels.com/de/longstay/ buchen. Eine Anmeldung ist nicht möglich.",
+        "en": "Long-term stays of 30+ nights can only be booked by you directly at https://www.aohostels.com/de/longstay/. Registration is not possible."
+      }
+    },
+    {
+      "title": "Parking Added / Parkplatz hinzugefügt",
+      "tags": [
+        "parking",
+        "Parkplatz",
+        "Gebühr",
+        "Verfügbarkeit"
+      ],
+      "text": {
+        "de": "Sehr geehrte Damen und Herren,\n\nvielen Dank für Ihre Nachricht.\n\nEin Parkplatz für XX € pro Nacht wurde hinzugefügt und ist kostenfrei stornierbar. Nutzung ab Anreise möglich, garantierter Anspruch jedoch erst ab 15 Uhr.\n\nBei weiteren Fragen stehen wir Ihnen zur Verfügung.",
+        "en": "Dear Sir or Madam,\n\nThank you for your message.\n\nA parking space for XX € per night has been added, cancellable free of charge. You may use it upon arrival, but it's only guaranteed from 3 PM.\n\nIf you have further questions you can always contact us."
+      },
+      "bodyOnly": {
+        "de": "Ein Parkplatz für XX € pro Nacht wurde hinzugefügt und ist kostenfrei stornierbar. Nutzung ab Anreise möglich, garantierter Anspruch jedoch erst ab 15 Uhr.",
+        "en": "A parking space for XX € per night has been added, cancellable free of charge. You may use it upon arrival, but it's only guaranteed from 3 PM."
+      }
+    },
+    {
+      "title": "Parking x2 Added / Parkplatz x2 hinzugefügt",
+      "tags": [
+        "parking spaces",
+        "Parkplätze",
+        "Gebühr",
+        "Verfügbarkeit"
+      ],
+      "text": {
+        "de": "Sehr geehrte Damen und Herren,\n\nvielen Dank für Ihre Nachricht.\n\nZwei Parkplätze für XX € pro Nacht wurden hinzugefügt und sind kostenfrei stornierbar. Nutzung ab Anreise möglich, garantierter Anspruch jedoch erst ab 15 Uhr.\n\nBei weiteren Fragen stehen wir Ihnen zur Verfügung.",
+        "en": "Dear Sir or Madam,\n\nThank you for your message.\n\nTwo parking spaces for XX € per night have been added, cancellable free of charge. You may use them upon arrival, but they're only guaranteed from 3 PM.\n\nIf you have further questions you can always contact us."
+      },
+      "bodyOnly": {
+        "de": "Zwei Parkplätze für XX € pro Nacht wurden hinzugefügt und sind kostenfrei stornierbar. Nutzung ab Anreise möglich, garantierter Anspruch jedoch erst ab 15 Uhr.",
+        "en": "Two parking spaces for XX € per night have been added, cancellable free of charge. You may use them upon arrival, but they're only guaranteed from 3 PM."
+      }
+    },
+    {
+      "title": "No Hotel Parking Available / Kein Parkplatz verfügbar",
+      "tags": [
+        "parking",
+        "Parkplatz",
+        "Ausgebucht",
+        "Alternative"
+      ],
+      "text": {
+        "de": "Sehr geehrte Damen und Herren,\n\nvielen Dank für Ihre Nachricht.\n\nLeider können wir Ihnen keinen hoteleigenen Parkplatz anbieten. Bitte nutzen Sie externe Angebote wie parkopedia.de oder andere öffentliche Parkmöglichkeiten.\n\nBei weiteren Fragen stehen wir Ihnen zur Verfügung.",
+        "en": "Dear Sir or Madam,\n\nThank you for your message.\n\nUnfortunately, we have no hotel parking spots available. Please check external options such as parkopedia.de or other public parking facilities.\n\nIf you have further questions you can always contact us."
+      },
+      "bodyOnly": {
+        "de": "Leider können wir Ihnen keinen hoteleigenen Parkplatz anbieten. Bitte nutzen Sie externe Angebote wie parkopedia.de oder andere öffentliche Parkmöglichkeiten.",
+        "en": "Unfortunately, we have no hotel parking spots available. Please check external options such as parkopedia.de or other public parking facilities."
+      }
+    },
+    {
+      "title": "Breakfast Buffet Details / Frühstücksbuffet",
+      "tags": [
+        "breakfast",
+        "Buffet",
+        "Preise",
+        "Kinder",
+        "Unverträglichkeiten"
+      ],
+      "text": {
+        "de": "Sehr geehrte Damen und Herren,\n\nvielen Dank für Ihre Nachricht.\n\nDas All-You-Can-Eat Frühstücksbuffet kostet 11,90 € für Erwachsene und 5,95 € für Kinder (7-17). Laktose- und glutenfreie Optionen sind erhältlich. Frühstückszeiten: Mo-Fr 7-11 Uhr, Sa/So 7-11 Uhr.\n\nBei weiteren Fragen stehen wir Ihnen zur Verfügung.",
+        "en": "Dear Sir or Madam,\n\nThank you for your message.\n\nOur all-you-can-eat breakfast buffet is €11.90 for adults and €5.95 for children (ages 7-17). Lactose- and gluten-free products are available. Breakfast is served 7-11 AM (Mon-Fri and weekends).\n\nIf you have further questions you can always contact us."
+      },
+      "bodyOnly": {
+        "de": "Das All-You-Can-Eat Frühstücksbuffet kostet 11,90 € für Erwachsene und 5,95 € für Kinder (7-17). Laktose- und glutenfreie Optionen sind erhältlich. Frühstückszeiten: Mo-Fr 7-11 Uhr, Sa/So 7-11 Uhr.",
+        "en": "Our all-you-can-eat breakfast buffet is €11.90 for adults and €5.95 for children (ages 7-17). Lactose- and gluten-free products are available. Breakfast is served 7-11 AM (Mon-Fri and weekends)."
+      }
+    },
+    {
+      "title": "Pet Policy / Haustiere",
+      "tags": [
+        "pets",
+        "Haustiere",
+        "Gebühr",
+        "Maximalhöhe"
+      ],
+      "text": {
+        "de": "Sehr geehrte Damen und Herren,\n\nvielen Dank für Ihre Nachricht.\n\nBis zu zwei kleine Tiere (max. 60 cm Schulterhöhe) sind gegen eine Gebühr (z.B. 14 €) pro Nacht und Tier im privaten Zimmer erlaubt. In Mehrbettzimmern und Frühstücksräumen sind Haustiere nicht gestattet.\n\nBei weiteren Fragen stehen wir Ihnen zur Verfügung.",
+        "en": "Dear Sir or Madam,\n\nThank you for your message.\n\nUp to two small animals (max. 60 cm shoulder height) are allowed in private rooms for a nightly fee (e.g. €14 per pet). Not allowed in dorms or breakfast areas.\n\nIf you have further questions you can always contact us."
+      },
+      "bodyOnly": {
+        "de": "Bis zu zwei kleine Tiere (max. 60 cm Schulterhöhe) sind gegen eine Gebühr (z.B. 14 €) pro Nacht und Tier im privaten Zimmer erlaubt. In Mehrbettzimmern und Frühstücksräumen sind Haustiere nicht gestattet.",
+        "en": "Up to two small animals (max. 60 cm shoulder height) are allowed in private rooms for a nightly fee (e.g. €14 per pet). Not allowed in dorms or breakfast areas."
+      }
+    },
+    {
+      "title": "Breakfast Booked / Frühstück hinzugebucht",
+      "tags": [
+        "breakfast",
+        "Buffet",
+        "Kosten",
+        "All-You-Can-Eat"
+      ],
+      "text": {
+        "de": "Sehr geehrte Damen und Herren,\n\nvielen Dank für Ihre Nachricht.\n\nDas Frühstücksbuffet (11,90 € für Erwachsene, 5,95 € für Kinder 7-17) wurde gebucht. Sie zahlen beim Check-in. Bei Unverträglichkeiten bitte vorab Bescheid geben.\n\nBei weiteren Fragen stehen wir Ihnen zur Verfügung.",
+        "en": "Dear Sir or Madam,\n\nThank you for your message.\n\nThe breakfast buffet (€11.90 for adults, €5.95 for children 7-17) has been added. You pay at check-in. Let us know in advance about any dietary restrictions.\n\nIf you have further questions you can always contact us."
+      },
+      "bodyOnly": {
+        "de": "Das Frühstücksbuffet (11,90 € für Erwachsene, 5,95 € für Kinder 7-17) wurde gebucht. Sie zahlen beim Check-in. Bei Unverträglichkeiten bitte vorab Bescheid geben.",
+        "en": "The breakfast buffet (€11.90 for adults, €5.95 for children 7-17) has been added. You pay at check-in. Let us know in advance about any dietary restrictions."
+      }
+    },
+    {
+      "title": "Date Change – Not Possible, No Availability / Datumsänderung – Nicht möglich, keine Verfügbarkeit",
+      "tags": [
+        "date change",
+        "Datumsänderung",
+        "no availability",
+        "keine Verfügbarkeit",
+        "fully booked",
+        "ausgebucht",
+        "modification not possible",
+        "Änderung nicht möglich"
+      ],
+      "text": {
+        "de": "Sehr geehrte Damen und Herren,\n\nvielen Dank für Ihre Nachricht.\n\nLeider ist eine Datumsänderung auf den gewünschten Zeitraum nicht möglich, da das a&o für diese Daten ausgebucht ist.\n\nGerne prüfen wir alternative Zeiträume für Sie. Wenn Sie möchten, teilen Sie uns bitte Ihre bevorzugten Ausweichdaten mit.\n\nBei weiteren Fragen stehen wir Ihnen zur Verfügung.",
+        "en": "Dear Sir or Madam,\n\nThank you for your message.\n\nUnfortunately, a date change to the requested period is not possible, as the a&o is fully booked for those dates.\n\nWe are happy to check alternative dates for you. If you would like, please let us know your preferred alternative dates.\n\nIf you have further questions you can always contact us."
+      },
+      "bodyOnly": {
+        "de": "Leider ist eine Datumsänderung auf den gewünschten Zeitraum nicht möglich, da das a&o für diese Daten ausgebucht ist.\n\nGerne prüfen wir alternative Zeiträume für Sie. Wenn Sie möchten, teilen Sie uns bitte Ihre bevorzugten Ausweichdaten mit.",
+        "en": "Unfortunately, a date change to the requested period is not possible, as the a&o is fully booked for those dates.\n\nWe are happy to check alternative dates for you. If you would like, please let us know your preferred alternative dates."
+      }
+    },
+    {
+      "title": "Booking Confirmation Resend / Buchungsbestätigung erneut senden",
+      "tags": [
+        "booking confirmation",
+        "Buchungsbestätigung",
+        "resend",
+        "erneut senden",
+        "email",
+        "confirmation number",
+        "Bestätigungsnummer"
+      ],
+      "text": {
+        "de": "Sehr geehrte Damen und Herren,\n\nvielen Dank für Ihre Nachricht.\n\nIm Anhang finden Sie Ihre Buchungsbestätigung für die Buchungsnummer [BUCHUNGSNUMMER].\n\nBitte prüfen Sie auch Ihren Spam-Ordner, falls künftige E-Mails von uns nicht im Posteingang erscheinen.\n\nBei weiteren Fragen stehen wir Ihnen zur Verfügung.",
+        "en": "Dear Sir or Madam,\n\nThank you for your message.\n\nPlease find attached your booking confirmation for reservation number [BOOKING NUMBER].\n\nWe also recommend checking your spam folder in case future emails from us are filtered there.\n\nIf you have further questions you can always contact us."
+      },
+      "bodyOnly": {
+        "de": "Im Anhang finden Sie Ihre Buchungsbestätigung für die Buchungsnummer [BUCHUNGSNUMMER].\n\nBitte prüfen Sie auch Ihren Spam-Ordner, falls künftige E-Mails von uns nicht im Posteingang erscheinen.",
+        "en": "Please find attached your booking confirmation for reservation number [BOOKING NUMBER].\n\nWe also recommend checking your spam folder in case future emails from us are filtered there."
+      }
+    },
+    {
+      "title": "Name Change on Booking / Namensänderung der Buchung",
+      "tags": [
+        "name change",
+        "Namensänderung",
+        "guest name",
+        "Gastname",
+        "booking update",
+        "Buchungsänderung",
+        "correction",
+        "Korrektur"
+      ],
+      "text": {
+        "de": "Sehr geehrte Damen und Herren,\n\nvielen Dank für Ihre Nachricht.\n\nWir haben den Namen in Ihrer Buchung [BUCHUNGSNUMMER] auf [NEUER NAME] geändert.\n\nIm Anhang finden Sie Ihre aktualisierte Buchungsbestätigung.\n\nBei weiteren Fragen stehen wir Ihnen zur Verfügung.",
+        "en": "Dear Sir or Madam,\n\nThank you for your message.\n\nWe have updated the name on your booking [BOOKING NUMBER] to [NEW NAME].\n\nPlease find attached your updated booking confirmation.\n\nIf you have further questions you can always contact us."
+      },
+      "bodyOnly": {
+        "de": "Wir haben den Namen in Ihrer Buchung [BUCHUNGSNUMMER] auf [NEUER NAME] geändert.\n\nIm Anhang finden Sie Ihre aktualisierte Buchungsbestätigung.",
+        "en": "We have updated the name on your booking [BOOKING NUMBER] to [NEW NAME].\n\nPlease find attached your updated booking confirmation."
+      }
+    },
+    {
+      "title": "Group Booking – Redirect to Group Department / Gruppenbuchung – Weiterleitung an Gruppenabteilung",
+      "tags": [
+        "group booking",
+        "Gruppenbuchung",
+        "group department",
+        "Gruppenabteilung",
+        "10 guests",
+        "10 Personen",
+        "large group",
+        "große Gruppe",
+        "group reservation",
+        "Gruppenreservierung"
+      ],
+      "text": {
+        "de": "Sehr geehrte Damen und Herren,\n\nvielen Dank für Ihre Nachricht.\n\nFür Gruppenanfragen ab 10 Personen ist unsere Gruppenabteilung zuständig, die Ihnen ein individuelles Angebot erstellen kann.\n\nSie erreichen die Abteilung unter:\nTelefon: +49 30 80947 1235\nE-Mail: groups@aohostels.com\n\nDie Erreichbarkeit ist Montag bis Freitag von 09:00–18:30 Uhr.\n\nBei weiteren Fragen stehen wir Ihnen zur Verfügung.",
+        "en": "Dear Sir or Madam,\n\nThank you for your message.\n\nFor group bookings of 10 or more guests, our Group Reservations department will be best placed to provide you with a tailored offer.\n\nYou can reach them at:\nPhone: +49 30 80947 1235\nEmail: groups@aohostels.com\n\nAvailability: Monday to Friday, 9:00 AM – 6:30 PM.\n\nIf you have further questions you can always contact us."
+      },
+      "bodyOnly": {
+        "de": "Für Gruppenanfragen ab 10 Personen ist unsere Gruppenabteilung zuständig, die Ihnen ein individuelles Angebot erstellen kann.\n\nSie erreichen die Abteilung unter:\nTelefon: +49 30 80947 1235\nE-Mail: groups@aohostels.com\n\nDie Erreichbarkeit ist Montag bis Freitag von 09:00–18:30 Uhr.",
+        "en": "For group bookings of 10 or more guests, our Group Reservations department will be best placed to provide you with a tailored offer.\n\nYou can reach them at:\nPhone: +49 30 80947 1235\nEmail: groups@aohostels.com\n\nAvailability: Monday to Friday, 9:00 AM – 6:30 PM."
+      }
+    },
+    {
+      "title": "a&o Club – Discount and Membership Info / a&o Club – Rabatt und Mitgliedschaft",
+      "tags": [
+        "a&o club",
+        "club membership",
+        "Mitgliedschaft",
+        "discount",
+        "Rabatt",
+        "20%",
+        "AOA",
+        "club rate",
+        "Club-Tarif",
+        "loyalty"
+      ],
+      "text": {
+        "de": "Sehr geehrte Damen und Herren,\n\nvielen Dank für Ihre Nachricht.\n\nMit einer a&o Club-Mitgliedschaft erhalten Sie 20 % Rabatt auf alle Buchungen sowie die Möglichkeit zur kostenlosen Stornierung jederzeit bis zur Ankunft.\n\nDie Mitgliedschaft ist kostenlos und kann direkt über unsere Website abgeschlossen werden: https://www.aohostels.com\n\nBei weiteren Fragen stehen wir Ihnen zur Verfügung.",
+        "en": "Dear Sir or Madam,\n\nThank you for your message.\n\nWith an a&o Club membership you receive a 20% discount on all bookings, as well as the option to cancel free of charge at any time before arrival.\n\nMembership is free and can be set up directly on our website: https://www.aohostels.com\n\nIf you have further questions you can always contact us."
+      },
+      "bodyOnly": {
+        "de": "Mit einer a&o Club-Mitgliedschaft erhalten Sie 20 % Rabatt auf alle Buchungen sowie die Möglichkeit zur kostenlosen Stornierung jederzeit bis zur Ankunft.\n\nDie Mitgliedschaft ist kostenlos und kann direkt über unsere Website abgeschlossen werden: https://www.aohostels.com",
+        "en": "With an a&o Club membership you receive a 20% discount on all bookings, as well as the option to cancel free of charge at any time before arrival.\n\nMembership is free and can be set up directly on our website: https://www.aohostels.com"
+      }
+    },
+    {
+      "title": "Accessible / Barrier-Free Room Request Noted / Barrierefreies Zimmer – Anfrage vermerkt",
+      "tags": [
+        "accessible room",
+        "barrierefreies Zimmer",
+        "wheelchair",
+        "Rollstuhl",
+        "disability",
+        "Behinderung",
+        "barrier-free",
+        "barrierefrei",
+        "ground floor",
+        "Erdgeschoss",
+        "special needs",
+        "Sonderbedürfnisse"
+      ],
+      "text": {
+        "de": "Sehr geehrte Damen und Herren,\n\nvielen Dank für Ihre Nachricht.\n\nWir haben Ihren Wunsch nach einem barrierefreien Zimmer in Ihrer Buchung [BUCHUNGSNUMMER] vermerkt. Unsere barrierefreien Zimmer befinden sich im Erdgeschoss und verfügen über bodenebene Duschen und Haltegriffe.\n\nBitte beachten Sie, dass die endgültige Zimmerzuteilung durch die Rezeption bei Ihrer Ankunft erfolgt. Wir werden Ihren Wunsch nach Möglichkeit berücksichtigen.\n\nBei weiteren Fragen stehen wir Ihnen zur Verfügung.",
+        "en": "Dear Sir or Madam,\n\nThank you for your message.\n\nWe have noted your request for an accessible room on booking [BOOKING NUMBER]. Our barrier-free rooms are located on the ground floor and feature level-access showers and grab rails.\n\nPlease note that the final room assignment is made by reception upon your arrival. We will do our best to accommodate your request.\n\nIf you have further questions you can always contact us."
+      },
+      "bodyOnly": {
+        "de": "Wir haben Ihren Wunsch nach einem barrierefreien Zimmer in Ihrer Buchung [BUCHUNGSNUMMER] vermerkt. Unsere barrierefreien Zimmer befinden sich im Erdgeschoss und verfügen über bodenebene Duschen und Haltegriffe.\n\nBitte beachten Sie, dass die endgültige Zimmerzuteilung durch die Rezeption bei Ihrer Ankunft erfolgt. Wir werden Ihren Wunsch nach Möglichkeit berücksichtigen.",
+        "en": "We have noted your request for an accessible room on booking [BOOKING NUMBER]. Our barrier-free rooms are located on the ground floor and feature level-access showers and grab rails.\n\nPlease note that the final room assignment is made by reception upon your arrival. We will do our best to accommodate your request."
+      }
+    },
+    {
+      "title": "Dorm Upgrade to Private Room (Make It Private) / Mehrbettzimmer als Privatzimmer (Make It Private)",
+      "tags": [
+        "make it private",
+        "dorm upgrade",
+        "Mehrbettzimmer",
+        "Privatzimmer",
+        "private use",
+        "Alleinnutzung",
+        "surcharge",
+        "Aufpreis",
+        "dorm to private",
+        "upgrade"
+      ],
+      "text": {
+        "de": "Sehr geehrte Damen und Herren,\n\nvielen Dank für Ihre Nachricht.\n\nEs ist möglich, ein Mehrbettzimmer als Privatzimmer zu nutzen. Hierfür fällt ein Aufpreis von €15 pro Bett pro Nacht (zusätzlich zum gebuchten Bettpreis) an.\n\nGerne fügen wir diese Option Ihrer Buchung hinzu. Bitte teilen Sie uns Ihre Buchungsnummer mit, falls Sie dies wünschen.\n\nBei weiteren Fragen stehen wir Ihnen zur Verfügung.",
+        "en": "Dear Sir or Madam,\n\nThank you for your message.\n\nIt is possible to use a shared dormitory as a private room. A surcharge of €15 per bed per night applies (in addition to the booked bed price).\n\nWe are happy to add this option to your booking. Please provide your booking number if you would like to proceed.\n\nIf you have further questions you can always contact us."
+      },
+      "bodyOnly": {
+        "de": "Es ist möglich, ein Mehrbettzimmer als Privatzimmer zu nutzen. Hierfür fällt ein Aufpreis von €15 pro Bett pro Nacht (zusätzlich zum gebuchten Bettpreis) an.\n\nGerne fügen wir diese Option Ihrer Buchung hinzu. Bitte teilen Sie uns Ihre Buchungsnummer mit, falls Sie dies wünschen.",
+        "en": "It is possible to use a shared dormitory as a private room. A surcharge of €15 per bed per night applies (in addition to the booked bed price).\n\nWe are happy to add this option to your booking. Please provide your booking number if you would like to proceed."
+      }
+    },
+    {
+      "title": "Late Check-Out – Not Available / Später Check-Out – Nicht möglich",
+      "tags": [
+        "late check-out",
+        "später Check-out",
+        "not available",
+        "nicht möglich",
+        "check-out",
+        "Abreise",
+        "high occupancy",
+        "hohe Belegung"
+      ],
+      "text": {
+        "de": "Sehr geehrte Damen und Herren,\n\nvielen Dank für Ihre Nachricht.\n\nLeider können wir für Ihre Buchung keinen späten Check-out anbieten, da das Haus an Ihrem Abreisetag stark ausgebucht ist.\n\nDer reguläre Check-out ist bis 10:00 Uhr. Ihr Gepäck können Sie selbstverständlich im Gepäckraum des Hostels aufbewahren.\n\nBei weiteren Fragen stehen wir Ihnen zur Verfügung.",
+        "en": "Dear Sir or Madam,\n\nThank you for your message.\n\nUnfortunately, we are unable to offer a late check-out for your booking, as the property is heavily occupied on your departure date.\n\nStandard check-out is by 10:00 AM. You are of course welcome to store your luggage in the hostel's luggage room.\n\nIf you have further questions you can always contact us."
+      },
+      "bodyOnly": {
+        "de": "Leider können wir für Ihre Buchung keinen späten Check-out anbieten, da das Haus an Ihrem Abreisetag stark ausgebucht ist.\n\nDer reguläre Check-out ist bis 10:00 Uhr. Ihr Gepäck können Sie selbstverständlich im Gepäckraum des Hostels aufbewahren.",
+        "en": "Unfortunately, we are unable to offer a late check-out for your booking, as the property is heavily occupied on your departure date.\n\nStandard check-out is by 10:00 AM. You are of course welcome to store your luggage in the hostel's luggage room."
+      }
+    },
+    {
+      "title": "Refund – Bank Details Required / Erstattung – Bankdaten erforderlich",
+      "tags": [
+        "refund",
+        "Erstattung",
+        "IBAN",
+        "SWIFT",
+        "BIC",
+        "bank details",
+        "Bankdaten",
+        "bank transfer",
+        "Überweisung",
+        "refund processing",
+        "Rückerstattung"
+      ],
+      "text": {
+        "de": "Sehr geehrte Damen und Herren,\n\nvielen Dank für Ihre Nachricht.\n\nUm die Rückerstattung zu veranlassen, benötigen wir Ihre Bankverbindung:\n\n– IBAN:\n– SWIFT/BIC:\n– Kontoinhaber:\n\nBitte antworten Sie auf diese E-Mail mit den entsprechenden Daten. Nach Eingang werden wir die Erstattung umgehend bearbeiten.\n\nBei weiteren Fragen stehen wir Ihnen zur Verfügung.",
+        "en": "Dear Sir or Madam,\n\nThank you for your message.\n\nIn order to process your refund, we require your bank details:\n\n– IBAN:\n– SWIFT/BIC:\n– Account holder:\n\nPlease reply to this email with the relevant information. Once received, we will process the refund promptly.\n\nIf you have further questions you can always contact us."
+      },
+      "bodyOnly": {
+        "de": "Um die Rückerstattung zu veranlassen, benötigen wir Ihre Bankverbindung:\n\n– IBAN:\n– SWIFT/BIC:\n– Kontoinhaber:\n\nBitte antworten Sie auf diese E-Mail mit den entsprechenden Daten. Nach Eingang werden wir die Erstattung umgehend bearbeiten.",
+        "en": "In order to process your refund, we require your bank details:\n\n– IBAN:\n– SWIFT/BIC:\n– Account holder:\n\nPlease reply to this email with the relevant information. Once received, we will process the refund promptly."
+      }
+    },
+    {
+      "title": "Refund Processing Time / Bearbeitungszeit der Erstattung",
+      "tags": [
+        "refund",
+        "Erstattung",
+        "processing time",
+        "Bearbeitungszeit",
+        "2-4 weeks",
+        "2–4 Wochen",
+        "bank transfer",
+        "Überweisung",
+        "refund status",
+        "Erstattungsstatus"
+      ],
+      "text": {
+        "de": "Sehr geehrte Damen und Herren,\n\nvielen Dank für Ihre Nachricht.\n\nDie Bearbeitung von Erstattungen dauert in der Regel 2–4 Wochen. Der Betrag wird per Überweisung auf das angegebene Konto zurückgezahlt.\n\nBei Rückfragen zur Zahlung wenden Sie sich bitte an: debit@aohostels.com\n\nBei weiteren Fragen stehen wir Ihnen zur Verfügung.",
+        "en": "Dear Sir or Madam,\n\nThank you for your message.\n\nRefunds are typically processed within 2–4 weeks. The amount will be returned by bank transfer to the account provided.\n\nFor payment-specific queries, please contact: debit@aohostels.com\n\nIf you have further questions you can always contact us."
+      },
+      "bodyOnly": {
+        "de": "Die Bearbeitung von Erstattungen dauert in der Regel 2–4 Wochen. Der Betrag wird per Überweisung auf das angegebene Konto zurückgezahlt.\n\nBei Rückfragen zur Zahlung wenden Sie sich bitte an: debit@aohostels.com",
+        "en": "Refunds are typically processed within 2–4 weeks. The amount will be returned by bank transfer to the account provided.\n\nFor payment-specific queries, please contact: debit@aohostels.com"
+      }
+    },
+    {
+      "title": "Duplicate Charge / Double Booking / Doppelte Abbuchung / Doppelte Buchung",
+      "tags": [
+        "duplicate charge",
+        "doppelte Abbuchung",
+        "double booking",
+        "Doppelbuchung",
+        "overcharge",
+        "Überzahlung",
+        "refund",
+        "Erstattung",
+        "technical error",
+        "technischer Fehler"
+      ],
+      "text": {
+        "de": "Sehr geehrte Damen und Herren,\n\nvielen Dank für Ihre Nachricht.\n\nWir entschuldigen uns für die entstandenen Unannehmlichkeiten. Bitte senden Sie uns einen Screenshot oder Kontoauszug, der die doppelte Abbuchung belegt, sowie Ihre Buchungsnummer an booking@aohostels.com.\n\nWir werden den Fall umgehend prüfen und uns mit Ihnen in Verbindung setzen.\n\nBei weiteren Fragen stehen wir Ihnen zur Verfügung.",
+        "en": "Dear Sir or Madam,\n\nThank you for your message.\n\nWe apologize for the inconvenience. Please send us a screenshot or bank statement showing the duplicate charge, along with your booking number, to booking@aohostels.com.\n\nWe will investigate the matter promptly and get back to you.\n\nIf you have further questions you can always contact us."
+      },
+      "bodyOnly": {
+        "de": "Wir entschuldigen uns für die entstandenen Unannehmlichkeiten. Bitte senden Sie uns einen Screenshot oder Kontoauszug, der die doppelte Abbuchung belegt, sowie Ihre Buchungsnummer an booking@aohostels.com.\n\nWir werden den Fall umgehend prüfen und uns mit Ihnen in Verbindung setzen.",
+        "en": "We apologize for the inconvenience. Please send us a screenshot or bank statement showing the duplicate charge, along with your booking number, to booking@aohostels.com.\n\nWe will investigate the matter promptly and get back to you."
+      }
+    },
+    {
+      "title": "Invoice Address Change – Within One Month / Rechnungsadresse ändern – Innerhalb eines Monats",
+      "tags": [
+        "invoice",
+        "Rechnung",
+        "address change",
+        "Adressänderung",
+        "invoice update",
+        "Rechnungsänderung",
+        "billing address",
+        "Rechnungsadresse",
+        "within one month",
+        "innerhalb eines Monats"
+      ],
+      "text": {
+        "de": "Sehr geehrte Damen und Herren,\n\nvielen Dank für Ihre Nachricht.\n\nWir haben die Rechnungsadresse für Ihre Buchung [BUCHUNGSNUMMER] aktualisiert. Im Anhang finden Sie die korrigierte Rechnung.\n\nBitte beachten Sie, dass Rechnungsänderungen nur innerhalb eines Monats nach dem Aufenthalt möglich sind.\n\nBei weiteren Fragen stehen wir Ihnen zur Verfügung.",
+        "en": "Dear Sir or Madam,\n\nThank you for your message.\n\nWe have updated the invoice address for your booking [BOOKING NUMBER]. Please find the corrected invoice attached.\n\nPlease note that invoice changes are only possible within one month of your stay.\n\nIf you have further questions you can always contact us."
+      },
+      "bodyOnly": {
+        "de": "Wir haben die Rechnungsadresse für Ihre Buchung [BUCHUNGSNUMMER] aktualisiert. Im Anhang finden Sie die korrigierte Rechnung.\n\nBitte beachten Sie, dass Rechnungsänderungen nur innerhalb eines Monats nach dem Aufenthalt möglich sind.",
+        "en": "We have updated the invoice address for your booking [BOOKING NUMBER]. Please find the corrected invoice attached.\n\nPlease note that invoice changes are only possible within one month of your stay."
+      }
+    },
+    {
+      "title": "City Tax / Tourist Tax Explanation / Erklärung Kurtaxe / Touristensteuer",
+      "tags": [
+        "city tax",
+        "Kurtaxe",
+        "tourist tax",
+        "Touristensteuer",
+        "Übernachtungssteuer",
+        "local tax",
+        "Ortssteuer",
+        "tax",
+        "Steuer",
+        "city levy"
+      ],
+      "text": {
+        "de": "Sehr geehrte Damen und Herren,\n\nvielen Dank für Ihre Nachricht.\n\nIn einigen Städten ist eine gesetzlich vorgeschriebene Kurtaxe (Übernachtungssteuer) zu entrichten, die nicht im Zimmerpreis enthalten ist und vor Ort beim Check-in gezahlt werden muss.\n\nDie Höhe der Abgabe richtet sich nach den Vorgaben der jeweiligen Gemeinde. Personen auf Dienstreise mit entsprechendem Nachweis sind in bestimmten Städten von der Abgabe befreit.\n\nBei weiteren Fragen stehen wir Ihnen zur Verfügung.",
+        "en": "Dear Sir or Madam,\n\nThank you for your message.\n\nIn some cities, a legally required city tax (tourist tax) applies. This is not included in the room price and must be paid on-site at check-in.\n\nThe amount is determined by local regulations. In certain cities, business travelers with appropriate documentation may be exempt from this tax.\n\nIf you have further questions you can always contact us."
+      },
+      "bodyOnly": {
+        "de": "In einigen Städten ist eine gesetzlich vorgeschriebene Kurtaxe (Übernachtungssteuer) zu entrichten, die nicht im Zimmerpreis enthalten ist und vor Ort beim Check-in gezahlt werden muss.\n\nDie Höhe der Abgabe richtet sich nach den Vorgaben der jeweiligen Gemeinde. Personen auf Dienstreise mit entsprechendem Nachweis sind in bestimmten Städten von der Abgabe befreit.",
+        "en": "In some cities, a legally required city tax (tourist tax) applies. This is not included in the room price and must be paid on-site at check-in.\n\nThe amount is determined by local regulations. In certain cities, business travelers with appropriate documentation may be exempt from this tax."
+      }
+    },
+    {
+      "title": "Company / Business Invoice Request / Firmenrechnung anfordern",
+      "tags": [
+        "company invoice",
+        "Firmenrechnung",
+        "business booking",
+        "Firmenbuchung",
+        "VAT",
+        "Mehrwertsteuer",
+        "tax number",
+        "Steuernummer",
+        "NIP",
+        "business travel",
+        "Geschäftsreise"
+      ],
+      "text": {
+        "de": "Sehr geehrte Damen und Herren,\n\nvielen Dank für Ihre Nachricht.\n\nGerne stellen wir Ihnen eine Firmenrechnung aus. Bitte teilen Sie uns dazu folgende Daten mit:\n\n– Firmenname:\n– Rechnungsadresse:\n– USt-IdNr. (falls zutreffend):\n\nNach Eingang der Daten werden wir die Rechnung umgehend ausstellen.\n\nBei weiteren Fragen stehen wir Ihnen zur Verfügung.",
+        "en": "Dear Sir or Madam,\n\nThank you for your message.\n\nWe would be happy to issue a company invoice. Please provide us with the following details:\n\n– Company name:\n– Billing address:\n– VAT number (if applicable):\n\nOnce we receive this information, we will issue the invoice promptly.\n\nIf you have further questions you can always contact us."
+      },
+      "bodyOnly": {
+        "de": "Gerne stellen wir Ihnen eine Firmenrechnung aus. Bitte teilen Sie uns dazu folgende Daten mit:\n\n– Firmenname:\n– Rechnungsadresse:\n– USt-IdNr. (falls zutreffend):\n\nNach Eingang der Daten werden wir die Rechnung umgehend ausstellen.",
+        "en": "We would be happy to issue a company invoice. Please provide us with the following details:\n\n– Company name:\n– Billing address:\n– VAT number (if applicable):\n\nOnce we receive this information, we will issue the invoice promptly."
+      }
+    },
+    {
+      "title": "Breakfast – Dietary Restrictions Noted / Frühstück – Unverträglichkeiten vermerkt",
+      "tags": [
+        "breakfast",
+        "Frühstück",
+        "dietary restrictions",
+        "Unverträglichkeiten",
+        "allergy",
+        "Allergie",
+        "gluten",
+        "lactose",
+        "vegetarian",
+        "vegetarisch",
+        "halal",
+        "special diet",
+        "Sonderernährung"
+      ],
+      "text": {
+        "de": "Sehr geehrte Damen und Herren,\n\nvielen Dank für Ihre Nachricht.\n\nWir haben Ihre Ernährungsbesonderheiten in Ihrer Buchung vermerkt. Bitte sprechen Sie bei Ihrer Ankunft noch einmal direkt mit dem Frühstücksteam, damit diese bestmöglich auf Ihre Bedürfnisse eingehen können.\n\nUnser Frühstücksbuffet enthält täglich vegane, vegetarische und glutenfreie Optionen.\n\nBei weiteren Fragen stehen wir Ihnen zur Verfügung.",
+        "en": "Dear Sir or Madam,\n\nThank you for your message.\n\nWe have noted your dietary requirements on your booking. Please also speak directly with the breakfast team upon arrival so they can best accommodate your needs.\n\nOur breakfast buffet includes vegan, vegetarian, and gluten-free options daily.\n\nIf you have further questions you can always contact us."
+      },
+      "bodyOnly": {
+        "de": "Wir haben Ihre Ernährungsbesonderheiten in Ihrer Buchung vermerkt. Bitte sprechen Sie bei Ihrer Ankunft noch einmal direkt mit dem Frühstücksteam, damit diese bestmöglich auf Ihre Bedürfnisse eingehen können.\n\nUnser Frühstücksbuffet enthält täglich vegane, vegetarische und glutenfreie Optionen.",
+        "en": "We have noted your dietary requirements on your booking. Please also speak directly with the breakfast team upon arrival so they can best accommodate your needs.\n\nOur breakfast buffet includes vegan, vegetarian, and gluten-free options daily."
+      }
+    },
+    {
+      "title": "Children's Breakfast Pricing / Kinderfrühstück – Preise",
+      "tags": [
+        "children's breakfast",
+        "Kinderfrühstück",
+        "kids",
+        "Kinder",
+        "pricing",
+        "Preise",
+        "free",
+        "kostenlos",
+        "family",
+        "Familie",
+        "breakfast",
+        "Frühstück"
+      ],
+      "text": {
+        "de": "Sehr geehrte Damen und Herren,\n\nvielen Dank für Ihre Nachricht.\n\nDas Frühstück für Kinder bis 6 Jahre ist kostenlos. Für Kinder von 7 bis 17 Jahren wird ein ermäßigter Preis berechnet.\n\nDie genauen Preise variieren je nach Standort und werden beim Check-in erhoben.\n\nBei weiteren Fragen stehen wir Ihnen zur Verfügung.",
+        "en": "Dear Sir or Madam,\n\nThank you for your message.\n\nBreakfast is free of charge for children up to 6 years old. For children aged 7 to 17, a reduced price applies.\n\nExact prices vary by location and are payable at check-in.\n\nIf you have further questions you can always contact us."
+      },
+      "bodyOnly": {
+        "de": "Das Frühstück für Kinder bis 6 Jahre ist kostenlos. Für Kinder von 7 bis 17 Jahren wird ein ermäßigter Preis berechnet.\n\nDie genauen Preise variieren je nach Standort und werden beim Check-in erhoben.",
+        "en": "Breakfast is free of charge for children up to 6 years old. For children aged 7 to 17, a reduced price applies.\n\nExact prices vary by location and are payable at check-in."
+      }
+    },
+    {
+      "title": "Feedback Voucher (AOFB) – How It Works / Feedback-Gutschein (AOFB) – So funktioniert es",
+      "tags": [
+        "feedback voucher",
+        "AOFB",
+        "Feedback-Gutschein",
+        "complimentary",
+        "kostenlos",
+        "voucher redemption",
+        "Gutscheineinlösung",
+        "city tax",
+        "Kurtaxe",
+        "check-in",
+        "Check-in"
+      ],
+      "text": {
+        "de": "Sehr geehrte Damen und Herren,\n\nvielen Dank für Ihre Nachricht.\n\nIhr Feedback-Gutschein (AOFB) kann direkt über unsere Gutscheinverwaltungsseite eingelöst werden: https://voucher.aohostels.com\n\nBitte beachten Sie:\n– Der Gutschein ist bei Ankunft an der Rezeption vorzuzeigen\n– Eine etwaige Kurtaxe ist weiterhin vor Ort zu entrichten\n– Für offene Beträge (z.B. zusätzliche Leistungen) erhalten Sie vor Ort eine Splitrechnung\n\nBei weiteren Fragen zu Ihrem Gutschein wenden Sie sich bitte an: gutschein@aohostels.com",
+        "en": "Dear Sir or Madam,\n\nThank you for your message.\n\nYour feedback voucher (AOFB) can be redeemed directly on our voucher management page: https://voucher.aohostels.com\n\nPlease note:\n– The voucher must be presented at reception on arrival\n– Any applicable city tax is still payable on-site\n– For any outstanding balance (e.g. additional services), you will receive a split invoice on-site\n\nFor further questions about your voucher, please contact: gutschein@aohostels.com"
+      },
+      "bodyOnly": {
+        "de": "Ihr Feedback-Gutschein (AOFB) kann direkt über unsere Gutscheinverwaltungsseite eingelöst werden: https://voucher.aohostels.com\n\nBitte beachten Sie:\n– Der Gutschein ist bei Ankunft an der Rezeption vorzuzeigen\n– Eine etwaige Kurtaxe ist weiterhin vor Ort zu entrichten\n– Für offene Beträge (z.B. zusätzliche Leistungen) erhalten Sie vor Ort eine Splitrechnung",
+        "en": "Your feedback voucher (AOFB) can be redeemed directly on our voucher management page: https://voucher.aohostels.com\n\nPlease note:\n– The voucher must be presented at reception on arrival\n– Any applicable city tax is still payable on-site\n– For any outstanding balance (e.g. additional services), you will receive a split invoice on-site"
+      }
+    },
+    {
+      "title": "Voucher Refund Within 30 Days / Gutschein-Rückerstattung innerhalb von 30 Tagen",
+      "tags": [
+        "voucher refund",
+        "Gutschein-Rückerstattung",
+        "30 days",
+        "30 Tage",
+        "refund",
+        "Erstattung",
+        "cancellation",
+        "Stornierung",
+        "voucher",
+        "Gutschein"
+      ],
+      "text": {
+        "de": "Sehr geehrte Damen und Herren,\n\nvielen Dank für Ihre Nachricht.\n\nEine Rückerstattung des Gutscheins ist innerhalb von 30 Tagen nach dem Kaufdatum möglich.\n\nBitte wenden Sie sich mit Ihrem Gutscheincode an: refundrequest@aohostels.com\n\nBei weiteren Fragen stehen wir Ihnen zur Verfügung.",
+        "en": "Dear Sir or Madam,\n\nThank you for your message.\n\nA refund for your voucher is possible within 30 days of the purchase date.\n\nPlease contact refundrequest@aohostels.com with your voucher code to initiate the process.\n\nIf you have further questions you can always contact us."
+      },
+      "bodyOnly": {
+        "de": "Eine Rückerstattung des Gutscheins ist innerhalb von 30 Tagen nach dem Kaufdatum möglich.\n\nBitte wenden Sie sich mit Ihrem Gutscheincode an: refundrequest@aohostels.com",
+        "en": "A refund for your voucher is possible within 30 days of the purchase date.\n\nPlease contact refundrequest@aohostels.com with your voucher code to initiate the process."
+      }
+    },
+    {
+      "title": "Lost & Found / Fundsachen",
+      "tags": [
+        "lost and found",
+        "Fundsachen",
+        "lost item",
+        "verlorener Gegenstand",
+        "forgotten",
+        "vergessen",
+        "belongings",
+        "Eigentum",
+        "hostel",
+        "Rezeption"
+      ],
+      "text": {
+        "de": "Sehr geehrte Damen und Herren,\n\nvielen Dank für Ihre Nachricht.\n\nFür Fundsachen wenden Sie sich bitte direkt an das a&o, in dem Sie übernachtet haben. Die Rezeption führt eine Liste der abgegebenen Fundgegenstände.\n\nBitte geben Sie folgende Informationen an:\n– Buchungsnummer\n– Beschreibung des Gegenstands\n– Zeitraum des Aufenthalts\n\nDie Kontaktdaten unserer Häuser finden Sie auf: https://www.aohostels.com\n\nBei weiteren Fragen stehen wir Ihnen zur Verfügung.",
+        "en": "Dear Sir or Madam,\n\nThank you for your message.\n\nFor lost and found items, please contact the a&o property where you stayed directly. Reception keeps a record of all handed-in items.\n\nPlease have the following ready:\n– Booking number\n– Description of the item\n– Dates of your stay\n\nContact details for all our properties can be found at: https://www.aohostels.com\n\nIf you have further questions you can always contact us."
+      },
+      "bodyOnly": {
+        "de": "Für Fundsachen wenden Sie sich bitte direkt an das a&o, in dem Sie übernachtet haben. Die Rezeption führt eine Liste der abgegebenen Fundgegenstände.\n\nBitte geben Sie folgende Informationen an:\n– Buchungsnummer\n– Beschreibung des Gegenstands\n– Zeitraum des Aufenthalts\n\nDie Kontaktdaten unserer Häuser finden Sie auf: https://www.aohostels.com",
+        "en": "For lost and found items, please contact the a&o property where you stayed directly. Reception keeps a record of all handed-in items.\n\nPlease have the following ready:\n– Booking number\n– Description of the item\n– Dates of your stay\n\nContact details for all our properties can be found at: https://www.aohostels.com"
+      }
+    },
+    {
+      "title": "Stolen Items – Police Report Required / Gestohlene Gegenstände – Polizeibericht erforderlich",
+      "tags": [
+        "stolen",
+        "gestohlen",
+        "theft",
+        "Diebstahl",
+        "police report",
+        "Polizeibericht",
+        "complaint",
+        "Beschwerde",
+        "feedback",
+        "security",
+        "Sicherheit"
+      ],
+      "text": {
+        "de": "Sehr geehrte Damen und Herren,\n\nvielen Dank für Ihre Nachricht.\n\nEs tut uns sehr leid von diesem Vorfall zu erfahren.\n\nBitte erstatten Sie zunächst Anzeige bei der Polizei und senden Sie uns den Polizeibericht anschließend an: feedback@aohostels.com\n\nUnser Feedback-Team wird sich dann schnellstmöglich mit Ihnen in Verbindung setzen.\n\nBei weiteren Fragen stehen wir Ihnen zur Verfügung.",
+        "en": "Dear Sir or Madam,\n\nThank you for your message.\n\nWe are very sorry to hear about this incident.\n\nPlease first file a police report and then send it to us at: feedback@aohostels.com\n\nOur feedback team will then get in touch with you as soon as possible.\n\nIf you have further questions you can always contact us."
+      },
+      "bodyOnly": {
+        "de": "Es tut uns sehr leid von diesem Vorfall zu erfahren.\n\nBitte erstatten Sie zunächst Anzeige bei der Polizei und senden Sie uns den Polizeibericht anschließend an: feedback@aohostels.com\n\nUnser Feedback-Team wird sich dann schnellstmöglich mit Ihnen in Verbindung setzen.",
+        "en": "We are very sorry to hear about this incident.\n\nPlease first file a police report and then send it to us at: feedback@aohostels.com\n\nOur feedback team will then get in touch with you as soon as possible."
+      }
+    },
+    {
+      "title": "Guest Complaint – Forwarded to Feedback Team / Beschwerde – Weiterleitung an Feedback-Abteilung",
+      "tags": [
+        "complaint",
+        "Beschwerde",
+        "feedback",
+        "escalation",
+        "Eskalation",
+        "apology",
+        "Entschuldigung",
+        "guest experience",
+        "Gasterlebnis",
+        "quality",
+        "Qualität"
+      ],
+      "text": {
+        "de": "Sehr geehrte Damen und Herren,\n\nvielen Dank für Ihre Nachricht.\n\nEs tut uns leid zu hören, dass Ihr Aufenthalt nicht Ihren Erwartungen entsprochen hat. Ihr Feedback ist für uns sehr wertvoll.\n\nWir haben Ihre Beschwerde an unsere Feedback-Abteilung weitergeleitet, die sich so bald wie möglich bei Ihnen melden wird.\n\nWir entschuldigen uns für die entstandenen Unannehmlichkeiten und danken Ihnen für Ihr Verständnis.",
+        "en": "Dear Sir or Madam,\n\nThank you for your message.\n\nWe are sorry to hear that your stay did not meet your expectations. Your feedback is very important to us.\n\nWe have forwarded your complaint to our feedback department, who will get back to you as soon as possible.\n\nWe apologize for the inconvenience and thank you for your understanding."
+      },
+      "bodyOnly": {
+        "de": "Es tut uns leid zu hören, dass Ihr Aufenthalt nicht Ihren Erwartungen entsprochen hat. Ihr Feedback ist für uns sehr wertvoll.\n\nWir haben Ihre Beschwerde an unsere Feedback-Abteilung weitergeleitet, die sich so bald wie möglich bei Ihnen melden wird.",
+        "en": "We are sorry to hear that your stay did not meet your expectations. Your feedback is very important to us.\n\nWe have forwarded your complaint to our feedback department, who will get back to you as soon as possible."
+      }
+    },
+    {
+      "title": "Visa Confirmation Letter / Visabestätigungsschreiben",
+      "tags": [
+        "visa",
+        "Visum",
+        "confirmation letter",
+        "Bestätigungsschreiben",
+        "visa support",
+        "Visaunterstützung",
+        "booking confirmation",
+        "Buchungsbestätigung",
+        "passport",
+        "Reisepass"
+      ],
+      "text": {
+        "de": "Sehr geehrte Damen und Herren,\n\nvielen Dank für Ihre Nachricht.\n\nGerne stellen wir Ihnen ein Bestätigungsschreiben für Ihren Visumantrag aus.\n\nBitte teilen Sie uns dazu folgende Informationen mit:\n– Vollständiger Name (wie im Reisepass)\n– Reisepassnummer\n– Geburtsdatum\n\nNach Eingang der Daten werden wir das Schreiben schnellstmöglich an Ihre E-Mail-Adresse senden.\n\nBei weiteren Fragen stehen wir Ihnen zur Verfügung.",
+        "en": "Dear Sir or Madam,\n\nThank you for your message.\n\nWe are happy to provide you with a confirmation letter for your visa application.\n\nPlease send us the following information:\n– Full name (as in passport)\n– Passport number\n– Date of birth\n\nOnce received, we will send the letter to your email address as soon as possible.\n\nIf you have further questions you can always contact us."
+      },
+      "bodyOnly": {
+        "de": "Gerne stellen wir Ihnen ein Bestätigungsschreiben für Ihren Visumantrag aus.\n\nBitte teilen Sie uns dazu folgende Informationen mit:\n– Vollständiger Name (wie im Reisepass)\n– Reisepassnummer\n– Geburtsdatum\n\nNach Eingang der Daten werden wir das Schreiben schnellstmöglich an Ihre E-Mail-Adresse senden.",
+        "en": "We are happy to provide you with a confirmation letter for your visa application.\n\nPlease send us the following information:\n– Full name (as in passport)\n– Passport number\n– Date of birth\n\nOnce received, we will send the letter to your email address as soon as possible."
+      }
+    },
+    {
+      "title": "Web Check-In Instructions / Online Check-In Anleitung",
+      "tags": [
+        "web check-in",
+        "Online-Check-in",
+        "self check-in",
+        "digital check-in",
+        "instructions",
+        "Anleitung",
+        "app",
+        "kiosk",
+        "Automat",
+        "arrival",
+        "Ankunft"
+      ],
+      "text": {
+        "de": "Sehr geehrte Damen und Herren,\n\nvielen Dank für Ihre Nachricht.\n\nDen Online-Check-in können Sie bequem über unsere Website oder die a&o App durchführen:\nhttps://www.aohostels.com\n\nDen Check-in können Sie ab dem Tag vor Ihrer Ankunft abschließen. Alternativ stehen an vielen Standorten Self-Check-in-Automaten in der Lobby zur Verfügung.\n\nSollte der Online-Check-in nicht funktionieren, können Sie natürlich wie gewohnt direkt an der Rezeption einchecken.\n\nBei weiteren Fragen stehen wir Ihnen zur Verfügung.",
+        "en": "Dear Sir or Madam,\n\nThank you for your message.\n\nYou can complete online check-in via our website or the a&o app:\nhttps://www.aohostels.com\n\nCheck-in can be completed from the day before your arrival. Alternatively, self-check-in kiosks are available in the lobby at many of our locations.\n\nIf online check-in is not working, you can of course check in at reception as usual.\n\nIf you have further questions you can always contact us."
+      },
+      "bodyOnly": {
+        "de": "Den Online-Check-in können Sie bequem über unsere Website oder die a&o App durchführen:\nhttps://www.aohostels.com\n\nDen Check-in können Sie ab dem Tag vor Ihrer Ankunft abschließen. Alternativ stehen an vielen Standorten Self-Check-in-Automaten in der Lobby zur Verfügung.\n\nSollte der Online-Check-in nicht funktionieren, können Sie natürlich wie gewohnt direkt an der Rezeption einchecken.",
+        "en": "You can complete online check-in via our website or the a&o app:\nhttps://www.aohostels.com\n\nCheck-in can be completed from the day before your arrival. Alternatively, self-check-in kiosks are available in the lobby at many of our locations.\n\nIf online check-in is not working, you can of course check in at reception as usual."
+      }
+    },
+    {
+      "title": "a&o Club – Free Early Check-In for Members / a&o Club – Kostenloser früher Check-in für Mitglieder",
+      "tags": [
+        "a&o club",
+        "early check-in",
+        "Club-Mitglied",
+        "club member",
+        "free",
+        "kostenlos",
+        "membership benefit",
+        "Mitgliedsvorteil",
+        "früher Check-in",
+        "11 Uhr"
+      ],
+      "text": {
+        "de": "Sehr geehrte Damen und Herren,\n\nvielen Dank für Ihre Nachricht.\n\nAls a&o Club-Mitglied steht Ihnen der frühe Check-in ab 11:00 Uhr kostenlos zur Verfügung – vorausgesetzt, es handelt sich um ein Privatzimmer und Sie haben diesen Wunsch im Voraus angemeldet.\n\nBitte beachten Sie, dass dieser Vorteil für Gutscheinbuchungen nicht gilt.\n\nWir haben den frühen Check-in für Ihre Buchung [BUCHUNGSNUMMER] vermerkt.\n\nBei weiteren Fragen stehen wir Ihnen zur Verfügung.",
+        "en": "Dear Sir or Madam,\n\nThank you for your message.\n\nAs an a&o Club member, you are entitled to a free early check-in from 11:00 AM – provided it is a private room and you have requested it in advance.\n\nPlease note that this benefit does not apply to voucher bookings.\n\nWe have noted the early check-in on your booking [BOOKING NUMBER].\n\nIf you have further questions you can always contact us."
+      },
+      "bodyOnly": {
+        "de": "Als a&o Club-Mitglied steht Ihnen der frühe Check-in ab 11:00 Uhr kostenlos zur Verfügung – vorausgesetzt, es handelt sich um ein Privatzimmer und Sie haben diesen Wunsch im Voraus angemeldet.\n\nBitte beachten Sie, dass dieser Vorteil für Gutscheinbuchungen nicht gilt.\n\nWir haben den frühen Check-in für Ihre Buchung [BUCHUNGSNUMMER] vermerkt.",
+        "en": "As an a&o Club member, you are entitled to a free early check-in from 11:00 AM – provided it is a private room and you have requested it in advance.\n\nPlease note that this benefit does not apply to voucher bookings.\n\nWe have noted the early check-in on your booking [BOOKING NUMBER]."
+      }
+    },
+    {
+      "title": "Flex Booking – Cancelled by a&o After 18:00 / Flex-Buchung – Stornierung durch a&o nach 18:00 Uhr",
+      "tags": [
+        "flex booking",
+        "Flex-Buchung",
+        "6pm cancellation",
+        "Stornierung 18 Uhr",
+        "overbooking",
+        "Überbuchung",
+        "cancellation by a&o",
+        "Stornierung durch a&o",
+        "no web check-in",
+        "kein Online-Check-in"
+      ],
+      "text": {
+        "de": "Sehr geehrte Damen und Herren,\n\nvielen Dank für Ihre Nachricht.\n\nIhre Buchung wurde gemäß unserer Flex-Tarif-Bedingungen storniert. Flex-Buchungen können durch a&o nach 18:00 Uhr des Anreisetags storniert werden, sofern folgende Bedingungen erfüllt sind: kein Online-Check-in wurde durchgeführt, keine Zahlung erfolgt ist und keine Kreditkarte als Sicherheit hinterlegt ist.\n\nFalls Sie dennoch ankommen sollten, bitten wir Sie, sich direkt an die Rezeption zu wenden.\n\nWir entschuldigen uns für etwaige Unannehmlichkeiten und stehen Ihnen bei Fragen zur Verfügung.",
+        "en": "Dear Sir or Madam,\n\nThank you for your message.\n\nYour booking was cancelled in accordance with our flex rate conditions. Flex bookings may be cancelled by a&o after 18:00 on the day of arrival if the following conditions apply: no web check-in was completed, no payment was made, and no credit card was provided as security.\n\nIf you do arrive at the property, please speak directly with reception.\n\nWe apologize for any inconvenience and are available for any further questions."
+      },
+      "bodyOnly": {
+        "de": "Ihre Buchung wurde gemäß unserer Flex-Tarif-Bedingungen storniert. Flex-Buchungen können durch a&o nach 18:00 Uhr des Anreisetags storniert werden, sofern folgende Bedingungen erfüllt sind: kein Online-Check-in wurde durchgeführt, keine Zahlung erfolgt ist und keine Kreditkarte als Sicherheit hinterlegt ist.\n\nFalls Sie dennoch ankommen sollten, bitten wir Sie, sich direkt an die Rezeption zu wenden.",
+        "en": "Your booking was cancelled in accordance with our flex rate conditions. Flex bookings may be cancelled by a&o after 18:00 on the day of arrival if the following conditions apply: no web check-in was completed, no payment was made, and no credit card was provided as security.\n\nIf you do arrive at the property, please speak directly with reception."
+      }
+    }
+  ],
+  "closings": [
+    {
+      "de": "Bei weiteren Fragen stehen wir Ihnen zur Verfügung.",
+      "en": "If you have further questions you can always contact us."
+    },
+    {
+      "de": "Wir freuen uns auf Ihre Rückmeldung.",
+      "en": "We are looking forward to hearing from you."
+    },
+    {
+      "de": "Bei weiteren Fragen stehen wir Ihnen gerne zur Verfügung!",
+      "en": "If you have any questions, feel free to ask!"
+    }
+  ]
+}

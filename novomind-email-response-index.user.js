@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         novomind-email-response-index
 // @namespace    https://example.com
-// @version      7.13
+// @version      7.14
 // @description  Inserts selected template text into focused input fields or TinyMCE editors (iframes), with F4 hotkey.
 // @author       KaiserXanderW
 // @match        *://*/*
@@ -25,6 +25,15 @@
     let filteredTemplates = [];
     let templates = [];
     let templatesLoadFailed = false;
+    let selectedIndices = new Set(); // stores indices into original `templates` array (stable across filter changes)
+    let selectedNames = [];
+    let selectedCountDiv = null;
+    let selectedSummaryEl = null;
+    let selectedNamesEl = null;
+    let languageLocked = false;
+    let preF4FieldContent = null;
+    let selectedClosingIndex = 0;
+    let closings = [];
 
     async function init() {
         console.log("Template Index Script: init() called.");
@@ -40,13 +49,14 @@
 
         setupIframeListeners();
         const loaded = await loadTemplates();
-        if (loaded === null) {
+        if (loaded.templates === null) {
             templatesLoadFailed = true;
             templates = [];
         } else {
             templatesLoadFailed = false;
-            templates = loaded;
+            templates = loaded.templates;
         }
+        closings = loaded.closings || [];
     }
 
     function setupIframeListeners() {
@@ -103,8 +113,39 @@
                el.contentEditable === "true";
     }
 
+    function getCurrentFieldContent() {
+        if (!lastFocusedElement) return '';
+        if (lastIframe && typeof tinymce !== 'undefined' && tinymce.activeEditor) {
+            return tinymce.activeEditor.getContent();
+        }
+        if (lastFocusedElement.tagName === 'TEXTAREA' || (lastFocusedElement.tagName === 'INPUT' && lastFocusedElement.type === 'text')) {
+            return lastFocusedElement.value;
+        }
+        return lastFocusedElement.innerHTML || '';
+    }
+
+    function restoreFieldContent(content) {
+        if (!lastFocusedElement) return;
+        if (lastIframe && typeof tinymce !== 'undefined' && tinymce.activeEditor) {
+            tinymce.activeEditor.setContent(content);
+            return;
+        }
+        if (lastFocusedElement.tagName === 'TEXTAREA' || (lastFocusedElement.tagName === 'INPUT' && lastFocusedElement.type === 'text')) {
+            lastFocusedElement.value = content;
+            return;
+        }
+        lastFocusedElement.innerHTML = content;
+    }
+
     function createSearchBox() {
-        if (searchBoxContainer) searchBoxContainer.remove();
+        if (searchBoxContainer) {
+            searchBoxContainer.remove();
+            searchBoxContainer = null;
+            // Reset state when re-opening (user pressed F4 again without closing properly)
+            selectedIndices.clear();
+            languageLocked = false;
+            preF4FieldContent = null;
+        }
 
         if (!lastFocusedElement) {
             alert("No text box or contenteditable field was focused.");
@@ -146,9 +187,18 @@
         const closeButton = document.createElement("button");
         closeButton.textContent = "X";
         closeButton.style.cssText = "font-size: 14px; cursor: pointer; margin-left: 5px;";
-        closeButton.addEventListener("click", closeSearchBox);
+        closeButton.addEventListener("click", () => closeSearchBox({ discard: true }));
 
         topRowContainer.append(input, closeButton);
+
+        // Selected templates summary (shown below search input when count > 0)
+        selectedSummaryEl = document.createElement("div");
+        selectedSummaryEl.id = "selectedSummary";
+        selectedSummaryEl.style.cssText = "font-size: 12px; padding: 4px 5px; color: #007bff; display: none;";
+        selectedNamesEl = document.createElement("span");
+        selectedNamesEl.id = "selectedNames";
+        selectedSummaryEl.appendChild(document.createTextNode("Selected templates: "));
+        selectedSummaryEl.appendChild(selectedNamesEl);
 
         ul = document.createElement("ul");
         ul.style.cssText = `
@@ -157,8 +207,25 @@
             overflow-y: auto; display: none;
         `;
 
-        searchBoxContainer.append(topRowContainer, ul);
+        // "N selected" counter (shown between summary and list)
+        selectedCountDiv = document.createElement("div");
+        selectedCountDiv.id = "selectedCount";
+        selectedCountDiv.style.cssText = "font-size: 12px; padding: 4px 8px; color: #007bff; display: none; border-bottom: 1px solid #eee;";
+
+        searchBoxContainer.append(topRowContainer, selectedSummaryEl, selectedCountDiv, ul);
         document.body.appendChild(searchBoxContainer);
+
+        // Save current field content for potential discard on blur/close
+        preF4FieldContent = getCurrentFieldContent();
+
+        // Blur/discard handler — discard all inserted text when focus leaves container
+        searchBoxContainer.addEventListener('focusout', (e) => {
+            setTimeout(() => {
+                if (!searchBoxContainer.contains(document.activeElement)) {
+                    closeSearchBox({ discard: true });
+                }
+            }, 100);
+        });
 
         input.focus();
         input.addEventListener("input", () => handleSearch(input.value));
@@ -201,6 +268,12 @@
             `;
             li.tabIndex = -1;
 
+            const stableIndex = templates.indexOf(template);
+            if (selectedIndices.has(stableIndex)) {
+                li.style.borderLeft = '3px solid #007bff';
+                li.style.backgroundColor = '#f0f7ff';
+            }
+
             const title = document.createElement("span");
             title.textContent = template.title;
             title.style.flex = "1";
@@ -222,6 +295,30 @@
         });
 
         highlightResult(0);
+
+        if (selectedCountDiv) {
+            if (selectedIndices.size > 0) {
+                selectedCountDiv.style.display = 'block';
+                selectedCountDiv.textContent = selectedIndices.size + ' selected';
+            } else {
+                selectedCountDiv.style.display = 'none';
+            }
+        }
+
+        if (selectedSummaryEl && selectedNamesEl) {
+            if (selectedIndices.size > 0) {
+                selectedSummaryEl.style.display = 'block';
+                let names = [];
+                for (let idx of selectedIndices) {
+                    if (idx < templates.length) {
+                        names.push(templates[idx].title);
+                    }
+                }
+                selectedNamesEl.textContent = names.join(', ');
+            } else {
+                selectedSummaryEl.style.display = 'none';
+            }
+        }
     }
 
     function createLangButton(lang, text, index) {
@@ -230,13 +327,33 @@
         button.style.cssText = `
             padding: 5px 10px; font-size: 12px; cursor: pointer;
             border: 1px solid #ccc; border-radius: 4px;
-            transition: background 0.2s, color 0.2s;
+            transition: background 0.2s, color 0.2s, opacity 0.2s;
         `;
 
         button.addEventListener("click", (e) => {
             e.stopPropagation();
-            insertTemplate(text);
-            closeSearchBox();
+            
+            // Language lock: if locked and this button is the wrong language, ignore
+            if (languageLocked && lang !== selectedLanguage) return;
+            
+            // Dedup: if already selected, no-op
+            if (selectedIndices.has(templates.indexOf(filteredTemplates[index]))) return;
+            
+            // First selection: lock language
+            if (selectedIndices.size === 0) {
+                selectedLanguage = lang;
+                languageLocked = true;
+            }
+            
+            // Track selection
+            selectedIndices.add(templates.indexOf(filteredTemplates[index]));
+            
+            // Append template body (first = greeting+body, subsequent = body-only)
+            const isFirst = selectedIndices.size === 1;
+            appendTemplateBody(filteredTemplates[index], isFirst, selectedLanguage);
+            
+            // Update UI 
+            handleSearch(input.value); // re-render to show selection visuals
         });
 
         updateButtonStyle(button, lang, index);
@@ -244,6 +361,15 @@
     }
 
     function updateButtonStyle(button, lang, index) {
+        // Language lock: dim opposite-language buttons
+        if (languageLocked && lang !== selectedLanguage) {
+            button.style.opacity = '0.4';
+            button.style.cursor = 'not-allowed';
+        } else {
+            button.style.opacity = '1';
+            button.style.cursor = 'pointer';
+        }
+        
         if (index === highlightedIndex && lang === selectedLanguage) {
             button.style.backgroundColor = "#007bff";
             button.style.color = "white";
@@ -258,7 +384,13 @@
         const items = ul.querySelectorAll("li");
 
         items.forEach((item, i) => {
-            item.style.backgroundColor = i === index ? "#bde4ff" : "";
+            if (i === index) {
+                item.style.backgroundColor = "#bde4ff";
+            } else if (selectedIndices.has(templates.indexOf(filteredTemplates[i]))) {
+                item.style.backgroundColor = "#f0f7ff";
+            } else {
+                item.style.backgroundColor = "";
+            }
 
             const buttons = item.querySelectorAll("button");
             buttons.forEach((btn) => {
@@ -286,55 +418,244 @@
                 highlightResult(highlightedIndex);
                 break;
             case "ArrowLeft":
+                if (languageLocked) return;
                 selectedLanguage = "DE";
                 highlightResult(highlightedIndex);
                 break;
             case "ArrowRight":
+                if (languageLocked) return;
                 selectedLanguage = "EN";
                 highlightResult(highlightedIndex);
                 break;
             case "Enter":
-                if (highlightedIndex >= 0 && filteredTemplates.length > 0) {
-                    const template = filteredTemplates[highlightedIndex];
-                    insertTemplate(selectedLanguage === "DE" ? template.text.de : template.text.en);
-                    closeSearchBox();
+                if (selectedIndices.size > 0 || (highlightedIndex >= 0 && filteredTemplates.length > 0)) {
+                    if (selectedIndices.size === 0 && highlightedIndex >= 0) {
+                        appendTemplateBody(filteredTemplates[highlightedIndex], true, selectedLanguage);
+                    }
+                    showClosingPicker();
                 }
                 break;
             case "Escape":
-                closeSearchBox();
+                if (selectedIndices.size > 0) {
+                    // First press: clear selection (text stays in field)
+                    selectedIndices.clear();
+                    languageLocked = false;
+                    handleSearch(input.value); // re-render to clear selection visuals
+                } else {
+                    // Second press: discard + close
+                    closeSearchBox({ discard: true });
+                }
                 break;
         }
     }
 
-    function insertTemplate(text) {
-        if (!lastFocusedElement) return;
-        lastFocusedElement.focus();
-    
-        let cleanText = text.trim().replace(/\n/g, '<br>');
-        let signature = selectedLanguage === "DE" 
-            ? '<br><br>Freundliche Grüße,<br>Alexander'
-            : '<br><br>Kind regards,<br>Alexander';
-        let wrappedText = cleanText + signature;  // Exact control
-    
-        if (typeof tinymce !== 'undefined' && tinymce.activeEditor) {
-            tinymce.activeEditor.insertContent(wrappedText);  // Use insertContent (no extra P)
-            return;
-        }
-    
-        const doc = lastIframe ? lastIframe.contentDocument : document;
-        if (doc.execCommand) {
-            doc.execCommand('insertHTML', false, wrappedText);
-            return;
-        }
-        lastFocusedElement.innerHTML += wrappedText;
+    function getBodyOnly(template, lang) {
+        if (template.bodyOnly && template.bodyOnly[lang]) return template.bodyOnly[lang];
+        let text = template.text[lang];
+        // Strip greeting
+        text = text.replace(/^(Sehr geehrte Damen und Herren,|Dear Sir or Madam,)\n\n/, '');
+        // Strip opening line
+        text = text.replace(/^(vielen Dank für Ihre Nachricht\.|Thank you for your message\.)\n\n/, '');
+        // Strip closing
+        text = text.replace(/\n\n(Bei weiteren Fragen stehen wir Ihnen zur Verfügung\.?|Wir freuen uns auf Ihre Rückmeldung\.?|If you have further questions you can always contact us\.?|We are looking forward to hearing from you\.?|If you have any questions, feel free to ask!)$/, '');
+        return text.trim();
     }
 
+    function appendTemplateBody(template, isFirst, lang) {
+        if (!lastFocusedElement) return;
+        lastFocusedElement.focus();
+        let text;
+        if (isFirst) {
+            // First template: keep greeting + body (strip closing)
+            text = template.text[lang].trim().replace(/\n/g, '<br>');
+            // Strip closing from first template too (closing chosen on finalize)
+            text = text.replace(/\n\n(Bei weiteren Fragen stehen wir Ihnen zur Verfügung\.?|Wir freuen uns auf Ihre Rückmeldung\.?|If you have further questions you can always contact us\.?|We are looking forward to hearing from you\.?|If you have any questions, feel free to ask!)$/, '');
+        } else {
+            // Subsequent templates: body-only
+            text = getBodyOnly(template, lang).replace(/\n/g, '<br>');
+        }
+        // 3-tier insertion (same as original insertTemplate but WITHOUT signature)
+        if (typeof tinymce !== 'undefined' && tinymce.activeEditor) {
+            tinymce.activeEditor.insertContent(text);
+            return;
+        }
+        const doc = lastIframe ? lastIframe.contentDocument : document;
+        if (doc.execCommand) {
+            doc.execCommand('insertHTML', false, text);
+            return;
+        }
+        lastFocusedElement.innerHTML += text;
+    }
 
+    function finalizeAndClose() {
+        if (!lastFocusedElement) return;
+        lastFocusedElement.focus();
+        let closing = '';
+        if (closings.length > 0 && selectedClosingIndex >= 0 && selectedClosingIndex < closings.length) {
+            closing = selectedLanguage === 'DE' ? closings[selectedClosingIndex].de : closings[selectedClosingIndex].en;
+        }
+        let signature = selectedLanguage === 'DE'
+            ? '<br><br>Freundliche Grüße,<br>Alexander'
+            : '<br><br>Kind regards,<br>Alexander';
+        let wrappedText = '';
+        if (closing) {
+            wrappedText = '<br><br>' + closing.replace(/\n/g, '<br>') + signature;
+        } else {
+            wrappedText = signature;
+        }
+        if (typeof tinymce !== 'undefined' && tinymce.activeEditor) {
+            tinymce.activeEditor.insertContent(wrappedText);
+        } else {
+            const doc = lastIframe ? lastIframe.contentDocument : document;
+            if (doc.execCommand) {
+                doc.execCommand('insertHTML', false, wrappedText);
+            } else {
+                lastFocusedElement.innerHTML += wrappedText;
+            }
+        }
+        closeSearchBox();
+    }
 
+    function showClosingPicker() {
+        const existing = document.getElementById('closingPicker');
+        if (existing) existing.remove();
 
+        const pickerContainer = document.createElement('div');
+        pickerContainer.id = 'closingPicker';
+        Object.assign(pickerContainer.style, {
+            position: 'absolute',
+            zIndex: '10001',
+            background: 'white',
+            border: '1px solid #007bff',
+            borderRadius: '4px',
+            padding: '8px',
+            boxShadow: '0 4px 12px rgba(0,0,0,0.15)',
+            fontFamily: 'Arial, sans-serif',
+            minWidth: '300px'
+        });
 
-    function closeSearchBox() {
+        if (searchBoxContainer) {
+            const rect = searchBoxContainer.getBoundingClientRect();
+            pickerContainer.style.top = (rect.bottom + window.scrollY + 4) + 'px';
+            pickerContainer.style.left = (rect.left + window.scrollX) + 'px';
+        } else if (lastFocusedElement) {
+            const rect = lastIframe ? lastIframe.getBoundingClientRect() : lastFocusedElement.getBoundingClientRect();
+            pickerContainer.style.top = (rect.top + window.scrollY) + 'px';
+            pickerContainer.style.left = (rect.left + window.scrollX) + 'px';
+        }
+
+        const title = document.createElement('div');
+        title.style.cssText = 'font-weight: bold; margin-bottom: 8px; font-size: 13px;';
+        title.textContent = 'Select closing:';
+        pickerContainer.appendChild(title);
+
+        const DEFAULT_CLOSINGS = [
+            { de: "Bei weiteren Fragen stehen wir Ihnen zur Verfügung.", en: "If you have further questions you can always contact us." },
+            { de: "Wir freuen uns auf Ihre Rückmeldung.", en: "We are looking forward to hearing from you." }
+        ];
+        const options = (closings && closings.length > 0) ? closings : DEFAULT_CLOSINGS;
+
+        let pickerHighlightedIndex = 0;
+
+        const optionDivs = options.map(function(opt, idx) {
+            const div = document.createElement('div');
+            div.style.cssText = 'padding: 6px 10px; cursor: pointer; border-radius: 3px;';
+            div.textContent = selectedLanguage === 'DE' ? opt.de : opt.en;
+            div.addEventListener('mouseenter', function() { highlightPickerOption(idx); });
+            div.addEventListener('click', function() { selectClosing(idx); });
+            return div;
+        });
+
+        optionDivs.forEach(function(div) { pickerContainer.appendChild(div); });
+
+        if (optionDivs.length > 0) {
+            optionDivs[0].style.background = '#e8f0fe';
+        }
+
+        function highlightPickerOption(idx) {
+            pickerHighlightedIndex = idx;
+            optionDivs.forEach(function(div, i) {
+                div.style.background = i === idx ? '#e8f0fe' : '';
+            });
+        }
+
+        function selectClosing(idx) {
+            if (closings && closings.length > 0) {
+                selectedClosingIndex = idx;
+            } else {
+                selectedClosingIndex = -1;
+                const closingText = options[idx];
+                const closingHtml = '<br><br>' + (selectedLanguage === 'DE' ? closingText.de : closingText.en).replace(/\n/g, '<br>');
+                if (typeof tinymce !== 'undefined' && tinymce.activeEditor) {
+                    tinymce.activeEditor.insertContent(closingHtml);
+                } else {
+                    const doc = lastIframe ? lastIframe.contentDocument : document;
+                    if (doc.execCommand) {
+                        doc.execCommand('insertHTML', false, closingHtml);
+                    } else {
+                        lastFocusedElement.innerHTML += closingHtml;
+                    }
+                }
+            }
+            pickerContainer.remove();
+            finalizeAndClose();
+        }
+
+        function skipClosing() {
+            selectedClosingIndex = -1;
+            pickerContainer.remove();
+            finalizeAndClose();
+        }
+
+        pickerContainer.addEventListener('keydown', function(e) {
+            switch (e.key) {
+                case 'ArrowDown':
+                    e.preventDefault();
+                    e.stopPropagation();
+                    pickerHighlightedIndex = (pickerHighlightedIndex + 1) % options.length;
+                    highlightPickerOption(pickerHighlightedIndex);
+                    break;
+                case 'ArrowUp':
+                    e.preventDefault();
+                    e.stopPropagation();
+                    pickerHighlightedIndex = (pickerHighlightedIndex - 1 + options.length) % options.length;
+                    highlightPickerOption(pickerHighlightedIndex);
+                    break;
+                case 'Enter':
+                    e.preventDefault();
+                    e.stopPropagation();
+                    selectClosing(pickerHighlightedIndex);
+                    break;
+                case 'Escape':
+                    e.preventDefault();
+                    e.stopPropagation();
+                    skipClosing();
+                    break;
+            }
+        });
+
+        pickerContainer.tabIndex = -1;
+
+        document.body.appendChild(pickerContainer);
+        pickerContainer.focus();
+    }
+
+    function insertTemplate(text) {
+        // Old single-insert behavior — kept for potential backward compat
+        // (currently unused; new flow uses appendTemplateBody + finalizeAndClose)
+        appendTemplateBody({ text: { de: text, en: text } }, true, selectedLanguage);
+        finalizeAndClose();
+    }
+
+    function closeSearchBox({ discard } = {}) {
+        if (discard && preF4FieldContent !== null) {
+            restoreFieldContent(preF4FieldContent);
+        }
         if (searchBoxContainer) searchBoxContainer.remove();
+        searchBoxContainer = null;
+        selectedIndices.clear();
+        languageLocked = false;
+        preF4FieldContent = null;
     }
 
     async function loadTemplates() {
@@ -343,15 +664,16 @@
             if (!response.ok) throw new Error(`HTTP ${response.status}`);
             const data = await response.json();
             GM_setValue("templatesCache", JSON.stringify(data));
-            return data;
+            return { templates: data.templates || data, closings: data.closings || [] };
         } catch (error) {
             console.error("Error loading templates:", error);
             const cached = GM_getValue("templatesCache", null);
             if (cached) {
                 console.warn("Using cached templates.");
-                return JSON.parse(cached);
+                const parsed = JSON.parse(cached);
+                return { templates: parsed.templates || parsed, closings: parsed.closings || [] };
             }
-            return null;
+            return { templates: null, closings: [] };
         }
     }
 
