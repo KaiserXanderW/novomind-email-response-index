@@ -26,7 +26,7 @@
     let templates = [];
     let templatesLoadFailed = false;
     let selectedIndices = new Set(); // stores indices into original `templates` array (stable across filter changes)
-    let selectedNames = [];
+    let observer = null;
     let selectedCountDiv = null;
     let selectedSummaryEl = null;
     let selectedNamesEl = null;
@@ -44,7 +44,8 @@
         document.addEventListener("focusin", trackFocusedElement, { capture: true });
         document.addEventListener("keydown", globalKeyListener, { capture: true });
 
-        const observer = new MutationObserver(setupIframeListeners);
+        if (observer) observer.disconnect();
+        observer = new MutationObserver(setupIframeListeners);
         observer.observe(document.body, { childList: true, subtree: true });
 
         setupIframeListeners();
@@ -65,7 +66,7 @@
                 iframe.dataset.scriptListener = "true";
                 iframe.contentDocument.addEventListener("focusin", (e) => trackFocusedElementInIframe(e, iframe), { capture: true });
                 iframe.contentDocument.addEventListener("keydown", (e) => globalKeyListenerInIframe(e, iframe), { capture: true });
-                console.log("Listeners added to iframe:", iframe.id || iframe.src);
+
             }
         });
     }
@@ -89,7 +90,7 @@
     }
 
     function globalKeyListener(event) {
-        console.log("Main keydown:", event.key);
+
         if (event.key === "F4") {
             event.preventDefault();
             event.stopPropagation();
@@ -98,7 +99,7 @@
     }
 
     function globalKeyListenerInIframe(event, iframe) {
-        console.log("Iframe keydown:", event.key);
+
         if (event.key === "F4") {
             event.preventDefault();
             event.stopPropagation();
@@ -638,13 +639,6 @@
 
         document.body.appendChild(pickerContainer);
         pickerContainer.focus();
-    }
-
-    function insertTemplate(text) {
-        // Old single-insert behavior — kept for potential backward compat
-        // (currently unused; new flow uses appendTemplateBody + finalizeAndClose)
-        appendTemplateBody({ text: { de: text, en: text } }, true, selectedLanguage);
-        finalizeAndClose();
     }
 
     function closeSearchBox({ discard } = {}) {
