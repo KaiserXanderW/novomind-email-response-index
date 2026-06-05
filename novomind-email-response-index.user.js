@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         novomind-email-response-index
 // @namespace    https://example.com
-// @version      7.17
+// @version      7.18
 // @description  Inserts selected template text into focused input fields or TinyMCE editors (iframes), with F4 hotkey.
 // @author       KaiserXanderW
 // @match        *://*/*
@@ -300,8 +300,16 @@
             buttonContainer.append(buttonDE, buttonEN);
             li.append(title, buttonContainer);
 
-            li.addEventListener("mouseenter", () => highlightResult(index));
-            li.addEventListener("mouseleave", () => highlightResult(-1));
+            li.addEventListener("mouseenter", () => {
+                const stableIdx = templates.indexOf(template);
+                const isSelected = selectedIndices.has(stableIdx);
+                if (!isSelected) li.style.backgroundColor = '#e8e8e8';
+            });
+            li.addEventListener("mouseleave", () => {
+                const stableIdx = templates.indexOf(template);
+                const isSelected = selectedIndices.has(stableIdx);
+                if (!isSelected) li.style.backgroundColor = '';
+            });
             li.addEventListener("click", () => highlightResult(index));
 
             ul.appendChild(li);
@@ -500,18 +508,29 @@
         const langKey = template.text[lang.toLowerCase()] ? lang.toLowerCase() : lang.toUpperCase();
         let text;
         if (isFirst) {
-            // First template: keep greeting + body (strip closing)
-            text = template.text[langKey].trim().replace(/\n/g, '<br>');
-            // Strip closing from first template too (closing chosen on finalize)
+            text = template.text[langKey].trim();
             text = text.replace(/\n\n(Bei weiteren Fragen stehen wir Ihnen zur Verfügung\.?|Wir freuen uns auf Ihre Rückmeldung\.?|If you have further questions you can always contact us\.?|We are looking forward to hearing from you\.?|If you have any questions, feel free to ask!)$/, '');
+            text = text.replace(/\n/g, '<br>');
         } else {
             // Subsequent templates: body-only
             text = getBodyOnly(template, lang.toLowerCase()).replace(/\n/g, '<br>');
         }
-        // Focus target before insertion
         lastFocusedElement.focus();
-        // 3-tier insertion (same as original insertTemplate but WITHOUT signature)
-        if (typeof tinymce !== 'undefined' && tinymce.activeEditor) {
+        if (typeof tinymce !== 'undefined' && lastIframe) {
+            const editors = tinymce.get();
+            const editor = editors.find(e => {
+                try { return e.getBody() === lastFocusedElement; } catch (ex) { return false; }
+            });
+            if (editor) {
+                editor.focus();
+                editor.insertContent(text);
+            } else if (tinymce.activeEditor) {
+                tinymce.activeEditor.insertContent(text);
+            } else {
+                const doc = lastIframe.contentDocument;
+                doc.execCommand('insertHTML', false, text);
+            }
+        } else if (typeof tinymce !== 'undefined' && tinymce.activeEditor) {
             tinymce.activeEditor.insertContent(text);
         } else {
             const doc = lastIframe ? lastIframe.contentDocument : document;
@@ -521,7 +540,6 @@
                 lastFocusedElement.innerHTML += text;
             }
         }
-        // Refocus search input so focusout handler doesn't fire and keyboard still works
         if (input) input.focus();
     }
 
@@ -542,7 +560,21 @@
         } else {
             wrappedText = signature;
         }
-        if (typeof tinymce !== 'undefined' && tinymce.activeEditor) {
+        if (typeof tinymce !== 'undefined' && lastIframe) {
+            const editors = tinymce.get();
+            const editor = editors.find(e => {
+                try { return e.getBody() === lastFocusedElement; } catch (ex) { return false; }
+            });
+            if (editor) {
+                editor.focus();
+                editor.insertContent(wrappedText);
+            } else if (tinymce.activeEditor) {
+                tinymce.activeEditor.insertContent(wrappedText);
+            } else {
+                const doc = lastIframe.contentDocument;
+                doc.execCommand('insertHTML', false, wrappedText);
+            }
+        } else if (typeof tinymce !== 'undefined' && tinymce.activeEditor) {
             tinymce.activeEditor.insertContent(wrappedText);
         } else {
             const doc = lastIframe ? lastIframe.contentDocument : document;
