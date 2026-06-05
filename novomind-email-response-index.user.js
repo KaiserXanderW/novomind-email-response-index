@@ -453,8 +453,11 @@
     }
 
     function getBodyOnly(template, lang) {
-        if (template.bodyOnly && template.bodyOnly[lang]) return template.bodyOnly[lang];
-        let text = template.text[lang];
+        // Handle both lowercase (Gist) and uppercase (test mock) keys
+        const bodyText = template.bodyOnly && (template.bodyOnly[lang] || template.bodyOnly[lang.toUpperCase()]);
+        if (bodyText) return bodyText;
+        const textKey = template.text[lang] ? lang : lang.toUpperCase();
+        let text = template.text[textKey];
         // Strip greeting
         text = text.replace(/^(Sehr geehrte Damen und Herren,|Dear Sir or Madam,)\n\n/, '');
         // Strip opening line
@@ -467,8 +470,10 @@
     function appendTemplateBody(template, isFirst, lang) {
         if (!lastFocusedElement) return;
         isAppending = true;
-        // Use lowercase key for template text (Gist stores "de"/"en", selectedLanguage is "DE"/"EN")
-        const langKey = lang.toLowerCase();
+        // Focus target before insertion (guarded by isAppending so focusout handler won't discard)
+        lastFocusedElement.focus();
+        // Handle both lowercase (Gist) and uppercase (test mock) keys
+        const langKey = template.text[lang.toLowerCase()] ? lang.toLowerCase() : lang.toUpperCase();
         let text;
         if (isFirst) {
             // First template: keep greeting + body (strip closing)
@@ -477,7 +482,7 @@
             text = text.replace(/\n\n(Bei weiteren Fragen stehen wir Ihnen zur Verfügung\.?|Wir freuen uns auf Ihre Rückmeldung\.?|If you have further questions you can always contact us\.?|We are looking forward to hearing from you\.?|If you have any questions, feel free to ask!)$/, '');
         } else {
             // Subsequent templates: body-only
-            text = getBodyOnly(template, langKey).replace(/\n/g, '<br>');
+            text = getBodyOnly(template, lang.toLowerCase()).replace(/\n/g, '<br>');
         }
         // 3-tier insertion (same as original insertTemplate but WITHOUT signature)
         if (typeof tinymce !== 'undefined' && tinymce.activeEditor) {
