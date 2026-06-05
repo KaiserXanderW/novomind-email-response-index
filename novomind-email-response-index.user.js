@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         novomind-email-response-index
 // @namespace    https://example.com
-// @version      7.23
+// @version      7.24
 // @description  Inserts selected template text into focused input fields or TinyMCE editors (iframes), with F4 hotkey.
 // @author       KaiserXanderW
 // @match        *://*/*
@@ -473,12 +473,12 @@
                 break;
             case "ArrowLeft":
                 if (languageLocked) return;
-                selectedLanguage = "DE";
+                selectedLanguage = "EN";
                 highlightResult(highlightedIndex);
                 break;
             case "ArrowRight":
                 if (languageLocked) return;
-                selectedLanguage = "EN";
+                selectedLanguage = "DE";
                 highlightResult(highlightedIndex);
                 break;
             case "Enter":
