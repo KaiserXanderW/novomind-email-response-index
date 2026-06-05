@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         novomind-email-response-index
 // @namespace    https://example.com
-// @version      7.21
+// @version      7.22
 // @description  Inserts selected template text into focused input fields or TinyMCE editors (iframes), with F4 hotkey.
 // @author       KaiserXanderW
 // @match        *://*/*
@@ -193,7 +193,27 @@
         closeButton.style.cssText = "font-size: 14px; cursor: pointer; margin-left: 5px;";
         closeButton.addEventListener("click", () => closeSearchBox({ discard: true }));
 
-        topRowContainer.append(input, closeButton);
+        const confirmButton = document.createElement("button");
+        confirmButton.textContent = "✓";
+        confirmButton.style.cssText = "font-size: 14px; cursor: pointer; margin-left: 5px; background: #007bff; color: white; border: none; border-radius: 3px; padding: 2px 8px;";
+        confirmButton.addEventListener("click", () => {
+            if (selectedIndices.size === 0 && highlightedIndex >= 0 && filteredTemplates.length > 0) {
+                appendTemplateBody(filteredTemplates[highlightedIndex], true, selectedLanguage);
+                finalizeAndClose();
+            } else if (selectedIndices.size > 0) {
+                const sortedIndices = [...selectedIndices].sort((a, b) => a - b);
+                sortedIndices.forEach((idx, i) => {
+                    appendTemplateBody(templates[idx], i === 0, selectedLanguage);
+                });
+                if (selectedIndices.size > 1) {
+                    showClosingPicker();
+                } else {
+                    finalizeAndClose();
+                }
+            }
+        });
+
+        topRowContainer.append(input, confirmButton, closeButton);
 
         // Selected templates summary (shown below search input when count > 0)
         selectedSummaryEl = document.createElement("div");
@@ -464,8 +484,8 @@
             case "Enter":
                 event.preventDefault();
                 event.stopPropagation();
-                if (event.shiftKey) {
-                    // Shift+Enter: insert all selected in order, then finalize
+                if (!event.shiftKey) {
+                    // Enter: insert all selected in order, then finalize
                     if (selectedIndices.size === 0 && highlightedIndex >= 0) {
                         // No selections yet — quick-insert highlighted one
                         appendTemplateBody(filteredTemplates[highlightedIndex], true, selectedLanguage);
@@ -483,7 +503,7 @@
                         }
                     }
                 } else {
-                    // Enter: select highlighted without inserting text
+                    // Shift+Enter: select highlighted without inserting text
                     if (highlightedIndex >= 0 && filteredTemplates.length > 0) {
                         const stableIdx = templates.indexOf(filteredTemplates[highlightedIndex]);
                         if (!selectedIndices.has(stableIdx)) {
