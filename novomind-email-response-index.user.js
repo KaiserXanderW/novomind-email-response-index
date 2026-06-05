@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         novomind-email-response-index
 // @namespace    https://example.com
-// @version      7.22
+// @version      7.23
 // @description  Inserts selected template text into focused input fields or TinyMCE editors (iframes), with F4 hotkey.
 // @author       KaiserXanderW
 // @match        *://*/*
@@ -314,10 +314,10 @@
             const buttonContainer = document.createElement("div");
             buttonContainer.style.cssText = "display: flex; gap: 5px;";
 
-            const buttonDE = createLangButton("DE", template.text.de, index);
             const buttonEN = createLangButton("EN", template.text.en, index);
+            const buttonDE = createLangButton("DE", template.text.de, index);
 
-            buttonContainer.append(buttonDE, buttonEN);
+            buttonContainer.append(buttonEN, buttonDE);
             li.append(title, buttonContainer);
 
             li.addEventListener("mouseenter", () => {
