@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         novomind-email-response-index
 // @namespace    https://example.com
-// @version      7.24
+// @version      7.25
 // @description  Inserts selected template text into focused input fields or TinyMCE editors (iframes), with F4 hotkey.
 // @author       KaiserXanderW
 // @match        *://*/*
@@ -36,6 +36,7 @@
     let selectedClosingIndex = 0;
     let closings = [];
     let discardTimer = null;
+    let searchTimer = null;
 
 
     async function init() {
@@ -195,7 +196,7 @@
 
         const confirmButton = document.createElement("button");
         confirmButton.textContent = "✓";
-        confirmButton.style.cssText = "font-size: 14px; cursor: pointer; margin-left: 5px; background: #007bff; color: white; border: none; border-radius: 3px; padding: 2px 8px;";
+        confirmButton.style.cssText = "font-size: 14px; cursor: pointer; margin-left: 5px; background: #007bff; color: white; border: none; border-radius: 3px; font-weight: bold; padding: 2px 10px;";
         confirmButton.addEventListener("click", () => {
             if (selectedIndices.size === 0 && highlightedIndex >= 0 && filteredTemplates.length > 0) {
                 appendTemplateBody(filteredTemplates[highlightedIndex], true, selectedLanguage);
@@ -226,8 +227,8 @@
 
         // Title bar
         const titleBar = document.createElement("div");
-        titleBar.style.cssText = "font-size: 12px; font-weight: bold; padding: 4px 5px; background: #007bff; color: white; border-radius: 3px 3px 0 0; margin-bottom: 4px;";
-        titleBar.textContent = "Email Templates";
+        titleBar.style.cssText = "font-size: 12px; font-weight: bold; padding: 6px 8px; background: linear-gradient(to bottom, #007bff, #0056b3); color: white; border-radius: 3px 3px 0 0; margin: -5px -5px 5px -5px; display: flex; justify-content: space-between; align-items: center;";
+        titleBar.innerHTML = '<span>Email Templates</span><span style="font-size:10px;font-weight:normal;opacity:0.8;">F4 to toggle</span>';
         searchBoxContainer.insertBefore(titleBar, searchBoxContainer.firstChild);
 
         ul = document.createElement("ul");
@@ -243,6 +244,19 @@
         selectedCountDiv.style.cssText = "font-size: 12px; padding: 4px 8px; color: #007bff; display: none; border-bottom: 1px solid #eee;";
 
         searchBoxContainer.append(topRowContainer, selectedSummaryEl, selectedCountDiv, ul);
+
+        // Keyboard shortcuts legend
+        const shortcutsDiv = document.createElement("div");
+        shortcutsDiv.style.cssText = "font-size: 10px; color: #666; padding: 4px 5px; border-top: 1px solid #eee; margin-top: 2px; cursor: pointer;";
+        shortcutsDiv.textContent = '\u2328 Shortcuts';
+        const shortcutsList = document.createElement("div");
+        shortcutsList.style.cssText = "display: none; font-size: 10px; color: #666; padding: 4px 5px; line-height: 1.6; border-top: 1px solid #eee;";
+        shortcutsList.innerHTML = '\u2191\u2193 Navigate &nbsp; \u2190\u2192 Switch EN/DE<br>Enter Confirm &nbsp; Shift+Enter Select<br>Esc Clear/Discard &nbsp; \u2713 Confirm';
+        shortcutsDiv.addEventListener('click', () => {
+            shortcutsList.style.display = shortcutsList.style.display === 'none' ? 'block' : 'none';
+        });
+        searchBoxContainer.append(shortcutsDiv, shortcutsList);
+
         document.body.appendChild(searchBoxContainer);
 
         // Save current field content for potential discard on blur/close
@@ -261,7 +275,10 @@
         });
 
         input.focus();
-        input.addEventListener("input", () => handleSearch(input.value));
+        input.addEventListener("input", () => {
+            if (searchTimer) clearTimeout(searchTimer);
+            searchTimer = setTimeout(() => handleSearch(input.value), 150);
+        });
         input.addEventListener("keydown", handleInputNavigation, true);
         handleSearch("");
     }
@@ -274,8 +291,25 @@
         if (templatesLoadFailed) {
             ul.style.display = "block";
             const li = document.createElement("li");
-            li.style.cssText = "padding: 8px; color: red;";
-            li.textContent = "Failed to load templates. Check your connection.";
+            li.style.cssText = "padding: 8px; color: red; display: flex; justify-content: space-between; align-items: center;";
+            li.innerHTML = '<span>Failed to load templates.</span>';
+            const retryBtn = document.createElement('button');
+            retryBtn.textContent = 'Retry';
+            retryBtn.style.cssText = 'padding: 2px 8px; font-size: 11px; cursor: pointer;';
+            retryBtn.addEventListener('click', async () => {
+                li.textContent = 'Loading...';
+                const loaded = await loadTemplates();
+                if (loaded.templates === null) {
+                    templatesLoadFailed = true;
+                    templates = [];
+                } else {
+                    templatesLoadFailed = false;
+                    templates = loaded.templates;
+                }
+                closings = loaded.closings || [];
+                handleSearch(input.value);
+            });
+            li.appendChild(retryBtn);
             ul.appendChild(li);
             return;
         }
@@ -657,10 +691,10 @@
             pickerContainer.style.left = (rect.left + window.scrollX) + 'px';
         }
 
-        const title = document.createElement('div');
-        title.style.cssText = 'font-weight: bold; margin-bottom: 8px; font-size: 13px;';
-        title.textContent = 'Select closing:';
-        pickerContainer.appendChild(title);
+        const pickerTitle = document.createElement('div');
+        pickerTitle.style.cssText = 'font-size: 12px; font-weight: bold; padding: 6px 8px; background: linear-gradient(to bottom, #007bff, #0056b3); color: white; border-radius: 3px 3px 0 0; margin: -8px -8px 8px -8px;';
+        pickerTitle.textContent = 'Select Closing';
+        pickerContainer.insertBefore(pickerTitle, pickerContainer.firstChild);
 
         const DEFAULT_CLOSINGS = [
             { de: "Bei weiteren Fragen stehen wir Ihnen zur Verfügung.", en: "If you have further questions you can always contact us." },
