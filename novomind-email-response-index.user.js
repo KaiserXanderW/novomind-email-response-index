@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         novomind-email-response-index
 // @namespace    https://example.com
-// @version      7.19
+// @version      7.20
 // @description  Inserts selected template text into focused input fields or TinyMCE editors (iframes), with F4 hotkey.
 // @author       KaiserXanderW
 // @match        *://*/*
@@ -475,16 +475,17 @@
                         showClosingPicker();
                     }
                 } else {
-                    // Enter: select highlighted entry (like clicking DE/EN) — just select, no close
-                    if (highlightedIndex >= 0 && filteredTemplates.length > 0 && !selectedIndices.has(templates.indexOf(filteredTemplates[highlightedIndex]))) {
-                        // Simulate clicking the language button
-                        if (selectedIndices.size === 0) {
-                            languageLocked = true;
+                    if (highlightedIndex >= 0 && filteredTemplates.length > 0) {
+                        const stableIdx = templates.indexOf(filteredTemplates[highlightedIndex]);
+                        if (!selectedIndices.has(stableIdx)) {
+                            if (selectedIndices.size === 0) {
+                                languageLocked = true;
+                            }
+                            selectedIndices.add(stableIdx);
+                            appendTemplateBody(filteredTemplates[highlightedIndex], selectedIndices.size === 1, selectedLanguage);
+                            input.value = '';
+                            handleSearch('');
                         }
-                        selectedIndices.add(templates.indexOf(filteredTemplates[highlightedIndex]));
-                        const isFirst = selectedIndices.size === 1;
-                        appendTemplateBody(filteredTemplates[highlightedIndex], isFirst, selectedLanguage);
-                        handleSearch(input.value);
                     }
                 }
                 break;
@@ -527,8 +528,8 @@
             text = text.replace(/\n\n(Bei weiteren Fragen stehen wir Ihnen (gerne )?zur Verfügung[.!]?|Wir freuen uns auf Ihre Rückmeldung\.?|If you have further questions you can always contact us\.?|We are looking forward to hearing from you\.?|If you have any questions, feel free to ask!)$/, '');
             text = text.replace(/\n/g, '<br>');
         } else {
-            // Subsequent templates: body-only
-            text = getBodyOnly(template, lang.toLowerCase()).replace(/\n/g, '<br>');
+            // Subsequent templates: body-only, with blank line separator
+            text = '<br><br>' + getBodyOnly(template, lang.toLowerCase()).replace(/\n/g, '<br>');
         }
         lastFocusedElement.focus();
         if (typeof tinymce !== 'undefined' && lastIframe) {
