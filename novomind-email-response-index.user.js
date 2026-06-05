@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         novomind-email-response-index
 // @namespace    https://example.com
-// @version      7.16
+// @version      7.17
 // @description  Inserts selected template text into focused input fields or TinyMCE editors (iframes), with F4 hotkey.
 // @author       KaiserXanderW
 // @match        *://*/*
@@ -35,6 +35,7 @@
     let pickerActive = false;
     let selectedClosingIndex = 0;
     let closings = [];
+    let discardTimer = null;
 
 
     async function init() {
@@ -203,6 +204,12 @@
         selectedSummaryEl.appendChild(document.createTextNode("Selected templates: "));
         selectedSummaryEl.appendChild(selectedNamesEl);
 
+        // Title bar
+        const titleBar = document.createElement("div");
+        titleBar.style.cssText = "font-size: 12px; font-weight: bold; padding: 4px 5px; background: #007bff; color: white; border-radius: 3px 3px 0 0; margin-bottom: 4px;";
+        titleBar.textContent = "Email Templates";
+        searchBoxContainer.insertBefore(titleBar, searchBoxContainer.firstChild);
+
         ul = document.createElement("ul");
         ul.style.cssText = `
             list-style: none; margin: 5px 0 0 0; padding: 0; background: white;
@@ -223,7 +230,9 @@
 
         // Blur/discard handler — discard all inserted text when focus leaves container
         searchBoxContainer.addEventListener('focusout', (e) => {
-            setTimeout(() => {
+            if (discardTimer) clearTimeout(discardTimer);
+            discardTimer = setTimeout(() => {
+                discardTimer = null;
                 if (pickerActive) return;
                 if (!searchBoxContainer || !searchBoxContainer.contains(document.activeElement)) {
                     closeSearchBox({ discard: true });
@@ -361,7 +370,8 @@
         });
 
         button.addEventListener('mouseenter', () => {
-            button.style.backgroundColor = '#bde4ff';
+            button.style.backgroundColor = '#007bff';
+            button.style.color = 'white';
         });
         button.addEventListener('mouseleave', () => {
             updateButtonStyle(button, lang, index);
@@ -439,6 +449,8 @@
                 highlightResult(highlightedIndex);
                 break;
             case "Enter":
+                event.preventDefault();
+                event.stopPropagation();
                 if (event.shiftKey) {
                     if (selectedIndices.size === 0 && highlightedIndex >= 0) {
                         appendTemplateBody(filteredTemplates[highlightedIndex], true, selectedLanguage);
@@ -515,6 +527,7 @@
 
     function finalizeAndClose() {
         if (!lastFocusedElement) return;
+        if (discardTimer) clearTimeout(discardTimer);
         lastFocusedElement.focus();
         let closing = '';
         if (closings.length > 0 && selectedClosingIndex >= 0 && selectedClosingIndex < closings.length) {
@@ -562,11 +575,7 @@
             minWidth: '300px'
         });
 
-        if (searchBoxContainer) {
-            const rect = searchBoxContainer.getBoundingClientRect();
-            pickerContainer.style.top = (rect.bottom + window.scrollY + 4) + 'px';
-            pickerContainer.style.left = (rect.left + window.scrollX) + 'px';
-        } else if (lastFocusedElement) {
+        if (lastFocusedElement) {
             const rect = lastIframe ? lastIframe.getBoundingClientRect() : lastFocusedElement.getBoundingClientRect();
             pickerContainer.style.top = (rect.top + window.scrollY) + 'px';
             pickerContainer.style.left = (rect.left + window.scrollX) + 'px';
@@ -680,6 +689,7 @@
     }
 
     function closeSearchBox({ discard } = {}) {
+        if (discardTimer) { clearTimeout(discardTimer); discardTimer = null; }
         if (discard && preF4FieldContent !== null) {
             restoreFieldContent(preF4FieldContent);
         }
