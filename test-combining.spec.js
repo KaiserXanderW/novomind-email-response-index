@@ -1,3 +1,4 @@
+// Run with: npx playwright test test-combining.spec.js --reporter=list
 const { test, expect } = require('@playwright/test');
 const path = require('path');
 
