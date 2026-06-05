@@ -736,6 +736,7 @@
                 if (typeof tinymce !== 'undefined' && tinymce.activeEditor) {
                     tinymce.activeEditor.insertContent(closingHtml);
                 } else {
+                    lastFocusedElement.focus();
                     const doc = lastIframe ? lastIframe.contentDocument : document;
                     if (doc.execCommand) {
                         doc.execCommand('insertHTML', false, closingHtml);

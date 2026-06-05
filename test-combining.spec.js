@@ -85,11 +85,8 @@ test.describe('Novomind Email Response Index — Core Flow QA', () => {
         await input.fill('Check');
 
         await page.keyboard.press('Enter');
-
-        await page.waitForSelector(CLOSING_PICKER_SEL, { state: 'visible' });
-        await page.waitForTimeout(200);
-
-        await page.keyboard.press('Enter');
+        // Single template with no prior clicks: Enter finalizes directly (no closing picker)
+        await page.waitForTimeout(500);
 
         const value = await getTextareaValue(page);
         expect(value).toContain('Sehr geehrte Damen und Herren');
@@ -289,11 +286,13 @@ test.describe('Novomind Email Response Index — Core Flow QA', () => {
         await openSearchBox(page);
 
         await clickTemplateLang(page, 'Check-in Times', 'DE');
+        await clickTemplateLang(page, 'Parking Options', 'DE');
         await page.waitForTimeout(200);
 
         await searchInputLocator(page).click();
         await page.waitForTimeout(100);
 
+        // 2+ templates selected → Enter shows closing picker
         await page.keyboard.press('Enter');
         await page.waitForSelector(CLOSING_PICKER_SEL, { state: 'visible' });
         await page.waitForTimeout(200);
@@ -367,9 +366,11 @@ test.describe('Novomind Email Response Index — Core Flow QA', () => {
         await openSearchBox(page);
 
         await clickTemplateLang(page, 'Check-in Times', 'DE');
+        await clickTemplateLang(page, 'Parking Options', 'DE');
 
         await searchInputLocator(page).click();
         await page.waitForTimeout(100);
+        // 2+ templates selected → Enter shows closing picker
         await page.keyboard.press('Enter');
 
         await page.waitForSelector(CLOSING_PICKER_SEL, { state: 'visible' });
@@ -496,12 +497,7 @@ test.describe('Novomind Email Response Index — Core Flow QA', () => {
         await frame.locator('body').click();
         await page.waitForTimeout(300);
 
-        await frame.evaluate(() => {
-            document.dispatchEvent(new KeyboardEvent('keydown', {
-                key: 'F4', code: 'F4', keyCode: 115, which: 115,
-                bubbles: true, cancelable: true, composed: true
-            }));
-        });
+        await page.keyboard.press('F4');
         await page.waitForSelector(SEARCH_INPUT_SEL, { state: 'visible' });
         await page.waitForTimeout(200);
 
@@ -531,6 +527,7 @@ test.describe('Novomind Email Response Index — Core Flow QA', () => {
         await openSearchBox(page);
 
         await clickTemplateLang(page, 'Check-in Times', 'DE');
+        await clickTemplateLang(page, 'Parking Options', 'DE');
         await page.waitForTimeout(200);
 
         await searchInputLocator(page).click();
@@ -542,6 +539,7 @@ test.describe('Novomind Email Response Index — Core Flow QA', () => {
         await page.keyboard.press('ArrowRight');
         await page.waitForTimeout(100);
 
+        // 2+ templates → Enter shows closing picker
         await page.keyboard.press('Enter');
         await page.waitForSelector(CLOSING_PICKER_SEL, { state: 'visible' });
         await page.waitForTimeout(200);
