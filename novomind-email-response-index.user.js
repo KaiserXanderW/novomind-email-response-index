@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         novomind-email-response-index
 // @namespace    https://example.com
-// @version      7.15
+// @version      7.16
 // @description  Inserts selected template text into focused input fields or TinyMCE editors (iframes), with F4 hotkey.
 // @author       KaiserXanderW
 // @match        *://*/*
@@ -32,6 +32,7 @@
     let selectedNamesEl = null;
     let languageLocked = false;
     let preF4FieldContent = null;
+    let pickerActive = false;
     let selectedClosingIndex = 0;
     let closings = [];
 
@@ -223,7 +224,8 @@
         // Blur/discard handler — discard all inserted text when focus leaves container
         searchBoxContainer.addEventListener('focusout', (e) => {
             setTimeout(() => {
-                if (!searchBoxContainer.contains(document.activeElement)) {
+                if (pickerActive) return;
+                if (!searchBoxContainer || !searchBoxContainer.contains(document.activeElement)) {
                     closeSearchBox({ discard: true });
                 }
             }, 100);
@@ -358,6 +360,13 @@
             handleSearch(input.value); // re-render to show selection visuals
         });
 
+        button.addEventListener('mouseenter', () => {
+            button.style.backgroundColor = '#bde4ff';
+        });
+        button.addEventListener('mouseleave', () => {
+            updateButtonStyle(button, lang, index);
+        });
+
         updateButtonStyle(button, lang, index);
         return button;
     }
@@ -430,11 +439,18 @@
                 highlightResult(highlightedIndex);
                 break;
             case "Enter":
-                if (selectedIndices.size > 0 || (highlightedIndex >= 0 && filteredTemplates.length > 0)) {
+                if (event.shiftKey) {
                     if (selectedIndices.size === 0 && highlightedIndex >= 0) {
                         appendTemplateBody(filteredTemplates[highlightedIndex], true, selectedLanguage);
                     }
                     showClosingPicker();
+                } else {
+                    if (selectedIndices.size > 0) {
+                        finalizeAndClose();
+                    } else if (highlightedIndex >= 0 && filteredTemplates.length > 0) {
+                        appendTemplateBody(filteredTemplates[highlightedIndex], true, selectedLanguage);
+                        finalizeAndClose();
+                    }
                 }
                 break;
             case "Escape":
@@ -528,6 +544,7 @@
     }
 
     function showClosingPicker() {
+        pickerActive = true;
         const existing = document.getElementById('closingPicker');
         if (existing) existing.remove();
 
@@ -649,12 +666,24 @@
 
         document.body.appendChild(pickerContainer);
         pickerContainer.focus();
+
+        requestAnimationFrame(() => {
+            const pickerRect = pickerContainer.getBoundingClientRect();
+            if (pickerRect.bottom > window.innerHeight && searchBoxContainer) {
+                const searchRect = searchBoxContainer.getBoundingClientRect();
+                pickerContainer.style.top = (searchRect.top + window.scrollY - pickerRect.height - 4) + 'px';
+            }
+            if (pickerRect.right > window.innerWidth) {
+                pickerContainer.style.left = (window.innerWidth - pickerRect.width - 10 + window.scrollX) + 'px';
+            }
+        });
     }
 
     function closeSearchBox({ discard } = {}) {
         if (discard && preF4FieldContent !== null) {
             restoreFieldContent(preF4FieldContent);
         }
+        pickerActive = false;
         if (searchBoxContainer) searchBoxContainer.remove();
         searchBoxContainer = null;
         selectedIndices.clear();
