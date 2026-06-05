@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         novomind-email-response-index
 // @namespace    https://example.com
-// @version      7.18
+// @version      7.19
 // @description  Inserts selected template text into focused input fields or TinyMCE editors (iframes), with F4 hotkey.
 // @author       KaiserXanderW
 // @match        *://*/*
@@ -415,8 +415,13 @@
         items.forEach((item, i) => {
             if (i === index) {
                 item.style.backgroundColor = "#bde4ff";
-            } else if (selectedIndices.has(templates.indexOf(filteredTemplates[i]))) {
-                item.style.backgroundColor = "#f0f7ff";
+            } else if (selectedIndices.size > 0 && i < filteredTemplates.length) {
+                const stableIdx = templates.indexOf(filteredTemplates[i]);
+                if (selectedIndices.has(stableIdx)) {
+                    item.style.backgroundColor = "#f0f7ff";
+                } else {
+                    item.style.backgroundColor = "";
+                }
             } else {
                 item.style.backgroundColor = "";
             }
@@ -460,16 +465,26 @@
                 event.preventDefault();
                 event.stopPropagation();
                 if (event.shiftKey) {
+                    // Shift+Enter: finalize - auto-close if 0-1 templates, picker if 2+
                     if (selectedIndices.size === 0 && highlightedIndex >= 0) {
                         appendTemplateBody(filteredTemplates[highlightedIndex], true, selectedLanguage);
+                        finalizeAndClose();
+                    } else if (selectedIndices.size === 1) {
+                        finalizeAndClose();
+                    } else if (selectedIndices.size > 1) {
+                        showClosingPicker();
                     }
-                    showClosingPicker();
                 } else {
-                    if (selectedIndices.size > 0) {
-                        finalizeAndClose();
-                    } else if (highlightedIndex >= 0 && filteredTemplates.length > 0) {
-                        appendTemplateBody(filteredTemplates[highlightedIndex], true, selectedLanguage);
-                        finalizeAndClose();
+                    // Enter: select highlighted entry (like clicking DE/EN) — just select, no close
+                    if (highlightedIndex >= 0 && filteredTemplates.length > 0 && !selectedIndices.has(templates.indexOf(filteredTemplates[highlightedIndex]))) {
+                        // Simulate clicking the language button
+                        if (selectedIndices.size === 0) {
+                            languageLocked = true;
+                        }
+                        selectedIndices.add(templates.indexOf(filteredTemplates[highlightedIndex]));
+                        const isFirst = selectedIndices.size === 1;
+                        appendTemplateBody(filteredTemplates[highlightedIndex], isFirst, selectedLanguage);
+                        handleSearch(input.value);
                     }
                 }
                 break;
@@ -498,7 +513,7 @@
         // Strip opening line
         text = text.replace(/^(vielen Dank für Ihre Nachricht\.|Thank you for your message\.)\n\n/, '');
         // Strip closing
-        text = text.replace(/\n\n(Bei weiteren Fragen stehen wir Ihnen zur Verfügung\.?|Wir freuen uns auf Ihre Rückmeldung\.?|If you have further questions you can always contact us\.?|We are looking forward to hearing from you\.?|If you have any questions, feel free to ask!)$/, '');
+        text = text.replace(/\n\n(Bei weiteren Fragen stehen wir Ihnen (gerne )?zur Verfügung[.!]?|Wir freuen uns auf Ihre Rückmeldung\.?|If you have further questions you can always contact us\.?|We are looking forward to hearing from you\.?|If you have any questions, feel free to ask!)$/, '');
         return text.trim();
     }
 
@@ -509,7 +524,7 @@
         let text;
         if (isFirst) {
             text = template.text[langKey].trim();
-            text = text.replace(/\n\n(Bei weiteren Fragen stehen wir Ihnen zur Verfügung\.?|Wir freuen uns auf Ihre Rückmeldung\.?|If you have further questions you can always contact us\.?|We are looking forward to hearing from you\.?|If you have any questions, feel free to ask!)$/, '');
+            text = text.replace(/\n\n(Bei weiteren Fragen stehen wir Ihnen (gerne )?zur Verfügung[.!]?|Wir freuen uns auf Ihre Rückmeldung\.?|If you have further questions you can always contact us\.?|We are looking forward to hearing from you\.?|If you have any questions, feel free to ask!)$/, '');
             text = text.replace(/\n/g, '<br>');
         } else {
             // Subsequent templates: body-only
@@ -673,6 +688,7 @@
         function skipClosing() {
             selectedClosingIndex = -1;
             pickerContainer.remove();
+            if (searchBoxContainer) searchBoxContainer.style.display = '';
             finalizeAndClose();
         }
 
@@ -704,6 +720,10 @@
         });
 
         pickerContainer.tabIndex = -1;
+
+        if (searchBoxContainer) {
+            searchBoxContainer.style.display = 'none';
+        }
 
         document.body.appendChild(pickerContainer);
         pickerContainer.focus();
