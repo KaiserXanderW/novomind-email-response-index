@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         novomind-email-response-index
 // @namespace    https://example.com
-// @version      7.20
+// @version      7.21
 // @description  Inserts selected template text into focused input fields or TinyMCE editors (iframes), with F4 hotkey.
 // @author       KaiserXanderW
 // @match        *://*/*
@@ -465,16 +465,25 @@
                 event.preventDefault();
                 event.stopPropagation();
                 if (event.shiftKey) {
-                    // Shift+Enter: finalize - auto-close if 0-1 templates, picker if 2+
+                    // Shift+Enter: insert all selected in order, then finalize
                     if (selectedIndices.size === 0 && highlightedIndex >= 0) {
+                        // No selections yet — quick-insert highlighted one
                         appendTemplateBody(filteredTemplates[highlightedIndex], true, selectedLanguage);
                         finalizeAndClose();
-                    } else if (selectedIndices.size === 1) {
-                        finalizeAndClose();
-                    } else if (selectedIndices.size > 1) {
-                        showClosingPicker();
+                    } else {
+                        // Insert all selected templates in their original order
+                        const sortedIndices = [...selectedIndices].sort((a, b) => a - b);
+                        sortedIndices.forEach((idx, i) => {
+                            appendTemplateBody(templates[idx], i === 0, selectedLanguage);
+                        });
+                        if (selectedIndices.size > 1) {
+                            showClosingPicker();
+                        } else {
+                            finalizeAndClose();
+                        }
                     }
                 } else {
+                    // Enter: select highlighted without inserting text
                     if (highlightedIndex >= 0 && filteredTemplates.length > 0) {
                         const stableIdx = templates.indexOf(filteredTemplates[highlightedIndex]);
                         if (!selectedIndices.has(stableIdx)) {
@@ -482,7 +491,6 @@
                                 languageLocked = true;
                             }
                             selectedIndices.add(stableIdx);
-                            appendTemplateBody(filteredTemplates[highlightedIndex], selectedIndices.size === 1, selectedLanguage);
                             input.value = '';
                             handleSearch('');
                         }
