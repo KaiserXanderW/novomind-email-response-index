@@ -34,6 +34,7 @@
     let preF4FieldContent = null;
     let selectedClosingIndex = 0;
     let closings = [];
+    let isAppending = false;
 
     async function init() {
         console.log("Template Index Script: init() called.");
@@ -222,6 +223,7 @@
         // Blur/discard handler — discard all inserted text when focus leaves container
         searchBoxContainer.addEventListener('focusout', (e) => {
             setTimeout(() => {
+                if (isAppending) return;
                 if (!searchBoxContainer.contains(document.activeElement)) {
                     closeSearchBox({ discard: true });
                 }
@@ -464,28 +466,33 @@
 
     function appendTemplateBody(template, isFirst, lang) {
         if (!lastFocusedElement) return;
-        lastFocusedElement.focus();
+        isAppending = true;
+        // Use lowercase key for template text (Gist stores "de"/"en", selectedLanguage is "DE"/"EN")
+        const langKey = lang.toLowerCase();
         let text;
         if (isFirst) {
             // First template: keep greeting + body (strip closing)
-            text = template.text[lang].trim().replace(/\n/g, '<br>');
+            text = template.text[langKey].trim().replace(/\n/g, '<br>');
             // Strip closing from first template too (closing chosen on finalize)
             text = text.replace(/\n\n(Bei weiteren Fragen stehen wir Ihnen zur Verfügung\.?|Wir freuen uns auf Ihre Rückmeldung\.?|If you have further questions you can always contact us\.?|We are looking forward to hearing from you\.?|If you have any questions, feel free to ask!)$/, '');
         } else {
             // Subsequent templates: body-only
-            text = getBodyOnly(template, lang).replace(/\n/g, '<br>');
+            text = getBodyOnly(template, langKey).replace(/\n/g, '<br>');
         }
         // 3-tier insertion (same as original insertTemplate but WITHOUT signature)
         if (typeof tinymce !== 'undefined' && tinymce.activeEditor) {
             tinymce.activeEditor.insertContent(text);
+            isAppending = false;
             return;
         }
         const doc = lastIframe ? lastIframe.contentDocument : document;
         if (doc.execCommand) {
             doc.execCommand('insertHTML', false, text);
+            isAppending = false;
             return;
         }
         lastFocusedElement.innerHTML += text;
+        isAppending = false;
     }
 
     function finalizeAndClose() {
