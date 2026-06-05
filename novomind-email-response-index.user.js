@@ -34,7 +34,7 @@
     let preF4FieldContent = null;
     let selectedClosingIndex = 0;
     let closings = [];
-    let isAppending = false;
+
 
     async function init() {
         console.log("Template Index Script: init() called.");
@@ -223,7 +223,6 @@
         // Blur/discard handler — discard all inserted text when focus leaves container
         searchBoxContainer.addEventListener('focusout', (e) => {
             setTimeout(() => {
-                if (isAppending) return;
                 if (!searchBoxContainer.contains(document.activeElement)) {
                     closeSearchBox({ discard: true });
                 }
@@ -469,9 +468,6 @@
 
     function appendTemplateBody(template, isFirst, lang) {
         if (!lastFocusedElement) return;
-        isAppending = true;
-        // Focus target before insertion (guarded by isAppending so focusout handler won't discard)
-        lastFocusedElement.focus();
         // Handle both lowercase (Gist) and uppercase (test mock) keys
         const langKey = template.text[lang.toLowerCase()] ? lang.toLowerCase() : lang.toUpperCase();
         let text;
@@ -484,20 +480,21 @@
             // Subsequent templates: body-only
             text = getBodyOnly(template, lang.toLowerCase()).replace(/\n/g, '<br>');
         }
+        // Focus target before insertion
+        lastFocusedElement.focus();
         // 3-tier insertion (same as original insertTemplate but WITHOUT signature)
         if (typeof tinymce !== 'undefined' && tinymce.activeEditor) {
             tinymce.activeEditor.insertContent(text);
-            isAppending = false;
-            return;
+        } else {
+            const doc = lastIframe ? lastIframe.contentDocument : document;
+            if (doc.execCommand) {
+                doc.execCommand('insertHTML', false, text);
+            } else {
+                lastFocusedElement.innerHTML += text;
+            }
         }
-        const doc = lastIframe ? lastIframe.contentDocument : document;
-        if (doc.execCommand) {
-            doc.execCommand('insertHTML', false, text);
-            isAppending = false;
-            return;
-        }
-        lastFocusedElement.innerHTML += text;
-        isAppending = false;
+        // Refocus search input so focusout handler doesn't fire and keyboard still works
+        if (input) input.focus();
     }
 
     function finalizeAndClose() {
@@ -526,6 +523,7 @@
                 lastFocusedElement.innerHTML += wrappedText;
             }
         }
+        if (input) input.focus();
         closeSearchBox();
     }
 
